@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Conversores
 {
@@ -19,7 +18,7 @@ namespace Conversores
 
             numeroBinario = CargarNumeros(numero);
             return InvertirCadena(numeroBinario);
-            
+
         }
 
         private static string InvertirCadena(List<int> restos)
@@ -42,20 +41,20 @@ namespace Conversores
             }
             return restos;
         }
-            
+
 
         public static int BinarioADecimal(string numeroStr)
         {
             double resultado = -1;
             int potencia;
-            if(numeroStr is not null)
+            if (numeroStr is not null)
             {
                 potencia = numeroStr.Length;
                 resultado = 0;
-                for (int i=0;i<numeroStr.Length;i++)
+                for (int i = 0; i < numeroStr.Length; i++)
                 {
                     potencia--;
-                    if(numeroStr[i] == '1' || numeroStr[i] == '0')
+                    if (numeroStr[i] == '1' || numeroStr[i] == '0')
                     {
                         resultado += Math.Pow(2, potencia) * int.Parse(numeroStr[i].ToString());
                     }

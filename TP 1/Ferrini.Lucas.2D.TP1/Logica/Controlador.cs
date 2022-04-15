@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Entidades;
 namespace Logica
 {
@@ -44,7 +39,7 @@ namespace Logica
         public static double CalcularOperacion(string operacion)
         {
             char operador = '+';
-            if(operacion is not null && operacion.Length > 0)
+            if (operacion is not null && operacion.Length > 0)
             {
                 operador = operacion[0];
             }
