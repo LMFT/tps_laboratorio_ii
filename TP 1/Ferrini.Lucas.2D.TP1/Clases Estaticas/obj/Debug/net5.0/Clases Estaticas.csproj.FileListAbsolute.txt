@@ -1,0 +1,12 @@
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\bin\Debug\net5.0\Clases Estaticas.deps.json
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\bin\Debug\net5.0\Clases Estaticas.dll
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\bin\Debug\net5.0\ref\Clases Estaticas.dll
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\bin\Debug\net5.0\Clases Estaticas.pdb
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Clases Estaticas.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Clases Estaticas.AssemblyInfoInputs.cache
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Clases Estaticas.AssemblyInfo.cs
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Clases Estaticas.csproj.CoreCompileInputs.cache
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Clases Estaticas.dll
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\ref\Clases Estaticas.dll
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Clases Estaticas.pdb
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Clases Estaticas.csproj.AssemblyReference.cache

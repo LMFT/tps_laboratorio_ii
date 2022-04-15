@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Clases Estaticas/1.0.0": {
+        "runtime": {
+          "Clases Estaticas.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Clases Estaticas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

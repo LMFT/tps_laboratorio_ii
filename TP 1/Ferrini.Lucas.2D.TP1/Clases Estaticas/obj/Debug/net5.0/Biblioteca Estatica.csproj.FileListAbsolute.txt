@@ -1,0 +1,24 @@
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.AssemblyInfoInputs.cache
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.AssemblyInfo.cs
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.csproj.CoreCompileInputs.cache
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\bin\Debug\net5.0\Biblioteca Estatica.deps.json
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\bin\Debug\net5.0\Biblioteca Estatica.dll
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\bin\Debug\net5.0\ref\Biblioteca Estatica.dll
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\bin\Debug\net5.0\Biblioteca Estatica.pdb
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.dll
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\ref\Biblioteca Estatica.dll
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.pdb
+D:\Curso Programacion\LaboProgra 2\Ejercicios\Guia_Ejercicios\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.csproj.AssemblyReference.cache
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\bin\Debug\net5.0\Biblioteca Estatica.deps.json
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\bin\Debug\net5.0\Biblioteca Estatica.dll
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\bin\Debug\net5.0\ref\Biblioteca Estatica.dll
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\bin\Debug\net5.0\Biblioteca Estatica.pdb
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.csproj.AssemblyReference.cache
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.AssemblyInfoInputs.cache
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.AssemblyInfo.cs
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.csproj.CoreCompileInputs.cache
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.dll
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\obj\Debug\net5.0\ref\Biblioteca Estatica.dll
+D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Clases Estaticas\obj\Debug\net5.0\Biblioteca Estatica.pdb
