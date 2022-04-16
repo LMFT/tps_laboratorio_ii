@@ -2,21 +2,21 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
-      "Biblioteca Estatica/1.0.0": {
+      "Bibliotecas Estaticas/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/Biblioteca Estatica.dll": {}
+          "bin/placeholder/Bibliotecas Estaticas.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Biblioteca Estatica.dll": {}
+          "bin/placeholder/Bibliotecas Estaticas.dll": {}
         }
       },
       "Entidades/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Biblioteca Estatica": "1.0.0"
+          "Bibliotecas Estaticas": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Entidades.dll": {}
@@ -29,7 +29,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Biblioteca Estatica": "1.0.0",
+          "Bibliotecas Estaticas": "1.0.0",
           "Entidades": "1.0.0"
         },
         "compile": {
@@ -42,10 +42,10 @@
     }
   },
   "libraries": {
-    "Biblioteca Estatica/1.0.0": {
+    "Bibliotecas Estaticas/1.0.0": {
       "type": "project",
-      "path": "../Clases Estaticas/Biblioteca Estatica.csproj",
-      "msbuildProject": "../Clases Estaticas/Biblioteca Estatica.csproj"
+      "path": "../Clases Estaticas/Bibliotecas Estaticas.csproj",
+      "msbuildProject": "../Clases Estaticas/Bibliotecas Estaticas.csproj"
     },
     "Entidades/1.0.0": {
       "type": "project",

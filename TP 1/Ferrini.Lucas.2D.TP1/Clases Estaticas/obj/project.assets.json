@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj",
-      "projectName": "Biblioteca Estatica",
-      "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj",
+      "projectUniqueName": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj",
+      "projectName": "Bibliotecas Estaticas",
+      "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
       "outputPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\obj\\",
       "projectStyle": "PackageReference",

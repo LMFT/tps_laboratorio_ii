@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Clases Estaticas\Biblioteca Estatica.csproj" />
+    <ProjectReference Include="..\Clases Estaticas\Bibliotecas Estaticas.csproj" />
   </ItemGroup>
 
 </Project>

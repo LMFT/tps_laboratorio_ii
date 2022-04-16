@@ -2,21 +2,21 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Biblioteca Estatica/1.0.0": {
+      "Bibliotecas Estaticas/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/Biblioteca Estatica.dll": {}
+          "bin/placeholder/Bibliotecas Estaticas.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Biblioteca Estatica.dll": {}
+          "bin/placeholder/Bibliotecas Estaticas.dll": {}
         }
       },
       "Entidades/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Biblioteca Estatica": "1.0.0"
+          "Bibliotecas Estaticas": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Entidades.dll": {}
@@ -28,10 +28,10 @@
     }
   },
   "libraries": {
-    "Biblioteca Estatica/1.0.0": {
+    "Bibliotecas Estaticas/1.0.0": {
       "type": "project",
-      "path": "../Clases Estaticas/Biblioteca Estatica.csproj",
-      "msbuildProject": "../Clases Estaticas/Biblioteca Estatica.csproj"
+      "path": "../Clases Estaticas/Bibliotecas Estaticas.csproj",
+      "msbuildProject": "../Clases Estaticas/Bibliotecas Estaticas.csproj"
     },
     "Entidades/1.0.0": {
       "type": "project",
@@ -41,7 +41,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Biblioteca Estatica >= 1.0.0",
+      "Bibliotecas Estaticas >= 1.0.0",
       "Entidades >= 1.0.0"
     ]
   },
@@ -77,8 +77,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj": {
-              "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj"
+            "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj": {
+              "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj"
             },
             "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Entidades\\Entidades.csproj": {
               "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Entidades\\Entidades.csproj"

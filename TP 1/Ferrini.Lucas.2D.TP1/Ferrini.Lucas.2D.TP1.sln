@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP 1", "WinFormsApp1\TP 1.csproj", "{C8A5A936-5AAD-497F-995F-9470197E4819}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{4F185962-33BE-404A-BB98-1FE9F2DF21F8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca Estatica", "Clases Estaticas\Biblioteca Estatica.csproj", "{5EA635C0-9E0C-4A9B-9A5F-386E2F436AF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bibliotecas Estaticas", "Clases Estaticas\Bibliotecas Estaticas.csproj", "{5EA635C0-9E0C-4A9B-9A5F-386E2F436AF4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logica", "Logica\Logica.csproj", "{7ED0E0F8-5254-4B48-AB22-4AFDC6F38FA4}"
 EndProject

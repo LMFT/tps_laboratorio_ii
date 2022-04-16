@@ -4,12 +4,12 @@
     "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\WinFormsApp1\\TP 1.csproj": {}
   },
   "projects": {
-    "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj": {
+    "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj",
-        "projectName": "Biblioteca Estatica",
-        "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj",
+        "projectUniqueName": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj",
+        "projectName": "Bibliotecas Estaticas",
+        "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj",
         "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
         "outputPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\obj\\",
         "projectStyle": "PackageReference",
@@ -90,8 +90,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj": {
-                "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj"
+              "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj": {
+                "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj"
               }
             }
           }
@@ -152,8 +152,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj": {
-                "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Biblioteca Estatica.csproj"
+              "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj": {
+                "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Clases Estaticas\\Bibliotecas Estaticas.csproj"
               },
               "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Entidades\\Entidades.csproj": {
                 "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 1\\Ferrini.Lucas.2D.TP1\\Entidades\\Entidades.csproj"

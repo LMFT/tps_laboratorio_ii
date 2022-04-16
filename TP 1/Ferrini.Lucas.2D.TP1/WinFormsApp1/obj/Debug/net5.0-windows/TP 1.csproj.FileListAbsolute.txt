@@ -23,3 +23,28 @@ D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\
 D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.pdb
 D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.genruntimeconfig.cache
 D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.csproj.CopyComplete
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.csproj.AssemblyReference.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.FormCalculadora.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.csproj.GenerateResource.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.AssemblyInfoInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.AssemblyInfo.cs
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.csproj.CoreCompileInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\TP 1.exe
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\TP 1.deps.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\TP 1.runtimeconfig.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\TP 1.runtimeconfig.dev.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\TP 1.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\TP 1.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\Bibliotecas Estaticas.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\Entidades.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\Logica.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\Bibliotecas Estaticas.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\bin\Debug\net5.0-windows\Entidades.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.csproj.CopyComplete
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\refint\TP 1.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\TP 1.genruntimeconfig.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\WinFormsApp1\obj\Debug\net5.0-windows\ref\TP 1.dll

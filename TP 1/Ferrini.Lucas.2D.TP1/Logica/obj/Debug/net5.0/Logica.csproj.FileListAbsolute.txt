@@ -15,3 +15,20 @@ D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\
 D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\ref\Logica.dll
 D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.pdb
 D:\Curso Programacion\LaboProgra 2\Trabajos Practicos\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.csproj.CopyComplete
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.csproj.AssemblyReference.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.AssemblyInfoInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.AssemblyInfo.cs
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.csproj.CoreCompileInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\bin\Debug\net5.0\Logica.deps.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\bin\Debug\net5.0\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\bin\Debug\net5.0\Logica.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\bin\Debug\net5.0\Bibliotecas Estaticas.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\bin\Debug\net5.0\Entidades.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\bin\Debug\net5.0\Bibliotecas Estaticas.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\bin\Debug\net5.0\Entidades.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.csproj.CopyComplete
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\refint\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\Logica.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 1\Ferrini.Lucas.2D.TP1\Logica\obj\Debug\net5.0\ref\Logica.dll
