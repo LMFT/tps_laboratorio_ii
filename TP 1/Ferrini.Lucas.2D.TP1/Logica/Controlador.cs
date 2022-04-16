@@ -15,30 +15,21 @@ namespace Logica
             CargarOperandos("0", "0");
         }
         /// <summary>
-        /// Valida que los operandos recibidos como par
-        /// </summary>
-        /// <param name="primerNumero"></param>
-        /// <param name="segundoNumero"></param>
-        /// <returns></returns>
-        public static bool ValidarOperandos(string primerNumero, string segundoNumero)
-        {
-            bool operandosCargados = primerNumero is not null && segundoNumero is not null;
-            if (operandosCargados)
-            {
-                CargarOperandos(primerNumero, segundoNumero);
-            }
-            return operandosCargados;
-        }
-        /// <summary>
         /// Este método permite cargar un valor a los operandos del programa
         /// </summary>
         /// <param name="primerNumero">Valor a asignar al primer operando</param>
         /// <param name="segundoNumero">Valor a asignar al segundo operando</param>
-        private static void CargarOperandos(string primerNumero, string segundoNumero)
+        public static bool CargarOperandos(string primerNumero, string segundoNumero)
         {
-            primerOperando = new Operando(primerNumero);
-            segundoOperando = new Operando(segundoNumero);
+            bool operandosCargados = primerNumero is not null && segundoNumero is not null;
+            if (operandosCargados)
+            {
+                primerOperando = new Operando(primerNumero);
+                segundoOperando = new Operando(segundoNumero);
+            }
+            return operandosCargados;
         }
+        
         /// <summary>
         /// Realiza la operacion recibida como parámetro utilizando los operandos actuales
         /// </summary>
@@ -72,7 +63,15 @@ namespace Logica
         public static string ConvertirABinario(string numero)
         {
             Operando operando = new Operando(numero);
-            return operando.DecimalABinario(numero);
+            string numeroBinario = string.Empty;
+            string valorAbsoluto = numero;
+            if (numero[0]== '-')
+            {
+                numeroBinario += "-";
+                valorAbsoluto = numero.Substring(1);
+            }
+            numeroBinario += operando.DecimalABinario(valorAbsoluto);
+            return numeroBinario;
         }
         /// <summary>
         /// Convierte un número binario a su representacion decimal
@@ -82,7 +81,15 @@ namespace Logica
         public static string ConvertirADecimal(string numero)
         {
             Operando operando = new Operando(numero);
-            return operando.BinarioADecimal(numero);
+            string numeroDecimal = string.Empty;
+            string valorAbsoluto = numero;
+            if (numero[0] == '-')
+            {
+                numeroDecimal += "-";
+                valorAbsoluto = numero.Substring(1);
+            }
+            numeroDecimal += operando.BinarioADecimal(valorAbsoluto);
+            return numeroDecimal;
         }
 
     }

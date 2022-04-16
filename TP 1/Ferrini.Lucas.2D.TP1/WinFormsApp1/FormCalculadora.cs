@@ -36,10 +36,10 @@ namespace WinFormsApp1
         private void Operar()
         {
 
-            if (Controlador.ValidarOperandos(txbPrimerOperador.Text, txbSegundoOperador.Text))
+            if (Controlador.CargarOperandos(txbPrimerOperador.Text, txbSegundoOperador.Text))
             {
                 string operador = ValidarOperador();
-                string operacion = MostrarOperacion(operador);
+                string operacion = Operar(operador);
                 if (txbSegundoOperador.Text == "0" && operador == "/")
                 {
                     MessageBox.Show("Error: No se puede calcular el resultado de una division por 0");
@@ -52,12 +52,12 @@ namespace WinFormsApp1
         /// </summary>
         /// <param name="operador"></param>
         /// <returns></returns>
-        private string MostrarOperacion(string operador)
+        private string Operar(string operador)
         {
             
             string primerOperando = ValidarOperando(txbPrimerOperador);
             string segundoOperando = ValidarOperando(txbSegundoOperador);
-            resultado = (Controlador.CalcularOperacion(operador)).ToString();
+            resultado = Controlador.CalcularOperacion(operador).ToString();
             esBinario = false;
             return $"{primerOperando} {operador} {segundoOperando} = {resultado}\n";
         }
@@ -66,7 +66,7 @@ namespace WinFormsApp1
         /// </summary>
         /// <param name="textBox">Textbox a validar</param>
         /// <returns>El contenido de la propiedad Text si el valor recibido es numérico, o 0 en otro caso</returns>
-        private string ValidarOperando(TextBox textBox)
+        private static string ValidarOperando(TextBox textBox)
         {
             string operando = "0";
             if(!string.IsNullOrWhiteSpace(textBox.Text) && Validador.EsNumerico(textBox.Text))
@@ -136,9 +136,6 @@ namespace WinFormsApp1
         {
             ConvertirBinarioADecimal();
         }
-
-
-
         /// <summary>
         /// Convierte el resultado de la última operacion de binario a decimal
         /// </summary>
@@ -149,9 +146,9 @@ namespace WinFormsApp1
             {
                 if(esBinario)
                 {
-                    operacion.Append($"{resultado}(B) =");
+                    operacion.Append($"{resultado} (B) =");
                     resultado = Controlador.ConvertirADecimal(resultado);
-                    operacion.Append($" {resultado}(D)");
+                    operacion.Append($" {resultado} (D)");
                     esBinario = false;
                     ListarOperacion(operacion.ToString());
                 }
@@ -186,9 +183,9 @@ namespace WinFormsApp1
             {
                 if(!esBinario)
                 {
-                    operacion.Append($"{resultado}(D) =");
+                    operacion.Append($"{resultado} (D) =");
                     resultado = Controlador.ConvertirABinario(resultado);
-                    operacion.Append($" {resultado}(B)");
+                    operacion.Append($" {resultado} (B)");
                     esBinario = true;
                     ListarOperacion(operacion.ToString());
                 }

@@ -60,19 +60,7 @@ namespace Entidades
         /// <returns>Retorna true si la cadena está en formato binario, de lo contrario false</returns>
         public bool EsBinario(string strNumero)
         {
-            char[] arrayNumeros = strNumero.ToCharArray();
-            if (int.TryParse(strNumero, out int esNumerico))
-            {
-                for (int i = 0; i < strNumero.Length; i++)
-                {
-                    if (arrayNumeros[i] != '0' && arrayNumeros[i] != '1')
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            return false;
+            return ConversorBinario.EsBinario(strNumero);
         }
         /// <summary>
         /// Convierte un número binario a decimal
