@@ -36,15 +36,15 @@ namespace WinFormsApp1
         private void Operar()
         {
 
-            if (Controlador.CargarOperandos(txbPrimerOperador.Text, txbSegundoOperador.Text))
+            if (Controlador.CargarOperandos(txtNumero1.Text, txtNumero2.Text))
             {
                 string operador = ValidarOperador();
                 string operacion = Operar(operador);
-                if (txbSegundoOperador.Text == "0" && operador == "/")
+                if (txtNumero2.Text == "0" && operador == "/")
                 {
                     MessageBox.Show("Error: No se puede calcular el resultado de una division por 0");
                 }
-                ListarOperacion(operacion);
+                MostrarOperacion(operacion);
             }
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace WinFormsApp1
         private string Operar(string operador)
         {
             
-            string primerOperando = ValidarOperando(txbPrimerOperador);
-            string segundoOperando = ValidarOperando(txbSegundoOperador);
+            string primerOperando = ValidarOperando(txtNumero1);
+            string segundoOperando = ValidarOperando(txtNumero2);
             resultado = Controlador.CalcularOperacion(operador).ToString();
             esBinario = false;
             return $"{primerOperando} {operador} {segundoOperando} = {resultado}\n";
@@ -81,7 +81,7 @@ namespace WinFormsApp1
         /// <returns>Operacion a realizar</returns>
         private string ValidarOperador()
         {
-            string operador = cbxOperacion.Text;
+            string operador = cmbOperador.Text;
             if (operador == string.Empty)
             {
                 operador = "+";
@@ -89,11 +89,12 @@ namespace WinFormsApp1
             return operador;
         }
         /// <summary>
-        /// Añade una operacion a la lista de operaciones realizadas
+        /// Muesta una operacion y la añade a la lista de operaciones realizadas
         /// </summary>
         /// <param name="operacion">Operacion a imprimir</param>
-        private void ListarOperacion(string operacion)
+        private void MostrarOperacion(string operacion)
         {
+            lblResultado.Text = resultado;
             lstOperaciones.BeginUpdate();
             lstOperaciones.Items.Add(operacion);
             lstOperaciones.EndUpdate();
@@ -113,9 +114,10 @@ namespace WinFormsApp1
         private void Limpiar()
         {
             lstOperaciones.Items.Clear();
-            txbPrimerOperador.Text = string.Empty;
-            txbSegundoOperador.Text = string.Empty;
-            cbxOperacion.Text = string.Empty;
+            txtNumero1.Text = string.Empty;
+            txtNumero2.Text = string.Empty;
+            cmbOperador.Text = string.Empty;
+            lblResultado.Text = "0";
         }
         /// <summary>
         /// Evento del boton Cerrar que llama al método Close
@@ -149,8 +151,9 @@ namespace WinFormsApp1
                     operacion.Append($"{resultado} (B) =");
                     resultado = Controlador.ConvertirADecimal(resultado);
                     operacion.Append($" {resultado} (D)");
+                    lblResultado.Text = resultado;
                     esBinario = false;
-                    ListarOperacion(operacion.ToString());
+                    MostrarOperacion(operacion.ToString());
                 }
                 else
                 {
@@ -186,8 +189,9 @@ namespace WinFormsApp1
                     operacion.Append($"{resultado} (D) =");
                     resultado = Controlador.ConvertirABinario(resultado);
                     operacion.Append($" {resultado} (B)");
+                    lblResultado.Text = resultado;
                     esBinario = true;
-                    ListarOperacion(operacion.ToString());
+                    MostrarOperacion(operacion.ToString());
                 }
                 else
                 {

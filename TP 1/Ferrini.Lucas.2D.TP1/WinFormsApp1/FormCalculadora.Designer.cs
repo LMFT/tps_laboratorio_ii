@@ -29,35 +29,17 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbSegundoOperador = new System.Windows.Forms.TextBox();
-            this.txbPrimerOperador = new System.Windows.Forms.TextBox();
             this.btnOperar = new System.Windows.Forms.Button();
-            this.cbxOperacion = new System.Windows.Forms.ComboBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnBinarioADecimal = new System.Windows.Forms.Button();
-            this.btnDecimalABinario = new System.Windows.Forms.Button();
-            this.lblPrimerOperacion = new System.Windows.Forms.Label();
-            this.lblOperacion = new System.Windows.Forms.Label();
-            this.lblSegundoOperador = new System.Windows.Forms.Label();
+            this.btnConvertirADecimal = new System.Windows.Forms.Button();
+            this.btnConvertirABinario = new System.Windows.Forms.Button();
             this.lstOperaciones = new System.Windows.Forms.ListBox();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.txtNumero1 = new System.Windows.Forms.TextBox();
+            this.txtNumero2 = new System.Windows.Forms.TextBox();
+            this.cmbOperador = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // txbSegundoOperador
-            // 
-            this.txbSegundoOperador.BackColor = System.Drawing.Color.PapayaWhip;
-            this.txbSegundoOperador.Location = new System.Drawing.Point(305, 41);
-            this.txbSegundoOperador.Name = "txbSegundoOperador";
-            this.txbSegundoOperador.Size = new System.Drawing.Size(100, 23);
-            this.txbSegundoOperador.TabIndex = 2;
-            // 
-            // txbPrimerOperador
-            // 
-            this.txbPrimerOperador.BackColor = System.Drawing.Color.PapayaWhip;
-            this.txbPrimerOperador.Location = new System.Drawing.Point(23, 41);
-            this.txbPrimerOperador.Name = "txbPrimerOperador";
-            this.txbPrimerOperador.Size = new System.Drawing.Size(100, 23);
-            this.txbPrimerOperador.TabIndex = 0;
             // 
             // btnOperar
             // 
@@ -68,21 +50,6 @@ namespace WinFormsApp1
             this.btnOperar.Text = "Operar";
             this.btnOperar.UseVisualStyleBackColor = true;
             this.btnOperar.Click += new System.EventHandler(this.btnOperar_Click);
-            // 
-            // cbxOperacion
-            // 
-            this.cbxOperacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxOperacion.FormattingEnabled = true;
-            this.cbxOperacion.Items.AddRange(new object[] {
-            " ",
-            "+",
-            "-",
-            "*",
-            "/"});
-            this.cbxOperacion.Location = new System.Drawing.Point(178, 41);
-            this.cbxOperacion.Name = "cbxOperacion";
-            this.cbxOperacion.Size = new System.Drawing.Size(77, 23);
-            this.cbxOperacion.TabIndex = 1;
             // 
             // btnLimpiar
             // 
@@ -104,52 +71,25 @@ namespace WinFormsApp1
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // btnBinarioADecimal
+            // btnConvertirADecimal
             // 
-            this.btnBinarioADecimal.Location = new System.Drawing.Point(37, 162);
-            this.btnBinarioADecimal.Name = "btnBinarioADecimal";
-            this.btnBinarioADecimal.Size = new System.Drawing.Size(179, 31);
-            this.btnBinarioADecimal.TabIndex = 7;
-            this.btnBinarioADecimal.Text = "Convertir a Decimal";
-            this.btnBinarioADecimal.UseVisualStyleBackColor = true;
-            this.btnBinarioADecimal.Click += new System.EventHandler(this.btnBinarioADecimal_Click);
+            this.btnConvertirADecimal.Location = new System.Drawing.Point(37, 162);
+            this.btnConvertirADecimal.Name = "btnConvertirADecimal";
+            this.btnConvertirADecimal.Size = new System.Drawing.Size(179, 31);
+            this.btnConvertirADecimal.TabIndex = 7;
+            this.btnConvertirADecimal.Text = "Convertir a Decimal";
+            this.btnConvertirADecimal.UseVisualStyleBackColor = true;
+            this.btnConvertirADecimal.Click += new System.EventHandler(this.btnBinarioADecimal_Click);
             // 
-            // btnDecimalABinario
+            // btnConvertirABinario
             // 
-            this.btnDecimalABinario.Location = new System.Drawing.Point(242, 162);
-            this.btnDecimalABinario.Name = "btnDecimalABinario";
-            this.btnDecimalABinario.Size = new System.Drawing.Size(149, 31);
-            this.btnDecimalABinario.TabIndex = 8;
-            this.btnDecimalABinario.Text = "Convertir a Binario";
-            this.btnDecimalABinario.UseVisualStyleBackColor = true;
-            this.btnDecimalABinario.Click += new System.EventHandler(this.btnDecimalABinario_Click);
-            // 
-            // lblPrimerOperacion
-            // 
-            this.lblPrimerOperacion.AutoSize = true;
-            this.lblPrimerOperacion.Location = new System.Drawing.Point(23, 23);
-            this.lblPrimerOperacion.Name = "lblPrimerOperacion";
-            this.lblPrimerOperacion.Size = new System.Drawing.Size(93, 15);
-            this.lblPrimerOperacion.TabIndex = 9;
-            this.lblPrimerOperacion.Text = "Primer operador";
-            // 
-            // lblOperacion
-            // 
-            this.lblOperacion.AutoSize = true;
-            this.lblOperacion.Location = new System.Drawing.Point(178, 23);
-            this.lblOperacion.Name = "lblOperacion";
-            this.lblOperacion.Size = new System.Drawing.Size(62, 15);
-            this.lblOperacion.TabIndex = 10;
-            this.lblOperacion.Text = "Operacion";
-            // 
-            // lblSegundoOperador
-            // 
-            this.lblSegundoOperador.AutoSize = true;
-            this.lblSegundoOperador.Location = new System.Drawing.Point(305, 23);
-            this.lblSegundoOperador.Name = "lblSegundoOperador";
-            this.lblSegundoOperador.Size = new System.Drawing.Size(105, 15);
-            this.lblSegundoOperador.TabIndex = 11;
-            this.lblSegundoOperador.Text = "Segundo operador";
+            this.btnConvertirABinario.Location = new System.Drawing.Point(242, 162);
+            this.btnConvertirABinario.Name = "btnConvertirABinario";
+            this.btnConvertirABinario.Size = new System.Drawing.Size(149, 31);
+            this.btnConvertirABinario.TabIndex = 8;
+            this.btnConvertirABinario.Text = "Convertir a Binario";
+            this.btnConvertirABinario.UseVisualStyleBackColor = true;
+            this.btnConvertirABinario.Click += new System.EventHandler(this.btnDecimalABinario_Click);
             // 
             // lstOperaciones
             // 
@@ -161,6 +101,48 @@ namespace WinFormsApp1
             this.lstOperaciones.Size = new System.Drawing.Size(225, 184);
             this.lstOperaciones.TabIndex = 3;
             // 
+            // lblResultado
+            // 
+            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblResultado.Location = new System.Drawing.Point(23, 9);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblResultado.Size = new System.Drawing.Size(382, 46);
+            this.lblResultado.TabIndex = 25;
+            this.lblResultado.Text = "0";
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtNumero1
+            // 
+            this.txtNumero1.BackColor = System.Drawing.Color.PapayaWhip;
+            this.txtNumero1.Location = new System.Drawing.Point(23, 68);
+            this.txtNumero1.Name = "txtNumero1";
+            this.txtNumero1.Size = new System.Drawing.Size(100, 23);
+            this.txtNumero1.TabIndex = 0;
+            // 
+            // txtNumero2
+            // 
+            this.txtNumero2.BackColor = System.Drawing.Color.PapayaWhip;
+            this.txtNumero2.Location = new System.Drawing.Point(305, 68);
+            this.txtNumero2.Name = "txtNumero2";
+            this.txtNumero2.Size = new System.Drawing.Size(100, 23);
+            this.txtNumero2.TabIndex = 2;
+            // 
+            // cmbOperador
+            // 
+            this.cmbOperador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOperador.FormattingEnabled = true;
+            this.cmbOperador.Items.AddRange(new object[] {
+            " ",
+            "+",
+            "-",
+            "*",
+            "/"});
+            this.cmbOperador.Location = new System.Drawing.Point(178, 68);
+            this.cmbOperador.Name = "cmbOperador";
+            this.cmbOperador.Size = new System.Drawing.Size(77, 23);
+            this.cmbOperador.TabIndex = 1;
+            // 
             // FormCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -168,17 +150,15 @@ namespace WinFormsApp1
             this.BackColor = System.Drawing.Color.Moccasin;
             this.ClientSize = new System.Drawing.Size(653, 201);
             this.Controls.Add(this.lstOperaciones);
-            this.Controls.Add(this.lblSegundoOperador);
-            this.Controls.Add(this.lblOperacion);
-            this.Controls.Add(this.lblPrimerOperacion);
-            this.Controls.Add(this.btnDecimalABinario);
-            this.Controls.Add(this.btnBinarioADecimal);
+            this.Controls.Add(this.lblResultado);
+            this.Controls.Add(this.btnConvertirABinario);
+            this.Controls.Add(this.btnConvertirADecimal);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.cbxOperacion);
+            this.Controls.Add(this.cmbOperador);
             this.Controls.Add(this.btnOperar);
-            this.Controls.Add(this.txbPrimerOperador);
-            this.Controls.Add(this.txbSegundoOperador);
+            this.Controls.Add(this.txtNumero1);
+            this.Controls.Add(this.txtNumero2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -192,19 +172,16 @@ namespace WinFormsApp1
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txbSegundoOperador;
-        private System.Windows.Forms.TextBox txbPrimerOperador;
         private System.Windows.Forms.Button btnOperar;
-        private System.Windows.Forms.ComboBox cbxOperacion;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnBinarioADecimal;
-        private System.Windows.Forms.Button btnDecimalABinario;
-        private System.Windows.Forms.Label lblPrimerOperacion;
-        private System.Windows.Forms.Label lblOperacion;
-        private System.Windows.Forms.Label lblSegundoOperador;
+        private System.Windows.Forms.Button btnConvertirADecimal;
+        private System.Windows.Forms.Button btnConvertirABinario;
         private System.Windows.Forms.ListBox lstOperaciones;
+        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.TextBox txtNumero1;
+        private System.Windows.Forms.TextBox txtNumero2;
+        private System.Windows.Forms.ComboBox cmbOperador;
     }
 }
 
