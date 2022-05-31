@@ -10,25 +10,18 @@ namespace Entidades
     {
         Empleado,
         Administrador,
-        Duenio
+        Duenio,
     }
     public class Usuario : Persona
     {
-        private static int ultimoId;
-        private int id;
         private string nombreUsuario;
         private string password;
         private Permisos permisos;
 
-        static Usuario()
-        {
-            ultimoId = 0;
-        }
 
         public Usuario(string nombre, string apellido, int dni, Permisos permisos)
         : base(nombre, apellido, dni)
         {
-            id = ++ultimoId;
             nombreUsuario = GenerarNombreUsuario(nombre, apellido);
             password = "1234";
             this.permisos = permisos;
@@ -52,11 +45,11 @@ namespace Entidades
             }
         }
 
-        public int Id
+        public int Dni
         {
             get
             {
-                return id;
+                return dni;
             }
         }
 
@@ -114,16 +107,6 @@ namespace Entidades
             return false;
         }
 
-        public static bool operator ==(Usuario u1, Usuario u2)
-        {
-            return u1.id == u2.id;
-        }
-
-        public static bool operator !=(Usuario u1, Usuario u2)
-        {
-            return !(u1 == u2);
-        }
-
         public bool ValidarPassword(string password)
         {
             return this.password == password;
@@ -131,7 +114,7 @@ namespace Entidades
         /// <summary>
         /// Retorna la contraseña codificada en forma de lista de enteros
         /// </summary>
-        /// <param name="clave"></param>
+        /// <param name="n"></param>
         /// <returns>Contraseña codificada en forma de enteros</returns>
         public List<int> CodificarPassword(out int clave)
         {
@@ -193,7 +176,7 @@ namespace Entidades
         {
             foreach (Usuario usuario in lista)
             {
-                if (usuario.Id == id)
+                if (usuario.Dni == id)
                 {
                     return usuario;
                 }
@@ -210,13 +193,15 @@ namespace Entidades
         /// cumple con el criterio</returns>
         public static Usuario Obtener(List<Usuario> lista, bool admin)
         {
-            foreach (Usuario usuario in lista)
+            if(lista is not null && lista.Count > 0)
             {
-                if (admin && usuario.Permisos == Permisos.Administrador ||
-                    admin && usuario.Permisos == Permisos.Duenio ||
-                   !admin && usuario.Permisos == Permisos.Empleado)
+                foreach (Usuario usuario in lista)
                 {
-                    return usuario;
+                    if ((admin && (usuario.Permisos == Permisos.Administrador || usuario.Permisos == Permisos.Duenio)) ||
+                       !admin && usuario.Permisos == Permisos.Empleado)
+                    {
+                        return usuario;
+                    }
                 }
             }
             return null;

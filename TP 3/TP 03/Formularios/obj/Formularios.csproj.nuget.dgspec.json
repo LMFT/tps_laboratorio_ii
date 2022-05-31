@@ -90,8 +90,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Logica\\Logica.csproj": {
-                "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Logica\\Logica.csproj"
+              "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Lógica\\Logica.csproj": {
+                "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Lógica\\Logica.csproj"
               }
             }
           }
@@ -127,14 +127,14 @@
         }
       }
     },
-    "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Logica\\Logica.csproj": {
+    "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Lógica\\Logica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Logica\\Logica.csproj",
+        "projectUniqueName": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Lógica\\Logica.csproj",
         "projectName": "Logica",
-        "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Logica\\Logica.csproj",
+        "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Lógica\\Logica.csproj",
         "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Logica\\obj\\",
+        "outputPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Lógica\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

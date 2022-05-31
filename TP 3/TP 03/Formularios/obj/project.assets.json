@@ -35,8 +35,8 @@
     },
     "Logica/1.0.0": {
       "type": "project",
-      "path": "../Logica/Logica.csproj",
-      "msbuildProject": "../Logica/Logica.csproj"
+      "path": "../Lógica/Logica.csproj",
+      "msbuildProject": "../Lógica/Logica.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -76,8 +76,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Logica\\Logica.csproj": {
-              "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Logica\\Logica.csproj"
+            "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Lógica\\Logica.csproj": {
+              "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Lógica\\Logica.csproj"
             }
           }
         }

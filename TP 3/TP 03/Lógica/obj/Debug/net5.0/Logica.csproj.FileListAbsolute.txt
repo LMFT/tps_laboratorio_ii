@@ -1,0 +1,30 @@
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\bin\Debug\net5.0\Logica.deps.json
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\bin\Debug\net5.0\Logica.dll
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\bin\Debug\net5.0\Logica.pdb
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\bin\Debug\net5.0\Entidades.dll
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\bin\Debug\net5.0\Entidades.pdb
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\Logica.csproj.AssemblyReference.cache
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\Logica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\Logica.AssemblyInfoInputs.cache
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\Logica.AssemblyInfo.cs
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\Logica.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\Logica.csproj.CopyComplete
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\Logica.dll
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\refint\Logica.dll
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\Logica.pdb
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\Lógica\obj\Debug\net5.0\ref\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\bin\Debug\net5.0\Logica.deps.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\bin\Debug\net5.0\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\bin\Debug\net5.0\Logica.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\bin\Debug\net5.0\Entidades.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\bin\Debug\net5.0\Entidades.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\Logica.csproj.AssemblyReference.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\Logica.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\Logica.AssemblyInfoInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\Logica.AssemblyInfo.cs
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\Logica.csproj.CoreCompileInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\Logica.csproj.CopyComplete
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\refint\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\Logica.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\ref\Logica.dll
