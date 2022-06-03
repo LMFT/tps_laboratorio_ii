@@ -133,9 +133,9 @@
             // nudCantidad
             // 
             this.nudCantidad.BackColor = System.Drawing.Color.NavajoWhite;
-            this.nudCantidad.Location = new System.Drawing.Point(266, 158);
+            this.nudCantidad.Location = new System.Drawing.Point(256, 158);
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(50, 23);
+            this.nudCantidad.Size = new System.Drawing.Size(71, 23);
             this.nudCantidad.TabIndex = 9;
             // 
             // lblCantidad
@@ -147,12 +147,12 @@
             this.lblCantidad.TabIndex = 10;
             this.lblCantidad.Text = "Cantidad";
             // 
-            // FormAgregar
+            // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(583, 408);
+            this.ClientSize = new System.Drawing.Size(582, 408);
             this.ControlBox = false;
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.nudCantidad);
@@ -165,9 +165,10 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FormAgregar";
+            this.Name = "FormVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
+            this.Load += new System.EventHandler(this.FormVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mesaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bebidaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comidaBindingSource)).EndInit();

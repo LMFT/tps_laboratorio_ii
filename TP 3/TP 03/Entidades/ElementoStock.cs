@@ -15,24 +15,15 @@ namespace Entidades
     {
         private T producto;
         private int cantidad;
-        private int cantidadMinima;
 
         public ElementoStock(T producto, int cantidad)
         {
             this.producto = producto;
             this.cantidad = cantidad;
-            cantidadMinima = 1;
-        }
-        public ElementoStock(T producto, int cantidad, int cantidadMinima) 
-        :this(producto,cantidad)
-        {
-            this.producto = producto;
-            this.cantidad = cantidad;
-            this.cantidadMinima = cantidadMinima;
         }
 
-        public ElementoStock(KeyValuePair<T, int> par, int cantidadMinima) 
-        : this(par.Key,par.Value, cantidadMinima)
+        public ElementoStock(KeyValuePair<T, int> par) 
+        : this(par.Key,par.Value)
         {
             
         }
@@ -61,7 +52,7 @@ namespace Entidades
             }
         }
 
-        public double Cantidad
+        public int Cantidad
         {
             get
             {
@@ -69,12 +60,28 @@ namespace Entidades
             }
         }
 
-        public int CantidadMinima
+        public static bool operator ==(ElementoStock<T> elemento, T item)
         {
-            get
-            {
-                return cantidadMinima;
-            }
+                if(elemento.producto == item)
+                {
+                    return true;
+                }
+            return false;
+        }
+
+        public static bool operator !=(ElementoStock<T> elemento, T item)
+        {
+            return !(elemento == item);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is T producto && this == producto;
+        }
+
+        public override int GetHashCode()
+        {
+            return producto.GetHashCode();
         }
 
         /// <summary>
@@ -83,13 +90,19 @@ namespace Entidades
         /// <param name="usarCantidadMinima">Indica si se debería utilizar la cantidad actual o minima de unidades 
         /// de producto en el inventario</param>
         /// <returns></returns>
-        public KeyValuePair<T, int> APar(bool usarCantidadMinima)
+        public KeyValuePair<T, int> APar()
         {
-            if (usarCantidadMinima)
-            {
-                return KeyValuePair.Create(producto, this.cantidadMinima);
-            }
             return KeyValuePair.Create(producto, cantidad);
+        }
+
+        public bool ModificarCantidad(int variacion)
+        {
+            bool resultado = (variacion < 0 && cantidad + variacion >= 0) || variacion >= 0;
+            if (resultado)
+            {
+                cantidad += variacion;
+            }
+            return resultado;
         }
     }
 }

@@ -19,7 +19,6 @@ namespace Formularios
         private FormMostrar()
         {
             InitializeComponent();
-            CambiarColor();
         }
 
         public FormMostrar(MostrarInfo mostrar) : this()
@@ -28,30 +27,6 @@ namespace Formularios
             ConfigurarBotones();
             FormatearDataGrid();
             CambiarTitulo();
-        }
-        /// <summary>
-        /// Cambia el color de la aplicacion en base a los permisos del usuario logueado
-        /// </summary>
-        private void CambiarColor()
-        {
-            if (!ControladorMostrar.UsuarioEsAdmin)
-            {
-                BackColor = Color.LightSkyBlue;
-                dgvMostrar.BackColor = Color.LightBlue;
-                foreach (Control control in Controls.OfType<Button>())
-                {
-                    control.BackColor = Color.PowderBlue;
-                }
-            }
-            else
-            {
-                BackColor = Color.Tan;
-                dgvMostrar.BackColor = Color.NavajoWhite;
-                foreach (Control control in Controls.OfType<Button>())
-                {
-                    control.BackColor = Color.Moccasin;
-                }
-            }
         }
 
         /// <summary>
@@ -66,11 +41,22 @@ namespace Formularios
         /// </summary>
         private void FormatearDataGrid()
         {
-            dgvMostrar.DataSource = null;
             switch (mostrarInfo)
             {
-            
+                case MostrarInfo.Inventario:
+                    dgvMostrar.DataSource = ControladorMostrar.Inventario;
+                    break;
+                case MostrarInfo.Empleado:
+                    dgvMostrar.DataSource = ControladorMostrar.Empleados;
+                    break;
+                case MostrarInfo.Proveedores:
+                    dgvMostrar.DataSource = ControladorMostrar.Proveedores;
+                    break;
+                default:
+                    dgvMostrar.DataSource = null;
+                    break;
             }
+            
         }
         /// <summary>
         /// Esconde los controles que no son necesarios, ya sea por el tipo de informacion
@@ -123,35 +109,12 @@ namespace Formularios
             }
         }
         /// <summary>
-        /// Notifica a un administrador / dueño del faltante de un producto
-        /// </summary>
-        private void NotificarFaltante()
-        {
-            DataGridViewRow fila = SeleccionarFila();
-            if (fila is not null && ControladorMostrar.VerificarCantidad(fila.DataBoundItem))
-            {
-                string mensaje = "Se ha notificado al administrador de la falta de insumos";
-                string titulo = "Notificacion enviada";
-                MessageBoxButtons boton = MessageBoxButtons.OK;
-                MessageBoxIcon icono = MessageBoxIcon.Information;
-                MessageBox.Show(mensaje, titulo, boton, icono);
-            }
-        }
-        /// <summary>
         /// Selecciona la primer fila que contenga una celda seleccionada
         /// </summary>
-        /// <returns>Primer fila que contenga una celda seleccionada. En caso de no haber
-        /// ninguna retorna null</returns>
+        /// <returns>Primer fila que contenga una celda seleccionada.</returns>
         private DataGridViewRow SeleccionarFila()
         {
-            foreach(DataGridViewRow fila in dgvMostrar.Rows)
-            {
-                if (FilaContieneCeldaSeleccionada(fila))
-                {
-                    return fila;
-                }
-            }
-            return null;
+            return dgvMostrar.SelectedRows[0];
         }
         /// <summary>
         /// Abre el formulario de ABM de elementos para dar de alta un producto
@@ -172,31 +135,7 @@ namespace Formularios
         /// </summary>
         private void RemoverElemento()
         {
-            foreach (DataGridViewRow fila in dgvMostrar.Rows)
-            {
-                if (FilaContieneCeldaSeleccionada(fila))
-                {
-                    ControladorMostrar.Eliminar(Convert.ToInt32(fila.Cells[0].Value),mostrarInfo);
-                    break;
-                }
-            }
-        }
-        /// <summary>
-        /// Verifica si una fila contiene alguna celda seleccionada
-        /// </summary>
-        /// <param name="fila">Fila a verificar</param>
-        /// <returns>Retorna true si la fila contiene al menos una celda seleccionada. 
-        /// Retorna false si la fila no contiene celdas seleccionadas</returns>
-        private bool FilaContieneCeldaSeleccionada(DataGridViewRow fila)
-        {
-            foreach(DataGridViewCell cell in fila.Cells)
-            {
-                if (cell.Selected)
-                {
-                    return true;
-                }
-            }
-            return false;
+            ControladorMostrar.Eliminar(Convert.ToInt32(SeleccionarFila().Cells[0].Value), mostrarInfo);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -235,6 +174,11 @@ namespace Formularios
             {
                 NotificarFaltante();
             }
+        }
+
+        private void NotificarFaltante()
+        {
+            ControladorMostrar.NotificarFaltante(dgvMostrar.SelectedRows[0].DataBoundItem);
         }
     }
 }

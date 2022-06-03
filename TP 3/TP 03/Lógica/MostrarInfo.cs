@@ -11,6 +11,6 @@ namespace Mostrar
         Inventario,
         Empleado,
         Producto,
-        Componente
+        Proveedores
     }
 }

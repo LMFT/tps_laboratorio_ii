@@ -19,6 +19,14 @@ namespace Entidades
             ultimoId = 0;
         }
 
+        public Producto()
+        {
+            id = 0;
+            precio = 0;
+            nombre = String.Empty;
+            marca = String.Empty;
+        }
+
         public Producto(string nombre, decimal precio, string marca)
         {
             ultimoId++;

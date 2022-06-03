@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Entidades;
 
 using Logica.Login;
+using Logica.MenuPrincipal;
 
 using Mostrar;
 
@@ -31,9 +32,17 @@ namespace Logica.Mostrar
                 ImmutableList<ElementoStock<Producto>> lista = ImmutableList.Create<ElementoStock<Producto>>();
                 foreach(KeyValuePair<Producto,int> par in CasaElectronica.Stock)
                 {
-                    lista = lista.Add(new ElementoStock<Producto>(par, CasaElectronica.CantidadMinima(par.Key)));
+                    lista = lista.Add(new ElementoStock<Producto>(par));
                 }
                 return lista;
+            }
+        }
+
+        public static ImmutableList<Proveedor> Proveedores
+        {
+            get
+            {
+                return CasaElectronica.Proveedores;
             }
         }
 
@@ -63,20 +72,7 @@ namespace Logica.Mostrar
                     return CasaElectronica.EliminarDeStock(insumo);
             }
         }
-        /// <summary>
-        /// Verifica si un elemento esta cercano al valor minimo que deberia haber en stock
-        /// </summary>
-        /// <param name="elemento">Elemento a verificar</param>
-        /// <returns></returns>
-        public static bool VerificarCantidad(object elemento)
-        {
-            ElementoStock<Producto> elementoInventario = elemento as ElementoStock<Producto>;
-            if(elementoInventario is not null)
-            {
-                return CasaElectronica.VerificarStockMinimo(elementoInventario.APar(false).Key);
-            }
-            return false;
-        }
+
         /// <summary>
         /// Permite reponer el stock de un elemento. Automáticamente lo repone hasta 2 veces la cantidad minima.
         /// </summary>
@@ -101,6 +97,17 @@ namespace Logica.Mostrar
             {
                 CasaElectronica.ReponerStock(producto,cantidad);
             }
+        }
+
+        public static bool NotificarFaltante(object elemento)
+        {
+            if(elemento is Producto producto)
+            {
+                ControladorMenuPrincipal.NuevaTarea($"Se requiere rellenar el stock del siguiente producto:" + 
+                                                     $"ID:{producto.Id} - Nombre: {producto.Nombre}");
+                return true;
+            }
+            return false;
         }
     }
 }

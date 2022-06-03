@@ -13,12 +13,14 @@ namespace Logica.AgregarPedidos
     public static class ControladorAgregar
     {
         private static List<ElementoStock<Producto>> inventario;
-        private static List<Producto> pedidos;
+        private static List<ElementoStock<Producto>> pedidosCliente;
+        private static List<Producto> productosProveedor;
 
         static ControladorAgregar()
         {
             inventario = new List<ElementoStock<Producto>>();
-            pedidos = new List<Producto>();
+            pedidosCliente = new List<ElementoStock<Producto>>();
+            productosProveedor = new List<Producto>();
         }
 
         public static bool UsuarioEsAdmin
@@ -37,6 +39,14 @@ namespace Logica.AgregarPedidos
             }
         }
 
+        internal static List<Producto> Productos
+        {
+            get
+            {
+                return productosProveedor;
+            }
+        }
+
         /// <summary>
         /// Añade un nuevo pedido al listado de pedidos, indicando la cantidad de unidades requeridas
         /// </summary>
@@ -44,16 +54,17 @@ namespace Logica.AgregarPedidos
         /// <param name="cantidad">Cantidades de unidades a agregar al pedido</param>
         /// <returns>Este metodo retorna true cuando pudo agregar correctamente la cantidad de unidades
         /// al listado de pedidos. De lo contraio retorna false</returns>
-        public static bool AgregarPedido(int indice, int cantidad)
+        public static bool NuevoPedido(object elemento, int cantidad)
         {
-            List<Producto> productos = CasaElectronica.Stock.Keys.ToList();
-            if (indice >= 0 && indice < productos.Count && cantidad > 0)
+            if(elemento is not null && elemento is Producto producto)
             {
-                Producto producto = productos[indice];
-                if (PrepararPedido(producto))
+                foreach(var item in inventario)
                 {
-                    pedidos.Add(producto);
-                    return true;
+                    if(item == producto && item.Cantidad >= cantidad)
+                    {
+                        PrepararPedido(producto,cantidad);
+                        return true;
+                    }
                 }
             }
             return false;
@@ -61,41 +72,40 @@ namespace Logica.AgregarPedidos
         /// <summary>
         /// Elimina una cantidad de unidades de un pedido del listado de pedidos
         /// </summary>
-        /// <param name="indice">Indice del pedido a eliminar</param>
-        /// <param name="cantidad">Cantidad a eliminar. De superar la cantidad de pedidos, elimina el pedido de la lista</param>
-        public static void EliminarPedido(int indice, int cantidad)
+        /// <param name="elemento">Elemento a eliminar</param>
+        /// <param name="cantidad">Cantidad a eliminar. De superar la cantidad de items pedidos anteriormente, 
+        /// elimina el pedido de la lista</param>
+        public static bool EliminarPedido(object elemento, int cantidad)
         {
-            ElementoStock<Producto> auxiliar;
-            if (indice >= 0 && indice < pedidos.Count && cantidad > 0)
+            if (elemento is not null && elemento is Producto producto)
             {
-                foreach(ElementoStock<Producto> elemento in inventario)
+                foreach (var item in pedidosCliente)
                 {
-                    auxiliar = elemento;
-                    var par = elemento.APar(false);
-                    if(pedidos[indice] == par.Key)
+                    if (item == producto)
                     {
-                        if (cantidad > par.Value)
+                        if(cantidad >= item.Cantidad)
                         {
-                            pedidos.RemoveAt(indice);
+                            return pedidosCliente.Remove(item);
                         }
-                        else
-                        {
-                            auxiliar = new ElementoStock<Producto>(par,auxiliar.CantidadMinima);
-                        }
+                        return item.ModificarCantidad(cantidad*-1);
                     }
                 }
             }
+            return false;
         }
         /// <summary>
         /// Prepara un pedido, consumiendo elementos del inventario para prepararlo
         /// </summary>
         /// <param name="producto">Consumible a preparar</param>
         /// <returns>Retorna true si el pedido pudo prepararse correctamente. De lo contrario false</returns>
-        public static bool PrepararPedido(Producto producto)
+        public static bool PrepararPedido(Producto producto, int cantidad)
         {
             if(producto is not null && CasaElectronica.HayStock(producto))
             {
-                return true;
+                ElementoStock<Producto> pedido = new ElementoStock<Producto>(producto, cantidad);
+                pedidosCliente.Add(pedido);
+                CasaElectronica.RetirarDeStock(producto, cantidad);
+
             }
             return false;
         }
@@ -104,7 +114,32 @@ namespace Logica.AgregarPedidos
         /// </summary>
         public static void LimpiarPedidos()
         {
-            pedidos.Clear();
+            pedidosCliente.Clear();
+        }
+
+        public static void AgregarProducto(object elemento)
+        {
+            if(elemento is ElementoStock<Producto> elementoStock)
+            {
+                productosProveedor.Add(elementoStock.APar().Key);
+            }
+        }
+
+        public static void EliminarProducto(object elemento)
+        {
+            if (elemento is ElementoStock<Producto> elementoStock)
+            {
+                Producto producto = elementoStock.APar().Key;
+                if(productosProveedor == producto)
+                {
+                    productosProveedor.Remove(elementoStock.APar().Key);
+                }
+            }
+        }
+
+        public static void LimpiarProductos()
+        {
+            productosProveedor.Clear();
         }
     }
 }

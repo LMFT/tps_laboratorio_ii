@@ -30,7 +30,6 @@ C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\For
 C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\ref\Formularios.dll
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.AssemblyReference.cache
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormABM.resources
-D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormAgregar.resources
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormAutoCompletar.resources
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormCaja.resources
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormLogin.resources
@@ -58,3 +57,4 @@ D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.pdb
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.genruntimeconfig.cache
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\ref\Formularios.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormAgregar.resources

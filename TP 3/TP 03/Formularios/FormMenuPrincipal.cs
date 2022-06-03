@@ -20,35 +20,9 @@ namespace Formularios
         {
             InitializeComponent();
             lblUsuario.Text = $"Hola, {ControladorMenuPrincipal.UsuarioLogeado}!";
-            CambiarColor();
             OcultarControles();
         }
-        /// <summary>
-        /// Cambia el color de la aplicacion en base a los permisos del usuario logueado
-        /// </summary>
-        private void CambiarColor()
-        {
-            if (!ControladorMenuPrincipal.UsuarioEsAdmin)
-            {
-                BackColor = Color.LightSkyBlue;
-                lstMesas.BackColor = Color.LightBlue;
-                rtxtInfoMesa.BackColor = Color.LightBlue;
-                foreach (Control control in Controls.OfType<Button>())
-                {
-                    control.BackColor = Color.PowderBlue;
-                }
-            }
-            else
-            {
-                BackColor = Color.Tan;
-                lstMesas.BackColor = Color.NavajoWhite;
-                rtxtInfoMesa.BackColor = Color.NavajoWhite;
-                foreach (Control control in Controls.OfType<Button>())
-                {
-                    control.BackColor = Color.Moccasin;
-                }
-            }
-        }
+
         /// <summary>
         /// Oculta controles segun el nivel de permisos del usuario logueado
         /// </summary>
@@ -67,8 +41,10 @@ namespace Formularios
 
         }
 
-        private void btnAsignar_Click(object sender, EventArgs e)
+        private void BtnNuevaVenta_Click(object sender, EventArgs e)
         {
+            FormAgregar frm = new FormAgregar(true);
+            frm.ShowDialog();
             ActualizarInterfaz();
         }
 
@@ -110,7 +86,8 @@ namespace Formularios
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-
+            Mostrar(MostrarInfo.Proveedores);
+            ActualizarInterfaz();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -140,11 +117,6 @@ namespace Formularios
             {
                 e.Cancel = true;
             }
-        }
-
-        private void lstMesas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

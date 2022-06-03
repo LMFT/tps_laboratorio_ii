@@ -56,7 +56,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(138, 74);
+            this.lblUsuario.Location = new System.Drawing.Point(148, 74);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(47, 15);
             this.lblUsuario.TabIndex = 99;
@@ -84,12 +84,12 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("MV Boli", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.Location = new System.Drawing.Point(64, 9);
+            this.lblTitulo.Font = new System.Drawing.Font("Caladea", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.Location = new System.Drawing.Point(16, 19);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(221, 44);
+            this.lblTitulo.Size = new System.Drawing.Size(323, 38);
             this.lblTitulo.TabIndex = 99;
-            this.lblTitulo.Text = "Bar Les UTN";
+            this.lblTitulo.Text = "Electrónica Kaufmann";
             // 
             // btnSalir
             // 

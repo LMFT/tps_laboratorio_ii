@@ -33,21 +33,21 @@
             this.txtSegundoCampo = new System.Windows.Forms.TextBox();
             this.lblSegundoCampo = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtQuintoCampo = new System.Windows.Forms.TextBox();
-            this.lblQuintoCampo = new System.Windows.Forms.Label();
-            this.txtCuartoCampo = new System.Windows.Forms.TextBox();
-            this.lblCuartoCampo = new System.Windows.Forms.Label();
-            this.btnAdicional2 = new System.Windows.Forms.Button();
-            this.btnAdicional1 = new System.Windows.Forms.Button();
-            this.grpAdicionales = new System.Windows.Forms.GroupBox();
             this.txtTercerCampo = new System.Windows.Forms.TextBox();
             this.lblTercerCampo = new System.Windows.Forms.Label();
-            this.chkCamposAdicionales = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.chkOpcionAdicional = new System.Windows.Forms.CheckBox();
-            this.nudCantidadMinima = new System.Windows.Forms.NumericUpDown();
-            this.grpAdicionales.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidadMinima)).BeginInit();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.lblCuartoCampo = new System.Windows.Forms.Label();
+            this.txtCuartoCampo = new System.Windows.Forms.TextBox();
+            this.lblQuintoCampo = new System.Windows.Forms.Label();
+            this.txtQuintoCampo = new System.Windows.Forms.TextBox();
+            this.btnAdicional1 = new System.Windows.Forms.Button();
+            this.btnAdicional2 = new System.Windows.Forms.Button();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.rdoCable = new System.Windows.Forms.RadioButton();
+            this.rdoComponente = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPrimerCampo
@@ -87,84 +87,13 @@
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.Moccasin;
-            this.btnAceptar.Location = new System.Drawing.Point(18, 293);
+            this.btnAceptar.Location = new System.Drawing.Point(13, 293);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(85, 23);
-            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.Size = new System.Drawing.Size(112, 23);
+            this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // txtQuintoCampo
-            // 
-            this.txtQuintoCampo.BackColor = System.Drawing.Color.NavajoWhite;
-            this.txtQuintoCampo.Location = new System.Drawing.Point(129, 50);
-            this.txtQuintoCampo.Name = "txtQuintoCampo";
-            this.txtQuintoCampo.Size = new System.Drawing.Size(123, 23);
-            this.txtQuintoCampo.TabIndex = 7;
-            // 
-            // lblQuintoCampo
-            // 
-            this.lblQuintoCampo.AutoSize = true;
-            this.lblQuintoCampo.Location = new System.Drawing.Point(6, 53);
-            this.lblQuintoCampo.Name = "lblQuintoCampo";
-            this.lblQuintoCampo.Size = new System.Drawing.Size(86, 15);
-            this.lblQuintoCampo.TabIndex = 8;
-            this.lblQuintoCampo.Text = "Quinto Campo";
-            // 
-            // txtCuartoCampo
-            // 
-            this.txtCuartoCampo.BackColor = System.Drawing.Color.NavajoWhite;
-            this.txtCuartoCampo.Location = new System.Drawing.Point(129, 21);
-            this.txtCuartoCampo.Name = "txtCuartoCampo";
-            this.txtCuartoCampo.Size = new System.Drawing.Size(123, 23);
-            this.txtCuartoCampo.TabIndex = 6;
-            // 
-            // lblCuartoCampo
-            // 
-            this.lblCuartoCampo.AutoSize = true;
-            this.lblCuartoCampo.Location = new System.Drawing.Point(6, 24);
-            this.lblCuartoCampo.Name = "lblCuartoCampo";
-            this.lblCuartoCampo.Size = new System.Drawing.Size(85, 15);
-            this.lblCuartoCampo.TabIndex = 6;
-            this.lblCuartoCampo.Text = "Cuarto Campo";
-            // 
-            // btnAdicional2
-            // 
-            this.btnAdicional2.BackColor = System.Drawing.Color.Moccasin;
-            this.btnAdicional2.Location = new System.Drawing.Point(172, 108);
-            this.btnAdicional2.Name = "btnAdicional2";
-            this.btnAdicional2.Size = new System.Drawing.Size(86, 23);
-            this.btnAdicional2.TabIndex = 9;
-            this.btnAdicional2.Text = "Adicional 2";
-            this.btnAdicional2.UseVisualStyleBackColor = false;
-            this.btnAdicional2.Click += new System.EventHandler(this.btnAdicional2_Click);
-            // 
-            // btnAdicional1
-            // 
-            this.btnAdicional1.BackColor = System.Drawing.Color.Moccasin;
-            this.btnAdicional1.Location = new System.Drawing.Point(6, 108);
-            this.btnAdicional1.Name = "btnAdicional1";
-            this.btnAdicional1.Size = new System.Drawing.Size(85, 23);
-            this.btnAdicional1.TabIndex = 8;
-            this.btnAdicional1.Text = "Adicional 1";
-            this.btnAdicional1.UseVisualStyleBackColor = false;
-            this.btnAdicional1.Click += new System.EventHandler(this.btnAdicional1_Click);
-            // 
-            // grpAdicionales
-            // 
-            this.grpAdicionales.Controls.Add(this.btnAdicional1);
-            this.grpAdicionales.Controls.Add(this.btnAdicional2);
-            this.grpAdicionales.Controls.Add(this.lblCuartoCampo);
-            this.grpAdicionales.Controls.Add(this.txtCuartoCampo);
-            this.grpAdicionales.Controls.Add(this.lblQuintoCampo);
-            this.grpAdicionales.Controls.Add(this.txtQuintoCampo);
-            this.grpAdicionales.Location = new System.Drawing.Point(12, 150);
-            this.grpAdicionales.Name = "grpAdicionales";
-            this.grpAdicionales.Size = new System.Drawing.Size(264, 137);
-            this.grpAdicionales.TabIndex = 14;
-            this.grpAdicionales.TabStop = false;
-            this.grpAdicionales.Text = "Adicionales";
             // 
             // txtTercerCampo
             // 
@@ -183,24 +112,13 @@
             this.lblTercerCampo.TabIndex = 997;
             this.lblTercerCampo.Text = "Tercer Campo";
             // 
-            // chkCamposAdicionales
-            // 
-            this.chkCamposAdicionales.AutoSize = true;
-            this.chkCamposAdicionales.Location = new System.Drawing.Point(12, 124);
-            this.chkCamposAdicionales.Name = "chkCamposAdicionales";
-            this.chkCamposAdicionales.Size = new System.Drawing.Size(134, 19);
-            this.chkCamposAdicionales.TabIndex = 5;
-            this.chkCamposAdicionales.Text = "Campos Adicionales";
-            this.chkCamposAdicionales.UseVisualStyleBackColor = true;
-            this.chkCamposAdicionales.CheckedChanged += new System.EventHandler(this.chkOpcionAlternativa_CheckedChanged);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Moccasin;
-            this.btnCancelar.Location = new System.Drawing.Point(184, 293);
+            this.btnCancelar.Location = new System.Drawing.Point(163, 293);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(86, 23);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Size = new System.Drawing.Size(101, 23);
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -208,29 +126,114 @@
             // chkOpcionAdicional
             // 
             this.chkOpcionAdicional.AutoSize = true;
-            this.chkOpcionAdicional.Location = new System.Drawing.Point(12, 99);
+            this.chkOpcionAdicional.Location = new System.Drawing.Point(12, 171);
             this.chkOpcionAdicional.Name = "chkOpcionAdicional";
             this.chkOpcionAdicional.Size = new System.Drawing.Size(118, 19);
-            this.chkOpcionAdicional.TabIndex = 3;
+            this.chkOpcionAdicional.TabIndex = 5;
             this.chkOpcionAdicional.Text = "Opcion Adicional";
             this.chkOpcionAdicional.UseVisualStyleBackColor = true;
             // 
             // nudCantidadMinima
             // 
-            this.nudCantidadMinima.Location = new System.Drawing.Point(154, 98);
-            this.nudCantidadMinima.Minimum = new decimal(new int[] {
+            this.nudCantidad.Location = new System.Drawing.Point(81, 210);
+            this.nudCantidad.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nudCantidadMinima.Name = "nudCantidadMinima";
-            this.nudCantidadMinima.Size = new System.Drawing.Size(44, 23);
-            this.nudCantidadMinima.TabIndex = 4;
-            this.nudCantidadMinima.Value = new decimal(new int[] {
+            this.nudCantidad.Name = "nudCantidadMinima";
+            this.nudCantidad.Size = new System.Drawing.Size(44, 23);
+            this.nudCantidad.TabIndex = 6;
+            this.nudCantidad.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            // 
+            // lblCuartoCampo
+            // 
+            this.lblCuartoCampo.AutoSize = true;
+            this.lblCuartoCampo.Location = new System.Drawing.Point(12, 104);
+            this.lblCuartoCampo.Name = "lblCuartoCampo";
+            this.lblCuartoCampo.Size = new System.Drawing.Size(85, 15);
+            this.lblCuartoCampo.TabIndex = 1002;
+            this.lblCuartoCampo.Text = "Cuarto Campo";
+            // 
+            // txtCuartoCampo
+            // 
+            this.txtCuartoCampo.BackColor = System.Drawing.Color.NavajoWhite;
+            this.txtCuartoCampo.Location = new System.Drawing.Point(141, 101);
+            this.txtCuartoCampo.Name = "txtCuartoCampo";
+            this.txtCuartoCampo.Size = new System.Drawing.Size(123, 23);
+            this.txtCuartoCampo.TabIndex = 3;
+            // 
+            // lblQuintoCampo
+            // 
+            this.lblQuintoCampo.AutoSize = true;
+            this.lblQuintoCampo.Location = new System.Drawing.Point(12, 133);
+            this.lblQuintoCampo.Name = "lblQuintoCampo";
+            this.lblQuintoCampo.Size = new System.Drawing.Size(86, 15);
+            this.lblQuintoCampo.TabIndex = 1005;
+            this.lblQuintoCampo.Text = "Quinto Campo";
+            // 
+            // txtQuintoCampo
+            // 
+            this.txtQuintoCampo.BackColor = System.Drawing.Color.NavajoWhite;
+            this.txtQuintoCampo.Location = new System.Drawing.Point(141, 130);
+            this.txtQuintoCampo.Name = "txtQuintoCampo";
+            this.txtQuintoCampo.Size = new System.Drawing.Size(123, 23);
+            this.txtQuintoCampo.TabIndex = 4;
+            // 
+            // btnAdicional1
+            // 
+            this.btnAdicional1.BackColor = System.Drawing.Color.Moccasin;
+            this.btnAdicional1.Location = new System.Drawing.Point(12, 252);
+            this.btnAdicional1.Name = "btnAdicional1";
+            this.btnAdicional1.Size = new System.Drawing.Size(113, 23);
+            this.btnAdicional1.TabIndex = 9;
+            this.btnAdicional1.Text = "Adicional 1";
+            this.btnAdicional1.UseVisualStyleBackColor = false;
+            // 
+            // btnAdicional2
+            // 
+            this.btnAdicional2.BackColor = System.Drawing.Color.Moccasin;
+            this.btnAdicional2.Location = new System.Drawing.Point(163, 252);
+            this.btnAdicional2.Name = "btnAdicional2";
+            this.btnAdicional2.Size = new System.Drawing.Size(101, 23);
+            this.btnAdicional2.TabIndex = 10;
+            this.btnAdicional2.Text = "Adicional 2";
+            this.btnAdicional2.UseVisualStyleBackColor = false;
+            // 
+            // lblNud
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(12, 212);
+            this.lblCantidad.Name = "lblNud";
+            this.lblCantidad.Size = new System.Drawing.Size(63, 15);
+            this.lblCantidad.TabIndex = 1006;
+            this.lblCantidad.Text = "Label NUD";
+            // 
+            // rdoCable
+            // 
+            this.rdoCable.AutoSize = true;
+            this.rdoCable.Location = new System.Drawing.Point(163, 170);
+            this.rdoCable.Name = "rdoCable";
+            this.rdoCable.Size = new System.Drawing.Size(55, 19);
+            this.rdoCable.TabIndex = 7;
+            this.rdoCable.TabStop = true;
+            this.rdoCable.Text = "Cable";
+            this.rdoCable.UseVisualStyleBackColor = true;
+            // 
+            // rdoComponente
+            // 
+            this.rdoComponente.AutoSize = true;
+            this.rdoComponente.Location = new System.Drawing.Point(163, 195);
+            this.rdoComponente.Name = "rdoComponente";
+            this.rdoComponente.Size = new System.Drawing.Size(95, 19);
+            this.rdoComponente.TabIndex = 8;
+            this.rdoComponente.TabStop = true;
+            this.rdoComponente.Text = "Componente";
+            this.rdoComponente.UseVisualStyleBackColor = true;
             // 
             // FormABM
             // 
@@ -239,14 +242,21 @@
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(286, 324);
             this.ControlBox = false;
-            this.Controls.Add(this.nudCantidadMinima);
+            this.Controls.Add(this.rdoComponente);
+            this.Controls.Add(this.rdoCable);
+            this.Controls.Add(this.lblCantidad);
+            this.Controls.Add(this.lblCuartoCampo);
+            this.Controls.Add(this.txtCuartoCampo);
+            this.Controls.Add(this.lblQuintoCampo);
+            this.Controls.Add(this.txtQuintoCampo);
+            this.Controls.Add(this.btnAdicional1);
+            this.Controls.Add(this.btnAdicional2);
+            this.Controls.Add(this.nudCantidad);
             this.Controls.Add(this.chkOpcionAdicional);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.chkCamposAdicionales);
             this.Controls.Add(this.txtTercerCampo);
             this.Controls.Add(this.lblTercerCampo);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.grpAdicionales);
             this.Controls.Add(this.txtSegundoCampo);
             this.Controls.Add(this.lblSegundoCampo);
             this.Controls.Add(this.txtPrimerCampo);
@@ -256,9 +266,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Altas";
             this.Load += new System.EventHandler(this.FormABM_Load);
-            this.grpAdicionales.ResumeLayout(false);
-            this.grpAdicionales.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidadMinima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,18 +279,19 @@
         private System.Windows.Forms.TextBox txtSegundoCampo;
         private System.Windows.Forms.Label lblSegundoCampo;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox txtQuintoCampo;
-        private System.Windows.Forms.Label lblQuintoCampo;
-        private System.Windows.Forms.TextBox txtCuartoCampo;
-        private System.Windows.Forms.Label lblCuartoCampo;
-        private System.Windows.Forms.Button btnAdicional2;
-        private System.Windows.Forms.Button btnAdicional1;
-        private System.Windows.Forms.GroupBox grpAdicionales;
         private System.Windows.Forms.TextBox txtTercerCampo;
         private System.Windows.Forms.Label lblTercerCampo;
-        private System.Windows.Forms.CheckBox chkCamposAdicionales;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox chkOpcionAdicional;
-        private System.Windows.Forms.NumericUpDown nudCantidadMinima;
+        private System.Windows.Forms.NumericUpDown nudCantidad;
+        private System.Windows.Forms.Label lblCuartoCampo;
+        private System.Windows.Forms.TextBox txtCuartoCampo;
+        private System.Windows.Forms.Label lblQuintoCampo;
+        private System.Windows.Forms.TextBox txtQuintoCampo;
+        private System.Windows.Forms.Button btnAdicional1;
+        private System.Windows.Forms.Button btnAdicional2;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.RadioButton rdoCable;
+        private System.Windows.Forms.RadioButton rdoComponente;
     }
 }

@@ -16,50 +16,26 @@ namespace Formularios
     public partial class FormABM : Form
     {
         private MostrarInfo mostrarInfo;
+        object? elemento;
 
         private FormABM()
         {
             InitializeComponent();
         }
 
-        public FormABM(MostrarInfo mostrarInfo): this()
+        public FormABM(MostrarInfo mostrarInfo, object? elemento): this()
         {
-            CambiarColor();
             this.mostrarInfo = mostrarInfo;
+            this.elemento = elemento;
         }
-        /// <summary>
-        /// Cambia el color de la aplicacion en base a los permisos del usuario logueado
-        /// </summary>
-        private void CambiarColor()
-        {
-            if (ControladorABM.UsuarioEsAdmin)
-            {
-                BackColor = Color.LightSkyBlue;
 
-                foreach (Control control in Controls)
-                {
-                    if(control is Button || control is TextBox)
-                    {
-                        control.BackColor = Color.PowderBlue;
-                    }
-                }
-            }
-            else
-            {
-                BackColor = Color.Tan;
-                foreach (Control control in Controls)
-                {
-                    if (control is Button || control is TextBox)
-                    {
-                        control.BackColor = Color.Moccasin;
-                    }
-                }
-            }
+        public FormABM(MostrarInfo mostrarInfo) : this(mostrarInfo, null)
+        {
+
         }
 
         private void FormABM_Load(object sender, EventArgs e)
         {
-            OcultarControles();
             ModificarTexto();
         }
         /// <summary>
@@ -69,114 +45,109 @@ namespace Formularios
         {
             switch (mostrarInfo)
             {
-                case MostrarInfo.Producto:
-                    ModificarTexto("Nombre", "Precio", "Cantidad", "Alta de stock", "Cantidad Minima");
+                //Adapta el texto para mostrar un producto
+                case MostrarInfo.Inventario:
+                    AltaProducto();
                     break;
-                case MostrarInfo.Componente:
-                    ModificarTexto("Nombre", "Precio", "", "Nuevo plato", "Es bebida?", "Incluir ingredientes", "Nombre",
-                        "Precio", "Ver ingredientes", "Ingredientes", "Agregar Ingrediente");
+                //Da de alta un nuevo proveedor
+                case MostrarInfo.Proveedores:
+                    AltaProveedor();
                     break;
                     //Por defecto es alta de empleado
                 default:
-                    ModificarTexto("Nombre", "Apellido", "DNI", "Alta de empleado", "Administrador", 
-                                   "Agregar datos de cuenta", "Usuario", "Contraseña", "Validar usuario",
-                                   "Datos de la cuenta");
+                    AltaEmpleado();
                     break;
             }
         }
-        /// <summary>
-        /// Asigna el valor de la propiedad Text de los controles indicados
-        /// </summary>
-        /// <param name="primerCampo">Valor a asignar a la propiedad Text del label lblPrimerCampo</param>
-        /// <param name="segundoCampo">Valor a asignar a la propiedad Text del label lblPrimerCampo</param>
-        /// <param name="tercerCampo">Valor a asignar a la propiedad Text del label lblPrimerCampo</param>
-        /// <param name="titulo">Valor a asignar al título del formulario</param>
-        /// <param name="opcionAdicional">Valor a asignar a la propiedad Text del checkbox chkOpcionAdicional</param>
-        private void ModificarTexto(string primerCampo, string segundoCampo, string tercerCampo, string titulo,
-                                    string opcionAdicional)
+
+        private void AltaProducto()
         {
-            lblPrimerCampo.Text = primerCampo;
-            lblSegundoCampo.Text = segundoCampo;
-            lblTercerCampo.Text = tercerCampo;
-            this.Text = titulo;
-            chkOpcionAdicional.Text = opcionAdicional;
-        }
-        /// <summary>
-        /// Asigna el valor de la propiedad Text de los controles indicados
-        /// </summary>
-        /// <param name="primerCampo">Valor a asignar a la propiedad Text del label lblPrimerCampo</param>
-        /// <param name="segundoCampo">Valor a asignar a la propiedad Text del label lblSegundoCampo</param>
-        /// <param name="tercerCampo">Valor a asignar a la propiedad Text del label lblTercerCampo</param>
-        /// <param name="titulo">Valor a asignar al título del formulario</param>
-        /// <param name="opcionAdicional">Valor a asignar a la propiedad Text del checkbox chkOpcionAdicional</param>
-        /// <param name="camposAdicionales">Valor a asignar a la propiedad Text del checkbox chkCamposAdicionales</param>
-        /// <param name="cuartoCampo">Valor a asignar a la propiedad Text del label lblCuartoCampo</param>
-        /// <param name="quintoCampo">Valor a asignar a la propiedad Text del label lblQuintoCampo</param>
-        /// <param name="adicional1">Valor a asignar a la propiedad Text del boton btnAdicional1</param>
-        /// <param name="groupbox">Valor a asignar a la propiedad text del group box grpAdicionales</param>
-        private void ModificarTexto(string primerCampo, string segundoCampo, string tercerCampo, string titulo, 
-                                    string opcionAdicional, string camposAdicionales, string cuartoCampo, 
-                                    string quintoCampo, string adicional1, string groupbox)
-        {
-            ModificarTexto(primerCampo, segundoCampo, tercerCampo, titulo, opcionAdicional);
-            grpAdicionales.Text = groupbox;
-            chkCamposAdicionales.Text = camposAdicionales;
-            lblCuartoCampo.Text = cuartoCampo;
-            lblQuintoCampo.Text = quintoCampo;
-            btnAdicional1.Text = adicional1;
-        }
-        /// <summary>
-        /// Asigna el valor de la propiedad Text de los controles indicados
-        /// </summary>
-        /// <param name="primerCampo">Valor a asignar a la propiedad Text del label lblPrimerCampo</param>
-        /// <param name="segundoCampo">Valor a asignar a la propiedad Text del label lblSegundoCampo</param>
-        /// <param name="tercerCampo">Valor a asignar a la propiedad Text del label lblTercerCampo</param>
-        /// <param name="titulo">Valor a asignar al título del formulario</param>
-        /// <param name="opcionAdicional">Valor a asignar a la propiedad Text del checkbox chkOpcionAdicional</param>
-        /// <param name="camposAdicionales">Valor a asignar a la propiedad Text del checkbox chkCamposAdicionales</param>
-        /// <param name="cuartoCampo">Valor a asignar a la propiedad Text del label lblCuartoCampo</param>
-        /// <param name="quintoCampo">Valor a asignar a la propiedad Text del label lblQuintoCampo</param>
-        /// <param name="adicional1">Valor a asignar a la propiedad Text del boton btnAdicional1</param>
-        /// <param name="groupbox">Valor a asignar a la propiedad Text del boton btnAdicional1</param>
-        /// <param name="adicional2">Valor a asignar a la propiedad Text del boton btnAdicional2</param>
-        private void ModificarTexto(string primerCampo,string segundoCampo, string tercerCampo, string titulo, 
-                                    string opcionAdicional, string camposAdicionales, string cuartoCampo, 
-                                    string quintoCampo, string adicional1, string groupbox, string adicional2)
-        {
-            ModificarTexto(primerCampo, segundoCampo, tercerCampo, titulo, opcionAdicional, camposAdicionales, cuartoCampo,
-                            quintoCampo, adicional1, groupbox);
-            btnAdicional2.Text = adicional2;
-        }
-        /// <summary>
-        /// Oculta controles del formulario que no sean necesarios para dar de alta un elemento
-        /// </summary>
-        private void OcultarControles()
-        {
+            Text = "Nuevo Producto";
+            lblPrimerCampo.Text = "Descripcion:";
+            lblSegundoCampo.Text = "Precio:";
+            lblCantidad.Text = "Cantidad:";
+            rdoCable.Checked = true;
+
+            lblQuintoCampo.Hide();
+            txtQuintoCampo.Hide();
+            btnAdicional1.Hide();
+            btnAdicional2.Hide();
             
+            CambiarFormularioPorTipoDeProducto();
         }
 
-        private void chkOpcionAlternativa_CheckedChanged(object sender, EventArgs e)
+        private void CambiarFormularioPorTipoDeProducto()
         {
-            CambiarEstadoGroupbox();
+            if (rdoCable.Checked)
+            {
+                lblTercerCampo.Text = "Seccion:";
+                chkOpcionAdicional.Text = "Doble aislacion";
+                lblCuartoCampo.Hide();
+                txtCuartoCampo.Hide();
+            }
+            if (rdoComponente.Checked)
+            {
+                lblTercerCampo.Text = "Capacidad:";
+                lblCuartoCampo.Text = "Unidad de medicion:";
+            }
         }
-        /// <summary>
-        /// Habilita o deshabilita el groupbox
-        /// </summary>
-        private void CambiarEstadoGroupbox()
+
+        private void AltaProveedor()
         {
-             grpAdicionales.Enabled = !grpAdicionales.Enabled;
+            Text = "Alta de proveedor";
+            lblPrimerCampo.Text = "Nombre";
+            lblSegundoCampo.Text = "Apellido";
+            lblTercerCampo.Text = "DNI";
+            btnAdicional1.Text = "Agregar productos";
+            btnAdicional2.Text = "Nuevo producto";
+
+            txtCuartoCampo.Hide();
+            txtQuintoCampo.Hide();
+            lblCuartoCampo.Hide();
+            lblQuintoCampo.Hide();
+            chkOpcionAdicional.Hide();
+            rdoCable.Hide();
+            rdoComponente.Hide();
+            lblCantidad.Hide();
+            nudCantidad.Hide();
         }
+
+        private void AltaEmpleado()
+        {
+            Text = "Nuevo empleado";
+            lblPrimerCampo.Text = "Nombre";
+            lblSegundoCampo.Text = "Apellido";
+            lblTercerCampo.Text = "DNI";
+            lblCuartoCampo.Text = "Usuario";
+            lblQuintoCampo.Text = "Contraseña";
+            txtQuintoCampo.PasswordChar = '*';
+            chkOpcionAdicional.Text = "Administrador";
+            btnAdicional1.Text = "Validar usuario";
+            
+            lblCantidad.Hide();
+            nudCantidad.Hide();
+            btnAdicional2.Hide();
+            rdoCable.Hide();
+            rdoComponente.Hide();
+        }
+
 
         private void btnAdicional1_Click(object sender, EventArgs e)
         {
             //Para el usuario este boton representa verificar que el nombre de usuario no exista
             if(mostrarInfo == MostrarInfo.Empleado)
             {
-                
+                ControladorABM.ValidarUsuario(txtCuartoCampo.Text);
             }
             else
             {
-                
+                //Para un proveedor me permite asignar un producto ya existente
+                FormAgregar formAgregar = new FormAgregar(false);
+                formAgregar.ShowDialog();
+                if(formAgregar.DialogResult == DialogResult.OK)
+                {
+                    ControladorABM.AgregarProductos();
+                }
             }
         }
 
@@ -192,11 +163,10 @@ namespace Formularios
             MessageBoxButtons boton = MessageBoxButtons.OK;
             MessageBoxIcon icono;
             DialogResult resultado;
-            //Guardo el valor del numeric up down para usar en el metodo CargarElemento
-            GuardarCantidadMinima();
-            //Cargo informacion para mostrar un mensaje en base a si pude crear o no un nuevo elemento
-            if(ControladorABM.CargarElemento(mostrarInfo, chkCamposAdicionales.Checked, chkOpcionAdicional.Checked,
-                txtPrimerCampo.Text, txtSegundoCampo.Text, txtTercerCampo.Text, txtCuartoCampo.Text, txtQuintoCampo.Text))
+
+            if(ControladorABM.CrearElemento(mostrarInfo,chkOpcionAdicional.Checked,txtPrimerCampo.Text,
+                                            txtSegundoCampo.Text,txtTercerCampo.Text,txtCuartoCampo.Text,
+                                            txtQuintoCampo.Text,rdoCable.Checked,(int)nudCantidad.Value))
             {
                 mensaje = "El alta se ha completado satisfactoriamente";
                 titulo = "Alta exitosa";
@@ -215,15 +185,6 @@ namespace Formularios
             {
                 DialogResult = resultado;
             }
-        }
-        /// <summary>
-        /// En caso de estar ingresando un nuevo elemento a stock en donde sea necesario conservar informacion sobre
-        /// la cantidad minima se almacena el valor almacenardo en el numeric up down en el textbox txtCuartoCampo,
-        /// cuyo valor es utilizado en el constructor general para crear un nuevo objeto
-        /// </summary>
-        private void GuardarCantidadMinima()
-        {
-
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {

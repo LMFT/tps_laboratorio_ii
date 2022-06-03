@@ -14,6 +14,12 @@ namespace Logica.MenuPrincipal
 {
     public static class ControladorMenuPrincipal
     {
+        private static List<Tarea> tareasPendientes;
+
+        static ControladorMenuPrincipal()
+        {
+            tareasPendientes = new List<Tarea>();
+        }
         public static string UsuarioLogeado
         {
             get
@@ -49,6 +55,11 @@ namespace Logica.MenuPrincipal
                 return true;
             }
             return false;
+        }
+
+        public static void NuevaTarea(string descripcion)
+        {
+            tareasPendientes.Add(new Tarea(descripcion));
         }
     }
 }

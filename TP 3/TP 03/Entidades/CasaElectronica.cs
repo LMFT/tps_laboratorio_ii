@@ -11,7 +11,8 @@ namespace Entidades
     {
         private static List<Usuario> personal;
         private static Dictionary<Producto, int> stock;
-        private static Dictionary<Producto, int> stockMinimo;
+
+        private static List<Proveedor> proveedores;
         private static List<Operacion> historial;
 
         static CasaElectronica()
@@ -19,6 +20,7 @@ namespace Entidades
             historial = new List<Operacion>();
             HardcodearPersonal();
             HardcodearStock();
+            HardcodearProveedores();
         }
         /// <summary>
         /// Retorna la lista de personal del bar de forma inmutable
@@ -42,6 +44,14 @@ namespace Entidades
                 return diccionario;
             }
         }
+
+        public static ImmutableList<Proveedor> Proveedores
+        {
+            get
+            {
+                return ImmutableList.Create(proveedores.ToArray());
+            }
+        }
         /// <summary>
         /// Hardcodea el listado de personal
         /// </summary>
@@ -62,7 +72,7 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Hardcodea el stock del bar
+        /// Hardcodea el stock
         /// </summary>
         private static void HardcodearStock()
         {
@@ -76,8 +86,6 @@ namespace Entidades
             string unidadMedida = "Ω";//Los valores de resistencia se representan con la letra Omega
 
             stock = new Dictionary<Producto, int>();
-            stockMinimo = new Dictionary<Producto, int>();
-
             for (int i = 0; i < nombres.Length; i++)
             {
                 Producto producto;
@@ -91,9 +99,36 @@ namespace Entidades
                     producto = new Componente(nombres[i], precios[i], marcas[1], capacidades[i-2],unidadMedida);
                 }
                 stock.Add(producto, cantidades[i]);
-                stockMinimo.Add(producto, cantidadesMinimas[i]);
             }
         }
+
+        private static void HardcodearProveedores()
+        {
+            int[] dni = { 31323334, 34433211 };
+            string[] nombres = { "Alberto", "Miriam" };
+            string[] apellidos = { "Casals", "Ferreira" };
+            List<Producto>[] productos = new List<Producto>[2];
+
+            proveedores = new List<Proveedor>();
+            
+            productos[0] = new List<Producto>();
+            productos[0].Add(stock.ElementAt(0).Key);
+            productos[0].Add(stock.ElementAt(1).Key);
+            productos[0].Add(new Cable("Cable",150,"Volteck",2.5,false));
+            productos[0].Add(new Cable("Cable Doble Aislacion", 500, "Volteck", 10, true));
+            
+            productos[1] = new List<Producto>();
+            productos[1].Add(stock.ElementAt(2).Key);
+            productos[1].Add(stock.ElementAt(3).Key);
+            productos[1].Add(stock.ElementAt(4).Key);
+            productos[1].Add(new Componente("Capacitor", 150, "Reggie", 50, "μF"));
+
+            for(int i = 0; i < dni.Length; i++)
+            {
+                proveedores.Add(new Proveedor(nombres[i], apellidos[i], dni[i], productos[i]));
+            }
+        }
+
         /// <summary>
         /// Busca un usuario en base al nombre de usuario registrado en la app
         /// </summary>
@@ -131,7 +166,7 @@ namespace Entidades
         /// </summary>
         /// <param name="producto">Consumible a verificar</param>
         /// <returns>true en caso de que haya suficientes ingredientes o consumibles, de lo contrario false</returns>
-        public static bool HayStock(Producto producto, double cantidad)
+        public static bool HayStock(Producto producto, int cantidad)
         {
             if(stock == producto)
             {
@@ -173,7 +208,7 @@ namespace Entidades
         /// <param name="producto">Producto a añadir</param>
         /// <param name="cantidad">Cantidad de unidades del producto</param>
         /// <returns>Retorna true si pudo añadir el elemento stock</returns>
-        private static bool AgregarAStock(Producto producto, int cantidad)
+        public static bool AgregarAStock(Producto producto, int cantidad)
         {
             if (stock == producto)
             {
@@ -182,35 +217,7 @@ namespace Entidades
             stock.Add(producto, cantidad);
             return true;
         }
-        /// <summary>
-        /// Añade un producto con una determinada cantidad al stock, determinando la cantidad minima que debe existir de este
-        /// producto
-        /// </summary>
-        /// <param name="producto">Producto a añadir</param>
-        /// <param name="cantidad">Cantidad de unidades del producto</param>
-        /// <param name="cantidadMinima">Cantidad minma de unidades del producto que deberia haber</param>
-        /// <returns>Retorna true si pudo añadir el elemento stock</returns>
-        public static bool AgregarAStock(Producto producto, int cantidad, int cantidadMinima)
-        {
-            if (AgregarAStock(producto, cantidad))
-            {
-                stockMinimo.Add(producto,cantidadMinima);
-                return true;
-            }
-            return false;
-        }
 
-        /// <summary>
-        /// Valida si la cantidad de stock de un producto es cercana a la cantidad minima de producto 
-        /// que deberia haber en stock 
-        /// </summary>
-        /// <param name="producto">Producto a verificar</param>
-        /// <returns>Retorna true cuando la cantidad de producto disponible es inferior al 125% de la cantidad minima
-        /// (De tener una cantidad minima de 20 unidades, retornará true si la cantidad actual es inferior a 25)</returns>
-        public static bool VerificarStockMinimo(Producto producto)
-        {
-            return stock[producto] / stockMinimo[producto] < 1.25;
-        }
         /// <summary>
         /// Rellena el stock de un producto a 2 veces su cantidad mínima
         /// </summary>
@@ -219,8 +226,7 @@ namespace Entidades
         {
             if(elementoInventario is not null)
             {
-                KeyValuePair<Producto, int> par = elementoInventario.APar(false);
-                stock[par.Key] = stockMinimo[par.Key]*2;
+                KeyValuePair<Producto, int> par = elementoInventario.APar();
             }
         }
         /// <summary>
@@ -230,21 +236,8 @@ namespace Entidades
         /// <param name="cantidad">Cantidad de unidades a agregar</param>
         public static void ReponerStock(ElementoStock<Producto> elementoInventario, int cantidad)
         {
-            KeyValuePair<Producto, int> par = elementoInventario.APar(false);
+            KeyValuePair<Producto, int> par = elementoInventario.APar();
             stock[par.Key] += cantidad;
-        }
-        /// <summary>
-        /// Obtiene la cantidad mínima de unidades que debería haber de un producto en stock
-        /// </summary>
-        /// <param name="producto">Producto del cual queremos saber la cantidad minimad e unidades</param>
-        /// <returns>La cantidad mínima de unidades del producto, o -1 si no se encuentra el producto</returns>
-        public static int CantidadMinima(Producto producto)
-        {
-            if(stockMinimo == producto)
-            {
-                return stockMinimo[producto];
-            }
-            return -1;
         }
         /// <summary>
         /// Elimina un producto del stock
@@ -285,6 +278,39 @@ namespace Entidades
         /// <returns>True si pudo crearse una nueva operacion, de lo contrario false</returns>
         public static bool NuevaOperacion(int indiceMesa)
         {
+            return false;
+        }
+
+        public static bool RetirarDeStock(Producto producto, int cantidad)
+        {
+            if(producto is not null && cantidad >= 0)
+            {
+                if (stock == producto && stock[producto]-cantidad <= 0)
+                {
+                    stock[producto] -= cantidad;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool AltaProveedor(Proveedor proveedor)
+        {
+            if(proveedor is not null)
+            {
+                proveedores.Add(proveedor);
+                return true; 
+            }
+            return false;
+        }
+
+        public static bool AltaProducto(Producto producto, int cantidad)
+        {
+            if(producto is not null && cantidad >= 0)
+            {
+                stock.Add(producto, cantidad);
+                return true;
+            }
             return false;
         }
     }
