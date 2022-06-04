@@ -93,7 +93,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Almacenamiento\\Almacenamiento.csproj": {
+                "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Almacenamiento\\Almacenamiento.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

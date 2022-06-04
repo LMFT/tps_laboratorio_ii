@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Almacenamiento/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Almacenamiento.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Almacenamiento.dll": {}
+        }
+      },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Interfaces.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Almacenamiento/1.0.0": {
+      "type": "project",
+      "path": "../Almacenamiento/Almacenamiento.csproj",
+      "msbuildProject": "../Almacenamiento/Almacenamiento.csproj"
+    },
+    "Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Interfaces/Interfaces.csproj",
+      "msbuildProject": "../Interfaces/Interfaces.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Almacenamiento >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\lucas\\.nuget\\packages\\": {},
@@ -38,7 +75,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Almacenamiento\\Almacenamiento.csproj": {
+              "projectPath": "D:\\Curso Programacion\\LaboProgra 2\\tps_laboratorio_ii\\TP 3\\TP 03\\Almacenamiento\\Almacenamiento.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

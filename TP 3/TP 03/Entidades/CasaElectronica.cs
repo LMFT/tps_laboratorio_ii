@@ -5,19 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Almacenamiento;
+
 namespace Entidades
 {
     public static class CasaElectronica
     {
         private static List<Usuario> personal;
         private static Dictionary<Producto, int> stock;
-
         private static List<Proveedor> proveedores;
         private static List<Operacion> historial;
+        public static string rutaGuardado;
 
         static CasaElectronica()
         {
             historial = new List<Operacion>();
+            rutaGuardado = string.Empty;
             HardcodearPersonal();
             HardcodearStock();
             HardcodearProveedores();
@@ -83,7 +86,7 @@ namespace Entidades
             int[] cantidadesMinimas = { 1000, 500, 50, 50, 50 };
             double[] secciones = { 1.5, 6 };
             double[] capacidades = { 100,200,500};
-            string unidadMedida = "Ω";//Los valores de resistencia se representan con la letra Omega
+            string unidadMedida = "ohm";
 
             stock = new Dictionary<Producto, int>();
             for (int i = 0; i < nombres.Length; i++)
@@ -121,7 +124,7 @@ namespace Entidades
             productos[1].Add(stock.ElementAt(2).Key);
             productos[1].Add(stock.ElementAt(3).Key);
             productos[1].Add(stock.ElementAt(4).Key);
-            productos[1].Add(new Componente("Capacitor", 150, "Reggie", 50, "μF"));
+            productos[1].Add(new Componente("Capacitor", 150, "Reggie", 50, "Micro Faradios"));
 
             for(int i = 0; i < dni.Length; i++)
             {
@@ -312,6 +315,66 @@ namespace Entidades
                 return true;
             }
             return false;
+        }
+
+        public static void Guardar(string ruta)
+        {
+            try
+            {
+                SerializadorXml<CableInterno> serializadorCable = new SerializadorXml<CableInterno>(ruta);
+                SerializadorXml<ComponenteInterno> serializadorComponente = new SerializadorXml<ComponenteInterno>();
+                SerializadorXml<ProveedorInterno> serializadorProveedores = new SerializadorXml<ProveedorInterno>(ruta);
+                SerializadorXml<UsuarioInterno> serializadorEmpleados = new SerializadorXml<UsuarioInterno>(ruta);
+
+                serializadorCable.Guardar(GetCablesInternos(), ruta,"Cables.xml");
+                serializadorComponente.Guardar(GetComponentesInternos(),ruta, "Componentes.xml");
+                serializadorProveedores.Guardar(GetProveedoresInternos(),ruta, "Proveedores.xml");
+                serializadorEmpleados.Guardar(GetUsuariosInternos(), ruta, "Empleados.xml");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private static List<UsuarioInterno> GetUsuariosInternos()
+        {
+            List<UsuarioInterno> lista = new List<UsuarioInterno>();
+            foreach(Usuario usuario in personal)
+            {
+                lista.Add(new UsuarioInterno(usuario));
+            }
+            return lista;
+        }
+
+        private static List<ProveedorInterno> GetProveedoresInternos()
+        {
+            List<ProveedorInterno> lista = new List<ProveedorInterno>();
+            foreach (Proveedor usuario in proveedores)
+            {
+                lista.Add(new ProveedorInterno(usuario));
+            }
+            return lista;
+        }
+
+        private static List<CableInterno> GetCablesInternos()
+        {
+            List<CableInterno> lista = new List<CableInterno>();
+            foreach (Cable usuario in stock.Keys)
+            {
+                lista.Add(new CableInterno(usuario,stock[usuario]));
+            }
+            return lista;
+        }
+
+        private static List<ComponenteInterno> GetComponentesInternos()
+        {
+            List<ComponenteInterno> lista = new List<ComponenteInterno>();
+            foreach (Componente usuario in stock.Keys)
+            {
+                lista.Add(new ComponenteInterno(usuario, stock[usuario]));
+            }
+            return lista;
         }
     }
 }

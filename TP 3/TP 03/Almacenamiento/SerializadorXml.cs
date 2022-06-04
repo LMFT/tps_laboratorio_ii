@@ -44,21 +44,34 @@ namespace Almacenamiento
             return Cargar(ruta, nombre);
         }
 
-        public int Guardar(ICollection<T> coleccion, string ruta, string nombreArchivo)
+        public int Guardar(List<T> coleccion, string ruta, string nombre)
         {
-            string rutaCompleta = ruta + @"\" + nombreArchivo;
             int i = 0;
+            string rutaCompleta = GetRutaCompleta(ruta,nombre);
 
-            using (StreamWriter sw = new StreamWriter(rutaCompleta))
+            if (string.IsNullOrEmpty(rutaCompleta))
             {
-                foreach (T elemento in coleccion)
+                using (StreamWriter sw = new StreamWriter(rutaCompleta))
                 {
-                    XmlSerializer xml = new XmlSerializer(typeof(T));
-                    xml.Serialize(sw, elemento);
+                    foreach (T elemento in coleccion)
+                    {
+                        XmlSerializer xml = new XmlSerializer(typeof(T));
+                        xml.Serialize(sw, elemento);
+                    }
                 }
             }
-            
             return i;
+        }
+
+        private string GetRutaCompleta(string ruta, string nombre)
+        {
+            ruta = ruta.Trim();
+            nombre = nombre.Trim();
+            if (ruta.EndsWith(@"\"))
+            {
+                return ruta + nombre;
+            }
+            return ruta + @"\" + nombre;
         }
     }
 }

@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
+    [XmlInclude(typeof(CableInterno))]
+    [XmlInclude(typeof(ComponenteInterno))]
     public class Producto
     {
         protected static int ultimoId;
         protected int id;
         protected decimal precio;
-        protected string nombre;
+        protected string descripcion;
         protected string marca;
 
         static Producto()
@@ -23,7 +26,7 @@ namespace Entidades
         {
             id = 0;
             precio = 0;
-            nombre = String.Empty;
+            descripcion = String.Empty;
             marca = String.Empty;
         }
 
@@ -31,7 +34,7 @@ namespace Entidades
         {
             ultimoId++;
             id = ultimoId;
-            this.nombre = nombre;
+            this.descripcion = nombre;
             this.precio = precio;
             this.marca = marca;
         }
@@ -44,15 +47,15 @@ namespace Entidades
             }
         }
 
-        public string Nombre
+        public string Descripcion
         {
             get 
             { 
-                return nombre; 
+                return descripcion; 
             }
         }
 
-        public virtual decimal Precio
+        public decimal Precio
         {
             get
             {
@@ -60,10 +63,18 @@ namespace Entidades
             }
         }
 
+        public string Marca
+        {
+            get
+            {
+                return Marca;
+            }
+        }
+
         public virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Nombre: {nombre}");
+            sb.AppendLine($"Nombre: {descripcion}");
             sb.AppendLine($"Precio: {precio}");
             return sb.ToString();
         }
@@ -162,9 +173,9 @@ namespace Entidades
 
         public override string ToString()
         {
-            if(nombre is not null)
+            if(descripcion is not null)
             {
-                return nombre;
+                return descripcion;
             }
             return string.Empty;
         }

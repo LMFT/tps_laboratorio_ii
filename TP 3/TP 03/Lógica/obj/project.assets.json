@@ -2,23 +2,59 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Almacenamiento/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Almacenamiento.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Almacenamiento.dll": {}
+        }
+      },
       "Entidades/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Almacenamiento": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Entidades.dll": {}
         },
         "runtime": {
           "bin/placeholder/Entidades.dll": {}
         }
+      },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Interfaces.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Almacenamiento/1.0.0": {
+      "type": "project",
+      "path": "../Almacenamiento/Almacenamiento.csproj",
+      "msbuildProject": "../Almacenamiento/Almacenamiento.csproj"
+    },
     "Entidades/1.0.0": {
       "type": "project",
       "path": "../Entidades/Entidades.csproj",
       "msbuildProject": "../Entidades/Entidades.csproj"
+    },
+    "Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Interfaces/Interfaces.csproj",
+      "msbuildProject": "../Interfaces/Interfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {

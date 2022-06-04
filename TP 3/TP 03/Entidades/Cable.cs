@@ -7,6 +7,13 @@ namespace Entidades
     {
         private double seccion;
         private bool dobleAislacion;
+
+        public Cable() : base()
+        {
+            seccion = 0;
+            dobleAislacion = false;
+        }
+
         public Cable(string nombre, decimal precio,string marca, double seccion, bool dobleAislacion)
         : base(nombre, precio, marca)
         {
@@ -14,6 +21,31 @@ namespace Entidades
             this.dobleAislacion = dobleAislacion;
         }
 
+        internal Cable(CableInterno cable)
+        {
+            id= cable.Id;
+            descripcion = cable.Descripcion;
+            precio = cable.Precio;
+            marca = cable.Marca;
+            seccion = cable.Seccion;
+            dobleAislacion = cable.DobleAislacion;
+        }
+
+        public double Seccion
+        {
+            get
+            {
+                return seccion;
+            }
+        }
+
+        public bool DobleAislacion
+        {
+            get
+            {
+                return dobleAislacion;
+            }
+        }
 
         public override string Mostrar()
         {

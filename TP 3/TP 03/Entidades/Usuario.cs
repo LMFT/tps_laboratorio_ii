@@ -18,6 +18,13 @@ namespace Entidades
         private string password;
         private Permisos permisos;
 
+        public Usuario() : base()
+        {
+            nombreUsuario = string.Empty;
+            password = string.Empty;
+            permisos = Permisos.Empleado;
+        }
+
 
         public Usuario(string nombre, string apellido, int dni, Permisos permisos)
         : base(nombre, apellido, dni)
@@ -44,14 +51,16 @@ namespace Entidades
                 this.password = password;
             }
         }
-
-        public int Dni
+        internal Usuario(UsuarioInterno usuario)
         {
-            get
-            {
-                return dni;
-            }
+            nombre = usuario.Nombre;
+            apellido = usuario.Apellido;
+            dni = usuario.Dni;
+            nombreUsuario = usuario.NombreUsuario;
+            password = usuario.Password;
+            permisos = usuario.Permisos;
         }
+
 
         public string NombreUsuario
         {

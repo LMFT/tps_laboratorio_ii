@@ -30,20 +30,19 @@
         {
             this.lblUsuario = new System.Windows.Forms.Label();
             this.btnVenta = new System.Windows.Forms.Button();
-            this.btnVerTareas = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnInfoEmpleados = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.dgvMostrarInformacion = new System.Windows.Forms.DataGridView();
+            this.btnCargar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarInformacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,21 +66,21 @@
             this.btnVenta.Text = "Nueva venta";
             this.btnVenta.UseVisualStyleBackColor = false;
             // 
-            // btnVerTareas
+            // btnGuardar
             // 
-            this.btnVerTareas.BackColor = System.Drawing.Color.Moccasin;
-            this.btnVerTareas.Location = new System.Drawing.Point(12, 161);
-            this.btnVerTareas.Name = "btnVerTareas";
-            this.btnVerTareas.Size = new System.Drawing.Size(372, 23);
-            this.btnVerTareas.TabIndex = 5;
-            this.btnVerTareas.Text = "Cerrar mesa";
-            this.btnVerTareas.UseVisualStyleBackColor = false;
-            this.btnVerTareas.Click += new System.EventHandler(this.btnCerrarMesa_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.Moccasin;
+            this.btnGuardar.Location = new System.Drawing.Point(12, 190);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(372, 23);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnInfoEmpleados
             // 
             this.btnInfoEmpleados.BackColor = System.Drawing.Color.Moccasin;
-            this.btnInfoEmpleados.Location = new System.Drawing.Point(12, 132);
+            this.btnInfoEmpleados.Location = new System.Drawing.Point(12, 161);
             this.btnInfoEmpleados.Name = "btnInfoEmpleados";
             this.btnInfoEmpleados.Size = new System.Drawing.Size(372, 23);
             this.btnInfoEmpleados.TabIndex = 6;
@@ -92,7 +91,7 @@
             // btnStock
             // 
             this.btnStock.BackColor = System.Drawing.Color.Moccasin;
-            this.btnStock.Location = new System.Drawing.Point(12, 74);
+            this.btnStock.Location = new System.Drawing.Point(12, 103);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(372, 23);
             this.btnStock.TabIndex = 8;
@@ -125,33 +124,13 @@
             // btnProveedores
             // 
             this.btnProveedores.BackColor = System.Drawing.Color.Moccasin;
-            this.btnProveedores.Location = new System.Drawing.Point(12, 103);
+            this.btnProveedores.Location = new System.Drawing.Point(12, 132);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(372, 23);
             this.btnProveedores.TabIndex = 15;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Moccasin;
-            this.button1.Location = new System.Drawing.Point(12, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(372, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Cerrar mesa";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Moccasin;
-            this.button2.Location = new System.Drawing.Point(12, 219);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(372, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Cerrar mesa";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -211,6 +190,16 @@
             this.dgvMostrarInformacion.Size = new System.Drawing.Size(373, 229);
             this.dgvMostrarInformacion.TabIndex = 27;
             // 
+            // btnCargar
+            // 
+            this.btnCargar.BackColor = System.Drawing.Color.Moccasin;
+            this.btnCargar.Location = new System.Drawing.Point(12, 219);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(372, 23);
+            this.btnCargar.TabIndex = 28;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = false;
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -218,20 +207,19 @@
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(829, 315);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.dgvMostrarInformacion);
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnStock);
             this.Controls.Add(this.btnInfoEmpleados);
-            this.Controls.Add(this.btnVerTareas);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnVenta);
             this.Controls.Add(this.lblUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -251,19 +239,18 @@
         #endregion
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnVenta;
-        private System.Windows.Forms.Button btnVerTareas;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnInfoEmpleados;
         private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnProveedores;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.DataGridView dgvMostrarInformacion;
+        private System.Windows.Forms.Button btnCargar;
     }
 }

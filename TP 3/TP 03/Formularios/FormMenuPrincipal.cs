@@ -54,13 +54,24 @@ namespace Formularios
 
         }
 
-        private void btnCerrarMesa_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            Guardar();
             ActualizarInterfaz();
         }
 
-     
+        private void Guardar()
+        {
+            FolderBrowserDialog browser = new FolderBrowserDialog();
+            if (browser.ShowDialog() == DialogResult.OK)
+            {
+                string ruta = browser.SelectedPath;
+                if (ruta is not null)
+                {
+                    ControladorMenuPrincipal.Guardar(ruta);
+                }
+            }
+        }
 
         private void btnStock_Click(object sender, EventArgs e)
         {

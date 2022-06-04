@@ -40,7 +40,7 @@ namespace Entidades
         {
             get
             {
-                return producto.Nombre;
+                return producto.Descripcion;
             }
         }
 

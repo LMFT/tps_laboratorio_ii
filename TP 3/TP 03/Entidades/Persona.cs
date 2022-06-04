@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
+    [XmlInclude(typeof(Proveedor))]
+    [XmlInclude(typeof(Usuario))]
     public abstract class Persona
     {
         protected string nombre;
@@ -68,6 +71,14 @@ namespace Entidades
             get
             {
                 return $"{nombre} {apellido}";
+            }
+        }
+
+        public int Dni
+        {
+            get
+            {
+                return dni;
             }
         }
 

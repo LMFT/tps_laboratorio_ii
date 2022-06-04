@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Entidades;
-
+using Almacenamiento;
 using Logica.AgregarPedidos;
 using Logica.Login;
 
@@ -60,6 +60,11 @@ namespace Logica.MenuPrincipal
         public static void NuevaTarea(string descripcion)
         {
             tareasPendientes.Add(new Tarea(descripcion));
+        }
+
+        public static void Guardar(string ruta)
+        {
+            CasaElectronica.Guardar(ruta);
         }
     }
 }

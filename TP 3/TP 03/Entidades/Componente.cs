@@ -11,11 +11,43 @@ namespace Entidades
         private double capacidad;
         private string unidadMedicion;
 
+        public Componente() : base()
+        {
+            capacidad = 0;
+            unidadMedicion = string.Empty;
+        }
+
         public Componente(string nombre, decimal precio,string marca,double capacidad, string unidadMedicion) 
         : base(nombre, precio,marca)
         {
             this.capacidad = capacidad;
             this.unidadMedicion = unidadMedicion;
+        }
+
+        internal Componente(ComponenteInterno componente)
+        {
+            id = componente.Id;
+            descripcion = componente.Descripcion;
+            precio = componente.Precio;
+            marca = componente.Marca;
+            capacidad = componente.Capacidad;
+            unidadMedicion = componente.UnidadMedicion;
+        }
+
+        public double Capacidad
+        {
+            get
+            {
+                return capacidad;
+            }
+        }
+
+        public string UnidadMedicion
+        {
+            get
+            {
+                return unidadMedicion;
+            }
         }
 
         public override string Mostrar()

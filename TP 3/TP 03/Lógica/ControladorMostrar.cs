@@ -104,7 +104,7 @@ namespace Logica.Mostrar
             if(elemento is Producto producto)
             {
                 ControladorMenuPrincipal.NuevaTarea($"Se requiere rellenar el stock del siguiente producto:" + 
-                                                     $"ID:{producto.Id} - Nombre: {producto.Nombre}");
+                                                     $"ID:{producto.Id} - Nombre: {producto.Descripcion}");
                 return true;
             }
             return false;
