@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class ProveedorInterno : Persona, IObtener<Proveedor>
+    public class ProveedorInterno : Persona, IObtener<Proveedor>
     {
-
         private List<Producto> productos;
 
         public ProveedorInterno()

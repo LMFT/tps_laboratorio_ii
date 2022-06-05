@@ -58,3 +58,7 @@ D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.genruntimeconfig.cache
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\ref\Formularios.dll
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormAgregar.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Almacenamiento.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Interfaces.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Almacenamiento.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Interfaces.pdb

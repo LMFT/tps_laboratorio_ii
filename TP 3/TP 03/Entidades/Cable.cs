@@ -23,6 +23,7 @@ namespace Entidades
 
         internal Cable(CableInterno cable)
         {
+            ultimoId = cable.UltimoId;
             id= cable.Id;
             descripcion = cable.Descripcion;
             precio = cable.Precio;
@@ -44,6 +45,14 @@ namespace Entidades
             get
             {
                 return dobleAislacion;
+            }
+        }
+
+        internal static int UltimoId
+        {
+            get
+            {
+                return ultimoId;
             }
         }
 

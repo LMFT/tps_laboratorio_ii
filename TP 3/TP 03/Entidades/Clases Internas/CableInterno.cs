@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class CableInterno : Producto, IObtener<Cable>
+    public class CableInterno : Producto, IObtener<Cable>
     {
         private double seccion;
         private bool dobleAislacion;
@@ -45,6 +45,8 @@ namespace Entidades
         public double Seccion { get => seccion; set => seccion = value; }
         public bool DobleAislacion { get => dobleAislacion; set => dobleAislacion = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
+        public int UltimoId { get => ultimoId; set => ultimoId = value; }
+
         public Cable Obtener()
         {
             return new Cable(this);

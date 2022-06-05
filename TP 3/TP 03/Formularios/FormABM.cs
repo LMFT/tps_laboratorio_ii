@@ -135,21 +135,30 @@ namespace Formularios
         private void btnAdicional1_Click(object sender, EventArgs e)
         {
             //Para el usuario este boton representa verificar que el nombre de usuario no exista
-            if(mostrarInfo == MostrarInfo.Empleado)
+            if (mostrarInfo == MostrarInfo.Empleado)
             {
-                ControladorABM.ValidarUsuario(txtCuartoCampo.Text);
+                try
+                {
+                    ControladorABM.ValidarUsuario(txtCuartoCampo.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
                 //Para un proveedor me permite asignar un producto ya existente
                 FormAgregar formAgregar = new FormAgregar(false);
                 formAgregar.ShowDialog();
-                if(formAgregar.DialogResult == DialogResult.OK)
+                if (formAgregar.DialogResult == DialogResult.OK)
                 {
                     ControladorABM.AgregarProductos();
                 }
             }
         }
+
+
 
         private void btnAdicional2_Click(object sender, EventArgs e)
         {
@@ -158,32 +167,41 @@ namespace Formularios
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            ConfirmarAlta();
+        }
+
+        private void ConfirmarAlta()
+        {
             string mensaje;
             string titulo;
             MessageBoxButtons boton = MessageBoxButtons.OK;
-            MessageBoxIcon icono;
+            MessageBoxIcon icono = MessageBoxIcon.Error;
             DialogResult resultado;
 
-            if(ControladorABM.CrearElemento(mostrarInfo,chkOpcionAdicional.Checked,txtPrimerCampo.Text,
-                                            txtSegundoCampo.Text,txtTercerCampo.Text,txtCuartoCampo.Text,
-                                            txtQuintoCampo.Text,rdoCable.Checked,(int)nudCantidad.Value))
+            try
             {
-                mensaje = "El alta se ha completado satisfactoriamente";
-                titulo = "Alta exitosa";
-                icono = MessageBoxIcon.Information;
-                resultado = DialogResult.OK;
+                if (ControladorABM.CrearElemento(mostrarInfo, chkOpcionAdicional.Checked, txtPrimerCampo.Text,
+                                                txtSegundoCampo.Text, txtTercerCampo.Text, txtCuartoCampo.Text,
+                                                txtQuintoCampo.Text, rdoCable.Checked, (int)nudCantidad.Value))
+                {
+                    mensaje = "El alta se ha completado satisfactoriamente";
+                    titulo = "Alta exitosa";
+                    icono = MessageBoxIcon.Information;
+                    resultado = DialogResult.OK;
+                }
+                else
+                {
+                    throw new Exception("Se produjo un error al dan de alta este elemento");
+                }
+                MessageBox.Show(mensaje, titulo, boton, icono);
+                if (resultado == DialogResult.OK)
+                {
+                    DialogResult = resultado;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                mensaje = "Se produjo un error al dar de alta este elemento";
-                titulo = "Error";
-                icono = MessageBoxIcon.Warning;
-                resultado = DialogResult.Ignore;
-            }
-            MessageBox.Show(mensaje, titulo, boton, icono);
-            if(resultado == DialogResult.OK)
-            {
-                DialogResult = resultado;
+                MessageBox.Show(ex.Message, "Error", boton,icono);
             }
         }
         private void btnCancelar_Click(object sender, EventArgs e)

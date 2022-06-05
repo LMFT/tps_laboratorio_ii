@@ -20,6 +20,7 @@ namespace Formularios
         {
             InitializeComponent();
             lblUsuario.Text = $"Hola, {ControladorMenuPrincipal.UsuarioLogeado}!";
+            lstTareas.DataSource = ControladorMenuPrincipal.Tareas;
             OcultarControles();
         }
 
@@ -33,50 +34,42 @@ namespace Formularios
                 btnInfoEmpleados.Hide();
             }
         }
-        /// <summary>
-        /// Actualiza la interfaz
-        /// </summary>
+
         private void ActualizarInterfaz()
         {
-
-        }
-
-        private void BtnNuevaVenta_Click(object sender, EventArgs e)
-        {
-            FormAgregar frm = new FormAgregar(true);
-            frm.ShowDialog();
-            ActualizarInterfaz();
-        }
-
-        private void btnAgregarPedido_Click(object sender, EventArgs e)
-        {
-            ActualizarInterfaz();
-
+            lstTareas.Update();
+            lstTareas.Refresh();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
-            ActualizarInterfaz();
         }
 
         private void Guardar()
         {
-            FolderBrowserDialog browser = new FolderBrowserDialog();
-            if (browser.ShowDialog() == DialogResult.OK)
+            try
             {
-                string ruta = browser.SelectedPath;
-                if (ruta is not null)
+                FolderBrowserDialog browser = new FolderBrowserDialog();
+                browser.Description = "Seleccione la carpeta en donde desea almacenar los archivos";
+                if (browser.ShowDialog() == DialogResult.OK)
                 {
-                    ControladorMenuPrincipal.Guardar(ruta);
+                    string ruta = browser.SelectedPath;
+                    if (ruta is not null)
+                    {
+                        ControladorMenuPrincipal.Guardar(ruta);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnStock_Click(object sender, EventArgs e)
         {
             Mostrar(MostrarInfo.Inventario);
-            ActualizarInterfaz();
         }
         /// <summary>
         /// Abre la ventana para mostrar informacion
@@ -92,13 +85,11 @@ namespace Formularios
         private void btnInfoEmpleados_Click(object sender, EventArgs e)
         {
             Mostrar(MostrarInfo.Empleado);
-            ActualizarInterfaz();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
             Mostrar(MostrarInfo.Proveedores);
-            ActualizarInterfaz();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -120,7 +111,7 @@ namespace Formularios
 
         private void FormMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string mensaje = "Esta seguro que desea salir?";
+            string mensaje = "Esta seguro que desea salir? Se perderán los cambios no guardados";
             string titulo = "Salir";
             MessageBoxButtons botones = MessageBoxButtons.YesNo;
             MessageBoxIcon icono = MessageBoxIcon.Question;
@@ -129,5 +120,99 @@ namespace Formularios
                 e.Cancel = true;
             }
         }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            Cargar();
+        }
+
+        //A implementar para TP 4
+        private void CargarDesde()
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            folderBrowserDialog.Description = "Seleccione la carpeta desde la cual cargar los archivos";
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                //ControladorMenuPrincipal.Cargar(folderBrowserDialog.SelectedPath);
+            }
+        }
+        private void Cargar()
+        {
+            try
+            {
+                ControladorMenuPrincipal.Cargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+            FormAgregar frm = new FormAgregar(true);
+            
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                FormCaja formCaja = new FormCaja();
+                formCaja.ShowDialog();
+            }
+        }
+
+        private void btnNuevaTarea_Click(object sender, EventArgs e)
+        {
+            NuevaTarea();
+        }
+
+        private void NuevaTarea()
+        {
+            FormDescripcionTarea frm = new FormDescripcionTarea();
+            if(frm.ShowDialog() == DialogResult.OK && frm.Descripcion != "")
+            {
+                ControladorMenuPrincipal.NuevaTarea(frm.Descripcion);
+            }
+            ActualizarInterfaz();
+        }
+
+        private void btnEliminarTarea_Click(object sender, EventArgs e)
+        {
+            EliminarTarea();
+        }
+
+        private void EliminarTarea()
+        {
+            try
+            {
+                ControladorMenuPrincipal.EliminarTarea(lstTareas.SelectedItem);
+                ActualizarInterfaz();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditarTarea_Click(object sender, EventArgs e)
+        {
+            EditarTarea();
+        }
+
+        private void EditarTarea()
+        {
+            try
+            {
+                FormDescripcionTarea frm = new FormDescripcionTarea(lstTareas.Text);
+                if (frm.ShowDialog() == DialogResult.OK && frm.Descripcion != "")
+                {
+                    ControladorMenuPrincipal.EditarTarea(lstTareas.SelectedIndex, frm.Descripcion);
+                }
+                ActualizarInterfaz();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

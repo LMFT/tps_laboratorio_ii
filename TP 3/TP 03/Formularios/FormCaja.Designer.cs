@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rtxtInfoMesa = new System.Windows.Forms.RichTextBox();
+            this.rtxtListaProductos = new System.Windows.Forms.RichTextBox();
             this.grpMetodoPago = new System.Windows.Forms.GroupBox();
             this.lblCuotas = new System.Windows.Forms.Label();
             this.nudCuotas = new System.Windows.Forms.NumericUpDown();
@@ -41,14 +41,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCuotas)).BeginInit();
             this.SuspendLayout();
             // 
-            // rtxtInfoMesa
+            // rtxtListaProductos
             // 
-            this.rtxtInfoMesa.BackColor = System.Drawing.Color.NavajoWhite;
-            this.rtxtInfoMesa.Location = new System.Drawing.Point(12, 12);
-            this.rtxtInfoMesa.Name = "rtxtInfoMesa";
-            this.rtxtInfoMesa.Size = new System.Drawing.Size(201, 279);
-            this.rtxtInfoMesa.TabIndex = 0;
-            this.rtxtInfoMesa.Text = "Informacion de la mesa";
+            this.rtxtListaProductos.BackColor = System.Drawing.Color.NavajoWhite;
+            this.rtxtListaProductos.Location = new System.Drawing.Point(12, 12);
+            this.rtxtListaProductos.Name = "rtxtListaProductos";
+            this.rtxtListaProductos.Size = new System.Drawing.Size(201, 279);
+            this.rtxtListaProductos.TabIndex = 0;
+            this.rtxtListaProductos.Text = "Informacion de los productos";
             // 
             // grpMetodoPago
             // 
@@ -73,7 +73,7 @@
             this.lblCuotas.TabIndex = 4;
             this.lblCuotas.Text = "Cuotas";
             // 
-            // numericUpDown1
+            // nudCuotas
             // 
             this.nudCuotas.Location = new System.Drawing.Point(145, 58);
             this.nudCuotas.Maximum = new decimal(new int[] {
@@ -86,7 +86,7 @@
             0,
             0,
             0});
-            this.nudCuotas.Name = "numericUpDown1";
+            this.nudCuotas.Name = "nudCuotas";
             this.nudCuotas.Size = new System.Drawing.Size(58, 23);
             this.nudCuotas.TabIndex = 3;
             this.nudCuotas.Value = new decimal(new int[] {
@@ -163,7 +163,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCobrar);
             this.Controls.Add(this.grpMetodoPago);
-            this.Controls.Add(this.rtxtInfoMesa);
+            this.Controls.Add(this.rtxtListaProductos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormCaja";
             this.Text = "Cobrar";
@@ -177,7 +177,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox rtxtInfoMesa;
+        private System.Windows.Forms.RichTextBox rtxtListaProductos;
         private System.Windows.Forms.GroupBox grpMetodoPago;
         private System.Windows.Forms.RadioButton rdoDebito;
         private System.Windows.Forms.RadioButton rdoCredito;

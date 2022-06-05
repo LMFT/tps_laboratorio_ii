@@ -14,12 +14,6 @@ namespace Logica.MenuPrincipal
 {
     public static class ControladorMenuPrincipal
     {
-        private static List<Tarea> tareasPendientes;
-
-        static ControladorMenuPrincipal()
-        {
-            tareasPendientes = new List<Tarea>();
-        }
         public static string UsuarioLogeado
         {
             get
@@ -33,6 +27,14 @@ namespace Logica.MenuPrincipal
             get
             {
                 return (int)ControladorLogin.UsuarioLogeado.Permisos > 0;
+            }
+        }
+
+        public static ImmutableList<Tarea> Tareas
+        {
+            get
+            {
+                return CasaElectronica.Tareas;
             }
         }
 
@@ -59,12 +61,50 @@ namespace Logica.MenuPrincipal
 
         public static void NuevaTarea(string descripcion)
         {
-            tareasPendientes.Add(new Tarea(descripcion));
+            if (string.IsNullOrWhiteSpace(descripcion))
+            {
+                throw new ArgumentException("Esta descripcion no es valida");
+            }
+            CasaElectronica.NuevaTarea(descripcion);
+        }
+
+        public static void EditarTarea(object elemento, string descripcion)
+        {
+            try
+            {
+                if(elemento is null)
+                {
+                    throw new NullReferenceException("No hay ningun objeto seleccionado");
+                }
+                if (string.IsNullOrWhiteSpace(descripcion))
+                {
+                    throw new ArgumentException("Esta descripcion no es valida");
+                }
+                CasaElectronica.EditarTarea(elemento, descripcion);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+        }
+
+        public static void EliminarTarea(object objeto)
+        {
+            if(objeto is null)
+            {
+                throw new NullReferenceException("No hay ninguna tarea seleccionada");
+            }
+            CasaElectronica.EliminarTarea(objeto);
         }
 
         public static void Guardar(string ruta)
         {
             CasaElectronica.Guardar(ruta);
+        }
+
+        public static void Cargar()
+        {
+            CasaElectronica.Cargar();
         }
     }
 }

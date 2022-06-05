@@ -7,7 +7,9 @@ using System.Xml.Serialization;
 
 namespace Entidades
 {
+    [XmlInclude(typeof(Cable))]
     [XmlInclude(typeof(CableInterno))]
+    [XmlInclude(typeof(Componente))]
     [XmlInclude(typeof(ComponenteInterno))]
     public class Producto
     {
@@ -67,7 +69,7 @@ namespace Entidades
         {
             get
             {
-                return Marca;
+                return marca;
             }
         }
 

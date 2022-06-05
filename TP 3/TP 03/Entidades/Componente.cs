@@ -26,6 +26,7 @@ namespace Entidades
 
         internal Componente(ComponenteInterno componente)
         {
+            ultimoId = componente.UltimoId;
             id = componente.Id;
             descripcion = componente.Descripcion;
             precio = componente.Precio;
@@ -47,6 +48,14 @@ namespace Entidades
             get
             {
                 return unidadMedicion;
+            }
+        }
+
+        internal static int UltimoId
+        {
+            get
+            {
+                return ultimoId;
             }
         }
 

@@ -14,9 +14,25 @@
           "Logica.dll": {}
         }
       },
+      "Almacenamiento/1.0.0": {
+        "dependencies": {
+          "Interfaces": "1.0.0"
+        },
+        "runtime": {
+          "Almacenamiento.dll": {}
+        }
+      },
       "Entidades/1.0.0": {
+        "dependencies": {
+          "Almacenamiento": "1.0.0"
+        },
         "runtime": {
           "Entidades.dll": {}
+        }
+      },
+      "Interfaces/1.0.0": {
+        "runtime": {
+          "Interfaces.dll": {}
         }
       }
     }
@@ -27,7 +43,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Almacenamiento/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Entidades/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

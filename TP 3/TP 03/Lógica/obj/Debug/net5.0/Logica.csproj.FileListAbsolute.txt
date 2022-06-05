@@ -28,3 +28,7 @@ D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Deb
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\refint\Logica.dll
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\Logica.pdb
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\obj\Debug\net5.0\ref\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\bin\Debug\net5.0\Almacenamiento.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\bin\Debug\net5.0\Interfaces.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\bin\Debug\net5.0\Almacenamiento.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Lógica\bin\Debug\net5.0\Interfaces.pdb

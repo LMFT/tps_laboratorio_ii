@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class UsuarioInterno : Persona,IObtener<Usuario>
+    public class UsuarioInterno : Persona,IObtener<Usuario>
     {
         private string nombreUsuario;
         private string password;

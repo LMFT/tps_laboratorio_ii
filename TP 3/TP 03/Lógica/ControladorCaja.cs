@@ -1,5 +1,6 @@
 ﻿using Entidades;
 
+using Logica.AgregarPedidos;
 using Logica.MenuPrincipal;
 
 using System;
@@ -29,11 +30,32 @@ namespace Logica.Caja
         /// <summary>
         /// Registra una nueva operacion en el historial
         /// </summary>
-        /// <param name="indiceMesa">Indice de la mesa sobre la cual hicimos la operacion</param>
         /// <returns>Retorna true si pudo añadir la operacion exitosamente, de lo contrario false</returns>
-        public static bool Cobrar(int indiceMesa)
+        public static bool Cobrar()
         {
-            return CasaElectronica.NuevaOperacion(indiceMesa);
+            try
+            {
+                bool operacionExitosa = CasaElectronica.NuevaOperacion(ControladorAgregar.Productos);
+                if (operacionExitosa)
+                  {
+                    ControladorAgregar.LimpiarProductos();
+                  }
+                return operacionExitosa;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static string MostrarVenta()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(Producto producto in ControladorAgregar.Productos)
+            {
+                sb.AppendLine($"{producto.Mostrar()}\n");
+            }
+            return sb.ToString();
         }
     }
 }

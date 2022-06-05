@@ -75,6 +75,7 @@ namespace Logica.AgregarPedidos
         /// <param name="elemento">Elemento a eliminar</param>
         /// <param name="cantidad">Cantidad a eliminar. De superar la cantidad de items pedidos anteriormente, 
         /// elimina el pedido de la lista</param>
+        /// <exception cref="NullReferenceException">Si no hay elementos seleccionados lanza esta excepcion</exception>
         public static bool EliminarPedido(object elemento, int cantidad)
         {
             if (elemento is not null && elemento is Producto producto)
@@ -91,13 +92,14 @@ namespace Logica.AgregarPedidos
                     }
                 }
             }
-            return false;
+            throw new NullReferenceException("No hay ningun elemento seleccionado");
         }
         /// <summary>
         /// Prepara un pedido, consumiendo elementos del inventario para prepararlo
         /// </summary>
         /// <param name="producto">Consumible a preparar</param>
         /// <returns>Retorna true si el pedido pudo prepararse correctamente. De lo contrario false</returns>
+        /// <exception cref="NullReferenceException">Si no hay elementos seleccionados lanza esta excepcion</exception>
         public static bool PrepararPedido(Producto producto, int cantidad)
         {
             if(producto is not null && CasaElectronica.HayStock(producto))
@@ -107,7 +109,7 @@ namespace Logica.AgregarPedidos
                 CasaElectronica.RetirarDeStock(producto, cantidad);
 
             }
-            return false;
+            throw new NullReferenceException("No hay ningun elemento seleccionado");
         }
         /// <summary>
         /// Limpia el listado de pedidos para reutilizar la ventana
@@ -116,18 +118,27 @@ namespace Logica.AgregarPedidos
         {
             pedidosCliente.Clear();
         }
-
+        /// <summary>
+        /// Agrega un producto al listado de pedidos
+        /// </summary>
+        /// <param name="elemento">Elemento a agregar</param>
+        /// <exception cref="NullReferenceException">Si no hay elementos seleccionados lanza esta excepcion</exception>
         public static void AgregarProducto(object elemento)
         {
-            if(elemento is ElementoStock<Producto> elementoStock)
+            if(elemento is not null && elemento is ElementoStock<Producto> elementoStock)
             {
                 productosProveedor.Add(elementoStock.APar().Key);
             }
+            throw new NullReferenceException("No hay ningun elemento seleccionado");
         }
-
+        /// <summary>
+        /// Elimina un producto de la lista de productos disponibles
+        /// </summary>
+        /// <param name="elemento">Elemento a agregar</param>
+        /// <exception cref="NullReferenceException">Si no hay elementos seleccionados se lanza esta excepcion</exception>
         public static void EliminarProducto(object elemento)
         {
-            if (elemento is ElementoStock<Producto> elementoStock)
+            if (elemento is not null && elemento is ElementoStock<Producto> elementoStock)
             {
                 Producto producto = elementoStock.APar().Key;
                 if(productosProveedor == producto)
@@ -135,6 +146,8 @@ namespace Logica.AgregarPedidos
                     productosProveedor.Remove(elementoStock.APar().Key);
                 }
             }
+            throw new NullReferenceException("No hay ningun elemento seleccionado");
+
         }
 
         public static void LimpiarProductos()

@@ -11,16 +11,32 @@ namespace Entidades
         private static int ultimoId;
         private int id;
         private decimal total;
+        private List<Producto> productos;
 
         static Operacion()
         {
             ultimoId = 0;
         }
 
-        public Operacion(decimal total)
+        public Operacion()
+        {
+            id = 0;
+            total = 0;
+            productos = new List<Producto>();
+        }
+
+        public Operacion(List<Producto> productos)
         {
             id = ++ultimoId;
+            this.productos = new List<Producto>(productos);
+            total = CalcularTotal(productos);
+        }
+
+        internal Operacion(int id,decimal total, List<Producto> productos)
+        {
+            this.id = id;
             this.total = total;
+            this.productos = new List<Producto>(productos);
         }
 
         public int Id
@@ -36,6 +52,14 @@ namespace Entidades
             get
             {
                 return total;
+            }
+        }
+
+        internal List<Producto> Productos
+        {
+            get
+            {
+                return productos;
             }
         }
 
@@ -82,6 +106,16 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Numero de operacion: {id}");
             return sb.ToString();
+        }
+
+        private decimal CalcularTotal(List<Producto> productos)
+        {
+            decimal total = 0;
+            foreach(Producto producto in productos)
+            {
+                total += producto.Precio;
+            }
+            return total;
         }
     }
 }

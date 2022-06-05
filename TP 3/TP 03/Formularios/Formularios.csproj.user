@@ -5,7 +5,7 @@
     <Compile Update="FormABM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormVentas.cs">
+    <Compile Update="FormAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormAutoCompletar.cs">

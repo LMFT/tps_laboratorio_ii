@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class ComponenteInterno : Producto, IObtener<Componente>
+    public class ComponenteInterno : Producto, IObtener<Componente>
     {
         private double capacidad;
         private string unidadMedicion;
@@ -44,6 +44,7 @@ namespace Entidades
         public double Capacidad { get => capacidad; set => capacidad = value; }
         public string UnidadMedicion { get => unidadMedicion; set => unidadMedicion = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
+        public int UltimoId { get => ultimoId; set => ultimoId = value; }
 
         public Componente Obtener()
         {

@@ -36,21 +36,19 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnNuevaTarea = new System.Windows.Forms.Button();
+            this.btnEditarTarea = new System.Windows.Forms.Button();
+            this.btnEliminarTarea = new System.Windows.Forms.Button();
             this.lblBusqueda = new System.Windows.Forms.Label();
-            this.dgvMostrarInformacion = new System.Windows.Forms.DataGridView();
             this.btnCargar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarInformacion)).BeginInit();
+            this.lstTareas = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblUsuario.Location = new System.Drawing.Point(134, 9);
+            this.lblUsuario.Location = new System.Drawing.Point(12, 9);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(123, 21);
             this.lblUsuario.TabIndex = 1;
@@ -61,17 +59,18 @@
             this.btnVenta.BackColor = System.Drawing.Color.Moccasin;
             this.btnVenta.Location = new System.Drawing.Point(12, 45);
             this.btnVenta.Name = "btnVenta";
-            this.btnVenta.Size = new System.Drawing.Size(372, 23);
+            this.btnVenta.Size = new System.Drawing.Size(372, 28);
             this.btnVenta.TabIndex = 3;
             this.btnVenta.Text = "Nueva venta";
             this.btnVenta.UseVisualStyleBackColor = false;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Moccasin;
-            this.btnGuardar.Location = new System.Drawing.Point(12, 190);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 181);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(372, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(372, 28);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -80,9 +79,9 @@
             // btnInfoEmpleados
             // 
             this.btnInfoEmpleados.BackColor = System.Drawing.Color.Moccasin;
-            this.btnInfoEmpleados.Location = new System.Drawing.Point(12, 161);
+            this.btnInfoEmpleados.Location = new System.Drawing.Point(12, 147);
             this.btnInfoEmpleados.Name = "btnInfoEmpleados";
-            this.btnInfoEmpleados.Size = new System.Drawing.Size(372, 23);
+            this.btnInfoEmpleados.Size = new System.Drawing.Size(372, 28);
             this.btnInfoEmpleados.TabIndex = 6;
             this.btnInfoEmpleados.Text = "Informacion Empleados";
             this.btnInfoEmpleados.UseVisualStyleBackColor = false;
@@ -91,9 +90,9 @@
             // btnStock
             // 
             this.btnStock.BackColor = System.Drawing.Color.Moccasin;
-            this.btnStock.Location = new System.Drawing.Point(12, 103);
+            this.btnStock.Location = new System.Drawing.Point(12, 79);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(372, 23);
+            this.btnStock.Size = new System.Drawing.Size(372, 28);
             this.btnStock.TabIndex = 8;
             this.btnStock.Text = "Stock";
             this.btnStock.UseVisualStyleBackColor = false;
@@ -102,9 +101,9 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Moccasin;
-            this.btnSalir.Location = new System.Drawing.Point(220, 287);
+            this.btnSalir.Location = new System.Drawing.Point(220, 276);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(164, 23);
+            this.btnSalir.Size = new System.Drawing.Size(164, 34);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -113,9 +112,9 @@
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.BackColor = System.Drawing.Color.Moccasin;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(12, 287);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(12, 276);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(173, 23);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(173, 34);
             this.btnCerrarSesion.TabIndex = 13;
             this.btnCerrarSesion.Text = "Cerrar Sesion";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
@@ -124,81 +123,76 @@
             // btnProveedores
             // 
             this.btnProveedores.BackColor = System.Drawing.Color.Moccasin;
-            this.btnProveedores.Location = new System.Drawing.Point(12, 132);
+            this.btnProveedores.Location = new System.Drawing.Point(12, 113);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(372, 23);
+            this.btnProveedores.Size = new System.Drawing.Size(372, 28);
             this.btnProveedores.TabIndex = 15;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // button3
+            // btnNuevaTarea
             // 
-            this.button3.BackColor = System.Drawing.Color.Moccasin;
-            this.button3.Location = new System.Drawing.Point(432, 287);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 23);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Cerrar Sesion";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnNuevaTarea.BackColor = System.Drawing.Color.Moccasin;
+            this.btnNuevaTarea.Location = new System.Drawing.Point(422, 276);
+            this.btnNuevaTarea.Name = "btnNuevaTarea";
+            this.btnNuevaTarea.Size = new System.Drawing.Size(122, 34);
+            this.btnNuevaTarea.TabIndex = 19;
+            this.btnNuevaTarea.Text = "Nueva Tarea";
+            this.btnNuevaTarea.UseVisualStyleBackColor = false;
+            this.btnNuevaTarea.Click += new System.EventHandler(this.btnNuevaTarea_Click);
             // 
-            // button4
+            // btnEditarTarea
             // 
-            this.button4.BackColor = System.Drawing.Color.Moccasin;
-            this.button4.Location = new System.Drawing.Point(525, 287);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 23);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Cerrar Sesion";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnEditarTarea.BackColor = System.Drawing.Color.Moccasin;
+            this.btnEditarTarea.Location = new System.Drawing.Point(550, 276);
+            this.btnEditarTarea.Name = "btnEditarTarea";
+            this.btnEditarTarea.Size = new System.Drawing.Size(122, 34);
+            this.btnEditarTarea.TabIndex = 22;
+            this.btnEditarTarea.Text = "Editar Tarea";
+            this.btnEditarTarea.UseVisualStyleBackColor = false;
+            this.btnEditarTarea.Click += new System.EventHandler(this.btnEditarTarea_Click);
             // 
-            // button5
+            // btnEliminarTarea
             // 
-            this.button5.BackColor = System.Drawing.Color.Moccasin;
-            this.button5.Location = new System.Drawing.Point(625, 287);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 23);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Cerrar Sesion";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Moccasin;
-            this.button6.Location = new System.Drawing.Point(718, 287);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 23);
-            this.button6.TabIndex = 24;
-            this.button6.Text = "Cerrar Sesion";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnEliminarTarea.BackColor = System.Drawing.Color.Moccasin;
+            this.btnEliminarTarea.Location = new System.Drawing.Point(678, 276);
+            this.btnEliminarTarea.Name = "btnEliminarTarea";
+            this.btnEliminarTarea.Size = new System.Drawing.Size(122, 34);
+            this.btnEliminarTarea.TabIndex = 23;
+            this.btnEliminarTarea.Text = "Eliminar Tarea";
+            this.btnEliminarTarea.UseVisualStyleBackColor = false;
+            this.btnEliminarTarea.Click += new System.EventHandler(this.btnEliminarTarea_Click);
             // 
             // lblBusqueda
             // 
             this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(432, 27);
+            this.lblBusqueda.Location = new System.Drawing.Point(432, 15);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(45, 15);
             this.lblBusqueda.TabIndex = 26;
             this.lblBusqueda.Text = "Buscar:";
             // 
-            // dgvMostrarInformacion
-            // 
-            this.dgvMostrarInformacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrarInformacion.Location = new System.Drawing.Point(432, 45);
-            this.dgvMostrarInformacion.Name = "dgvMostrarInformacion";
-            this.dgvMostrarInformacion.RowTemplate.Height = 25;
-            this.dgvMostrarInformacion.Size = new System.Drawing.Size(373, 229);
-            this.dgvMostrarInformacion.TabIndex = 27;
-            // 
             // btnCargar
             // 
             this.btnCargar.BackColor = System.Drawing.Color.Moccasin;
-            this.btnCargar.Location = new System.Drawing.Point(12, 219);
+            this.btnCargar.Location = new System.Drawing.Point(12, 215);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(372, 23);
+            this.btnCargar.Size = new System.Drawing.Size(372, 28);
             this.btnCargar.TabIndex = 28;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // lstTareas
+            // 
+            this.lstTareas.BackColor = System.Drawing.Color.Moccasin;
+            this.lstTareas.FormattingEnabled = true;
+            this.lstTareas.ItemHeight = 15;
+            this.lstTareas.Location = new System.Drawing.Point(422, 45);
+            this.lstTareas.Name = "lstTareas";
+            this.lstTareas.Size = new System.Drawing.Size(378, 214);
+            this.lstTareas.TabIndex = 29;
             // 
             // FormMenuPrincipal
             // 
@@ -207,13 +201,12 @@
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(829, 315);
             this.ControlBox = false;
+            this.Controls.Add(this.lstTareas);
             this.Controls.Add(this.btnCargar);
-            this.Controls.Add(this.dgvMostrarInformacion);
             this.Controls.Add(this.lblBusqueda);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnEliminarTarea);
+            this.Controls.Add(this.btnEditarTarea);
+            this.Controls.Add(this.btnNuevaTarea);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnSalir);
@@ -230,7 +223,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMenuPrincipal_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarInformacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,12 +237,11 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnProveedores;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnNuevaTarea;
+        private System.Windows.Forms.Button btnEditarTarea;
+        private System.Windows.Forms.Button btnEliminarTarea;
         private System.Windows.Forms.Label lblBusqueda;
-        private System.Windows.Forms.DataGridView dgvMostrarInformacion;
         private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.ListBox lstTareas;
     }
 }

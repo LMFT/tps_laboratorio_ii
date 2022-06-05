@@ -41,20 +41,31 @@ namespace Logica.ABM
                                           string segundoCampo, string tercerCampo, string cuartoCampo, 
                                           string quintoCampo, bool rdoCable, int cantidad)
         {
-            switch (mostrarInfo)
+            try
             {
-                //En el caso de un usuario, el primer campo representa nombre, segundo apellido, tercero DNI, cuato usuario,
-                //quinto pass. El booleano representa el nivel de permisos
-                case MostrarInfo.Empleado:
-                    return NuevoEmpleado(primerCampo, segundoCampo, tercerCampo, opcionCheckbox, cuartoCampo, quintoCampo);
-                case MostrarInfo.Producto:
-                    if (rdoCable)
-                    {
-                        return NuevoProducto(primerCampo, segundoCampo, tercerCampo, cuartoCampo, opcionCheckbox, cantidad);
-                    }
-                    return NuevoProducto(primerCampo,segundoCampo,tercerCampo,cuartoCampo,quintoCampo,cantidad);
-                default:
-                    return NuevoProveedor(primerCampo,segundoCampo,tercerCampo);
+                switch (mostrarInfo)
+                {
+                    //En el caso de un usuario, el primer campo representa nombre, segundo apellido, tercero DNI, cuato usuario,
+                    //quinto pass. El booleano representa el nivel de permisos
+                    case MostrarInfo.Empleado:
+                        return NuevoEmpleado(primerCampo, segundoCampo, tercerCampo, opcionCheckbox, cuartoCampo, quintoCampo);
+                    //Para los productos evaluo que radioButton estaba seleccionado al ingresar al método. Segun el resultado,
+                    //cambia el objeto a instanciar
+                    case MostrarInfo.Producto:
+                        if (rdoCable)
+                        {
+                            
+                            return NuevoProducto(primerCampo, segundoCampo, tercerCampo, cuartoCampo, opcionCheckbox, cantidad);
+                        }
+                        return NuevoProducto(primerCampo,segundoCampo,tercerCampo,cuartoCampo,quintoCampo,cantidad);
+                    //Por defecto, si no es un producto o empleado, es un proveedor
+                    default:
+                        return NuevoProveedor(primerCampo,segundoCampo,tercerCampo);
+                }
+            }
+            catch(Exception)
+            {
+                throw;
             }
         }
 
@@ -64,14 +75,42 @@ namespace Logica.ABM
             Permisos permisos = Permisos.Empleado;
             if (int.TryParse(dni, out int dniInt))
             {
+                if(string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido))
+                {
+                    throw new NullReferenceException("Verifique que tanto el nombre como el apellido " +
+                        "contengan caracteres");
+                }
                 if (administrador)
                 {
                     permisos = Permisos.Administrador;
                 }
-                Usuario usuario = new Usuario(nombre, apellido, dniInt, permisos, nombreUsuario, password);
+                Usuario usuario = InstanciarUsuario(nombre,apellido,dniInt,permisos,nombreUsuario,password);
+                
                 return CasaElectronica.AltaEmpleado(usuario);
             }
-            return false;
+            throw new ArgumentException("Verifique que el valor del campo DNI" +
+                " sea numérico");
+        }
+
+        private static Usuario InstanciarUsuario(string nombre, string apellido, int dni, Permisos permisos,
+                                          string nombreUsuario, string password)
+        {
+            Usuario usuario;
+            switch (string.IsNullOrWhiteSpace(password))
+            {
+                case false:
+                    usuario = new Usuario(nombre, apellido, dni, permisos, nombreUsuario, password);
+                    break;
+                case true:
+                    if (string.IsNullOrWhiteSpace(nombreUsuario))
+                    {
+                        usuario = new Usuario(nombre, apellido, dni, permisos);
+                        break;
+                    }
+                    usuario = new Usuario(nombre, apellido, dni, permisos, nombreUsuario);
+                    break;
+            }
+            return usuario;
         }
 
         private static bool NuevoProducto(string nombre, string precio, string marca, string seccion,bool dobleAislacion,
@@ -79,10 +118,17 @@ namespace Logica.ABM
         {
             if(decimal.TryParse(precio, out decimal precioDecimal) && double.TryParse(seccion, out double seccionDouble))
             {
+                if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(marca))
+                {
+                    throw new NullReferenceException("La informacion ingresada no es válida. Verifique que el nombre y la" +
+                        " marca del cable contengan caracteres");
+                }
                 Producto producto = new Cable(nombre, precioDecimal, marca, seccionDouble, dobleAislacion);
                 return CasaElectronica.AltaProducto(producto, cantidad);
             }
-            return false;
+            throw new ArgumentException("La informacion ingresada no es válida. Verifique que el valor de los campos " +
+                "precio y seccion sean numéricos");
+                
         }
 
         private static bool NuevoProducto(string nombre, string precio, string marca, string capacidad, 
@@ -91,29 +137,56 @@ namespace Logica.ABM
             if (decimal.TryParse(precio, out decimal precioDecimal) && 
                 double.TryParse(capacidad, out double capacidadDouble))
             {
+                if(string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(marca)  ||
+                   string.IsNullOrWhiteSpace(unidadMedicion))
+                {
+                    throw new NullReferenceException("La informacion ingresada no es válida. Verifique que el nombre, marca" +
+                        "y la unidad de medicion del componente contengan caracteres");
+                }
                 Producto producto = new Componente(nombre, precioDecimal, marca, capacidadDouble, unidadMedicion);
                 return CasaElectronica.AltaProducto(producto, cantidad);
             }
-            return false;
+            throw new ArgumentException("La informacion ingresada no es válida. Verifique que el valor de los campos pre" +
+                "cio y capacidad sean numéricos");
         }
-
+        /// <summary>
+        /// Da de alta un nuevo proveedor
+        /// </summary>
+        /// <param name="nombre">Nombre del proveedor</param>
+        /// <param name="apellido">Apellido del proveedor</param>
+        /// <param name="dniStr">Dni del proveedor</param>
+        /// <returns>Retorna true si pudo dar de alta al proveedor, de lo contrario false</returns>
+        /// <exception cref="ArgumentException">Si alguno de los parametros no es válido para crear un proveedor
+        /// lanza esta extepcion</exception>
         private static bool NuevoProveedor(string nombre, string apellido, string dniStr)
         {
             if(int.TryParse(dniStr, out int dni))
             {
-                Proveedor proveedor = new Proveedor(nombre,apellido,dni, productosDisponibles);
-                return CasaElectronica.AltaProveedor(proveedor);
+                if(!string.IsNullOrWhiteSpace(nombre) && !string.IsNullOrWhiteSpace(apellido))
+                {
+                    Proveedor proveedor = new Proveedor(nombre,apellido,dni, productosDisponibles);
+                    return CasaElectronica.AltaProveedor(proveedor);
+                }
             }
-            return false;
+            throw new ArgumentException("La informacion ingresada no es válida. Verifique que los campos nombre y" +
+                "apellido contengan caracteres ademas del espacio, y que el campo DNI sea numérico");
         }
+
         /// <summary>
         /// Valida que el nombre de usuario ingresado no esté ya registrado
         /// </summary>
         /// <param name="nombreUsuario">Nombre de usuario a validar</param>
         /// <returns>Retorna true si ningun usuario ocupa el nombre de usuario. Caso
         /// contrario retorna false</returns>
+        /// <exception cref="ArgumentException">En caso de recibir un null, texto vacio o con solo espacios en blanco
+        /// lanza una nueva ArgumentException</exception>
         public static bool ValidarUsuario(string nombreUsuario)
         {
+            if (string.IsNullOrWhiteSpace(nombreUsuario))
+            {
+                throw new ArgumentException("El nombre de usuario está vacío, " +
+                                            " ingrese un nombre de usuario e intente nuevamente");
+            }
             foreach(Usuario usuario in CasaElectronica.Personal)
             {
                 if(usuario.NombreUsuario == nombreUsuario)
@@ -123,28 +196,7 @@ namespace Logica.ABM
             }
             return true;
         }
-        /// <summary>
-        /// Genera un nombre de usuario por defecto y valida que no exista
-        /// </summary>
-        /// <param name="nombre">Nombre de la persona</param>
-        /// <param name="apellido">Apellido de la persona</param>
-        /// <returns>Nombre de usuario generado automáticamente, garantizando que no se repite</returns>
-        public static string GenerarUsuario(string nombre, string apellido)
-        {
-            string nombreUsuario = Usuario.GenerarNombreUsuario(nombre, apellido);
-            int i = 0;
-            while (!ValidarUsuario(nombreUsuario))
-            {
-                i++;
-                nombreUsuario = Usuario.GenerarNombreUsuario(nombre, apellido) + i.ToString();
-            }
-            return nombreUsuario;
-        }
 
-        public static bool EsComponente(object elemento)
-        {
-            return elemento is Componente;
-        }
 
         public static void AgregarProductos()
         {

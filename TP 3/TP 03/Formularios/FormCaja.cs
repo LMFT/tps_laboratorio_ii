@@ -14,40 +14,9 @@ namespace Formularios
 {
     public partial class FormCaja : Form
     {
-        private int indiceMesa;
-        private FormCaja()
+        public FormCaja()
         {
             InitializeComponent();
-        }
-
-        public FormCaja(int indiceMesa) : this()
-        {
-            this.indiceMesa = indiceMesa;
-        }
-        /// <summary>
-        /// Cambia el color de la aplicacion en base a los permisos del usuario logueado
-        /// </summary>
-        private void CambiarColor()
-        {
-            if (!ControladorCaja.UsuarioEsAdmin)
-            {
-                BackColor = Color.LightSkyBlue;
-                rtxtInfoMesa.BackColor = Color.LightBlue;
-                nudCuotas.BackColor = Color.LightBlue;
-                foreach (Control control in Controls.OfType<Button>())
-                {
-                    control.BackColor = Color.PowderBlue;
-                }
-            }
-            else
-            {
-                BackColor = Color.Tan;
-                rtxtInfoMesa.BackColor = Color.NavajoWhite;
-                foreach (Control control in Controls.OfType<Button>())
-                {
-                    control.BackColor = Color.Moccasin;
-                }
-            }
         }
 
         private void FormCaja_Load(object sender, EventArgs e)
@@ -59,7 +28,7 @@ namespace Formularios
         /// </summary>
         private void ActualizarInterfaz()
         {
-            rtxtInfoMesa.Text = String.Empty;
+            rtxtListaProductos.Text = ControladorCaja.MostrarVenta();
         }
 
         private void btnCobrar_Click(object sender, EventArgs e)
@@ -73,28 +42,32 @@ namespace Formularios
         private void Cobrar()
         {
             string mensaje;
-            string titulo;
+            string titulo = "Error";
             MessageBoxButtons boton = MessageBoxButtons.OK;
-            MessageBoxIcon icono;
-            DialogResult resultado;
-            if (ControladorCaja.Cobrar(indiceMesa))
+            MessageBoxIcon icono = MessageBoxIcon.Error;
+            DialogResult resultado = DialogResult.Abort;
+            try
             {
-                mensaje = "Operacion realizada con exito";
-                titulo = "Operacion realizada";
-                icono = MessageBoxIcon.Information;
-                resultado = DialogResult.OK;
+                if (ControladorCaja.Cobrar())
+                {
+                    mensaje = "Operacion realizada con exito";
+                    titulo = "Operacion realizada";
+                    icono = MessageBoxIcon.Information;
+                    resultado = DialogResult.OK;
+                }
+                else
+                {
+                    throw new Exception("No se pudo realizar el cobro de esta venta");
+                }
+                MessageBox.Show(mensaje,titulo,boton, icono);
+                if(resultado == DialogResult.OK)
+                {
+                    DialogResult = resultado;
+                }
             }
-            else
+            catch(Exception ex)
             {
-                mensaje = "No se pudo realizar el cobro del producto";
-                titulo = "Operacion fallida";
-                icono = MessageBoxIcon.Error;
-                resultado = DialogResult.Abort;
-            }
-            MessageBox.Show(mensaje,titulo,boton, icono);
-            if(resultado == DialogResult.OK)
-            {
-                DialogResult = resultado;
+                MessageBox.Show(ex.Message, titulo, boton, icono);
             }
         }
 
