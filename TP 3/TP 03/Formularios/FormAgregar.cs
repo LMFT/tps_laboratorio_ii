@@ -25,6 +25,7 @@ namespace Formularios
         public FormAgregar(bool venta) : this()
         {
             this.venta = venta;
+            ActualizarInterfaz();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -92,10 +93,17 @@ namespace Formularios
         /// </summary>
         private void ActualizarInterfaz()
         {
-            lstAgregados.Update();
-            lstExistencias.Update();
-            lstAgregados.Refresh();
-            lstExistencias.Refresh();
+            lstExistencias.DataSource = null;
+            lstExistencias.DataSource = ControladorAgregar.Inventario;
+            lstAgregados.DataSource = null;
+            if (venta)
+            {
+                lstAgregados.DataSource = ControladorAgregar.PedidosCliente;
+            }
+            else
+            {
+                lstAgregados.DataSource = ControladorAgregar.ProductosProveedor;
+            }
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -121,7 +129,6 @@ namespace Formularios
 
         private void FormVentas_Load(object sender, EventArgs e)
         {
-            lstAgregados.DataSource = ControladorAgregar.Inventario;
             if (!venta)
             {
                 nudCantidad.Hide();

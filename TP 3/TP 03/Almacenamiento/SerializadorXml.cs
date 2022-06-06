@@ -10,14 +10,19 @@ using System.Xml.Serialization;
 
 namespace Almacenamiento
 {
-    public class SerializadorXml<T> : IAlmacenar<T>  where T : new()
+    public class SerializadorXml<T> where T : new()
     {
         public SerializadorXml()
         {
 
         }
 
-
+        /// <summary>
+        /// Carga un listado de objeto desde un archivo xml
+        /// </summary>
+        /// <param name="ruta">Ruta del archivo</param>
+        /// <param name="nombreArchivo">Nombre del archivo</param>
+        /// <returns></returns>
         public List<T> Cargar(string ruta, string nombreArchivo)
         {
             string rutaCompleta = ruta + @"\" + nombreArchivo;
@@ -32,7 +37,12 @@ namespace Almacenamiento
             }
             return null;
         }
-
+        /// <summary>
+        /// Guarda una lista en un archivo serializado en xml
+        /// </summary>
+        /// <param name="coleccion">Lista a guardar</param>
+        /// <param name="ruta">Directorio en el cual guardar el archivo</param>
+        /// <param name="nombre">Nombre del archivo</param>
         public void Guardar(List<T> coleccion, string ruta, string nombre)
         {
             string rutaCompleta = GetRutaCompleta(ruta,nombre);
@@ -46,7 +56,12 @@ namespace Almacenamiento
                 }
             }
         }
-
+        /// <summary>
+        /// Retorna una unica ruta hacia un archivo, a partir de una ruta a un directorio y el nombre de un archivo
+        /// </summary>
+        /// <param name="ruta">Directorio del archivo</param>
+        /// <param name="nombre">Nombre del archivo</param>
+        /// <returns>Retorna una cadena con la ruta absoluta hacia un archivo</returns>
         private string GetRutaCompleta(string ruta, string nombre)
         {
             ruta = ruta.Trim();

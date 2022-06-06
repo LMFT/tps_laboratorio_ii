@@ -37,8 +37,8 @@ namespace Formularios
 
         private void ActualizarInterfaz()
         {
-            lstTareas.Update();
-            lstTareas.Refresh();
+            lstTareas.DataSource = null;
+            lstTareas.DataSource = ControladorMenuPrincipal.Tareas;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -162,6 +162,7 @@ namespace Formularios
         private void btnNuevaTarea_Click(object sender, EventArgs e)
         {
             NuevaTarea();
+            ActualizarInterfaz();
         }
 
         private void NuevaTarea()
@@ -171,12 +172,12 @@ namespace Formularios
             {
                 ControladorMenuPrincipal.NuevaTarea(frm.Descripcion);
             }
-            ActualizarInterfaz();
         }
 
         private void btnEliminarTarea_Click(object sender, EventArgs e)
         {
             EliminarTarea();
+            ActualizarInterfaz();
         }
 
         private void EliminarTarea()
@@ -195,6 +196,7 @@ namespace Formularios
         private void btnEditarTarea_Click(object sender, EventArgs e)
         {
             EditarTarea();
+            ActualizarInterfaz();
         }
 
         private void EditarTarea()

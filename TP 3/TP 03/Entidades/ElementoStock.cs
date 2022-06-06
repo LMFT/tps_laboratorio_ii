@@ -104,5 +104,10 @@ namespace Entidades
             }
             return resultado;
         }
+
+        public override string ToString()
+        {
+            return producto.ToString();
+        }
     }
 }

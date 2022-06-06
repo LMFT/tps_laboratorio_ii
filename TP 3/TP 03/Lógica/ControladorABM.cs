@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Entidades;
 
 using Logica.AgregarPedidos;
+using Logica.Login;
 using Logica.MenuPrincipal;
 
 using Mostrar;
@@ -19,9 +20,11 @@ namespace Logica.ABM
         {
             get
             {
-                return ControladorMenuPrincipal.UsuarioEsAdmin;
+                return ControladorLogin.UsuarioLogeado.Permisos == Permisos.Administrador;
             }
         }
+
+
         /// <summary>
         /// Instancia un nuevo elemento del tipo solicitado
         /// </summary>

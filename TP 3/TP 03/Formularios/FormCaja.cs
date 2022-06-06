@@ -17,6 +17,7 @@ namespace Formularios
         public FormCaja()
         {
             InitializeComponent();
+            ActualizarInterfaz();
         }
 
         private void FormCaja_Load(object sender, EventArgs e)

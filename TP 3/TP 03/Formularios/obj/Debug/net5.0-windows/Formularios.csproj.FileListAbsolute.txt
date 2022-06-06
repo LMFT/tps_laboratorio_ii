@@ -62,3 +62,4 @@ D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Interfaces.dll
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Almacenamiento.pdb
 D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Interfaces.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormDescripcionTarea.resources

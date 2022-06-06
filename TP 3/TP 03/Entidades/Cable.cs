@@ -73,6 +73,23 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+        public override string Descripcion
+        {
+            get
+            {
+                if (dobleAislacion)
+                {
+                    return $"{descripcion}, {seccion} mm";
+                }
+                    return $"{descripcion}, {seccion} mm";
+            }
+        }
+
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }
 

@@ -72,11 +72,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Fecha: {fechaHora.Date}");
-            sb.AppendLine($"Hora: {fechaHora.TimeOfDay}");
-            sb.AppendLine($"Descripcion: {descripcion}");
-            return sb.ToString();
+            return $"{fechaHora}: {descripcion}";
         }
     }
 }

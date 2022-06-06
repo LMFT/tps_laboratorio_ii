@@ -123,6 +123,12 @@ namespace Formularios
             txtQuintoCampo.PasswordChar = '*';
             chkOpcionAdicional.Text = "Administrador";
             btnAdicional1.Text = "Validar usuario";
+
+            if (ControladorABM.UsuarioEsAdmin)
+            {
+                chkOpcionAdicional.Checked = false;
+                chkOpcionAdicional.Hide();
+            }
             
             lblCantidad.Hide();
             nudCantidad.Hide();

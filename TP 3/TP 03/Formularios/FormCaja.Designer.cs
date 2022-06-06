@@ -46,6 +46,7 @@
             this.rtxtListaProductos.BackColor = System.Drawing.Color.NavajoWhite;
             this.rtxtListaProductos.Location = new System.Drawing.Point(12, 12);
             this.rtxtListaProductos.Name = "rtxtListaProductos";
+            this.rtxtListaProductos.ReadOnly = true;
             this.rtxtListaProductos.Size = new System.Drawing.Size(201, 279);
             this.rtxtListaProductos.TabIndex = 0;
             this.rtxtListaProductos.Text = "Informacion de los productos";

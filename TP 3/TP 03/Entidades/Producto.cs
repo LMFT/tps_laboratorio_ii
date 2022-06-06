@@ -49,7 +49,7 @@ namespace Entidades
             }
         }
 
-        public string Descripcion
+        public virtual string Descripcion
         {
             get 
             { 
@@ -175,11 +175,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            if(descripcion is not null)
-            {
-                return descripcion;
-            }
-            return string.Empty;
+            return descripcion;
         }
         /// <summary>
         /// Busca un producto en una lista utilizando su id 

@@ -39,7 +39,7 @@
             this.btnNuevaTarea = new System.Windows.Forms.Button();
             this.btnEditarTarea = new System.Windows.Forms.Button();
             this.btnEliminarTarea = new System.Windows.Forms.Button();
-            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.lblTareas = new System.Windows.Forms.Label();
             this.btnCargar = new System.Windows.Forms.Button();
             this.lstTareas = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -47,16 +47,17 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblUsuario.Location = new System.Drawing.Point(12, 9);
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Location = new System.Drawing.Point(100, 9);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(123, 21);
+            this.lblUsuario.Size = new System.Drawing.Size(218, 28);
             this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "Saludos, usuario";
+            this.lblUsuario.Text = "Hola, {nombre usuario}!";
             // 
             // btnVenta
             // 
             this.btnVenta.BackColor = System.Drawing.Color.Moccasin;
+            this.btnVenta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnVenta.Location = new System.Drawing.Point(12, 45);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(372, 28);
@@ -68,6 +69,7 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Moccasin;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGuardar.Location = new System.Drawing.Point(12, 181);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(372, 28);
@@ -79,6 +81,7 @@
             // btnInfoEmpleados
             // 
             this.btnInfoEmpleados.BackColor = System.Drawing.Color.Moccasin;
+            this.btnInfoEmpleados.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnInfoEmpleados.Location = new System.Drawing.Point(12, 147);
             this.btnInfoEmpleados.Name = "btnInfoEmpleados";
             this.btnInfoEmpleados.Size = new System.Drawing.Size(372, 28);
@@ -90,6 +93,7 @@
             // btnStock
             // 
             this.btnStock.BackColor = System.Drawing.Color.Moccasin;
+            this.btnStock.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnStock.Location = new System.Drawing.Point(12, 79);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(372, 28);
@@ -101,7 +105,8 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Moccasin;
-            this.btnSalir.Location = new System.Drawing.Point(220, 276);
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.Location = new System.Drawing.Point(220, 316);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(164, 34);
             this.btnSalir.TabIndex = 11;
@@ -112,7 +117,8 @@
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.BackColor = System.Drawing.Color.Moccasin;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(12, 276);
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(12, 316);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(173, 34);
             this.btnCerrarSesion.TabIndex = 13;
@@ -123,6 +129,7 @@
             // btnProveedores
             // 
             this.btnProveedores.BackColor = System.Drawing.Color.Moccasin;
+            this.btnProveedores.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProveedores.Location = new System.Drawing.Point(12, 113);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(372, 28);
@@ -134,7 +141,8 @@
             // btnNuevaTarea
             // 
             this.btnNuevaTarea.BackColor = System.Drawing.Color.Moccasin;
-            this.btnNuevaTarea.Location = new System.Drawing.Point(422, 276);
+            this.btnNuevaTarea.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNuevaTarea.Location = new System.Drawing.Point(422, 316);
             this.btnNuevaTarea.Name = "btnNuevaTarea";
             this.btnNuevaTarea.Size = new System.Drawing.Size(122, 34);
             this.btnNuevaTarea.TabIndex = 19;
@@ -145,7 +153,8 @@
             // btnEditarTarea
             // 
             this.btnEditarTarea.BackColor = System.Drawing.Color.Moccasin;
-            this.btnEditarTarea.Location = new System.Drawing.Point(550, 276);
+            this.btnEditarTarea.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEditarTarea.Location = new System.Drawing.Point(606, 316);
             this.btnEditarTarea.Name = "btnEditarTarea";
             this.btnEditarTarea.Size = new System.Drawing.Size(122, 34);
             this.btnEditarTarea.TabIndex = 22;
@@ -156,7 +165,8 @@
             // btnEliminarTarea
             // 
             this.btnEliminarTarea.BackColor = System.Drawing.Color.Moccasin;
-            this.btnEliminarTarea.Location = new System.Drawing.Point(678, 276);
+            this.btnEliminarTarea.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminarTarea.Location = new System.Drawing.Point(783, 316);
             this.btnEliminarTarea.Name = "btnEliminarTarea";
             this.btnEliminarTarea.Size = new System.Drawing.Size(122, 34);
             this.btnEliminarTarea.TabIndex = 23;
@@ -164,18 +174,20 @@
             this.btnEliminarTarea.UseVisualStyleBackColor = false;
             this.btnEliminarTarea.Click += new System.EventHandler(this.btnEliminarTarea_Click);
             // 
-            // lblBusqueda
+            // lblTareas
             // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(432, 15);
-            this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(45, 15);
-            this.lblBusqueda.TabIndex = 26;
-            this.lblBusqueda.Text = "Buscar:";
+            this.lblTareas.AutoSize = true;
+            this.lblTareas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTareas.Location = new System.Drawing.Point(422, 21);
+            this.lblTareas.Name = "lblTareas";
+            this.lblTareas.Size = new System.Drawing.Size(136, 21);
+            this.lblTareas.TabIndex = 26;
+            this.lblTareas.Text = "Tareas pendientes:";
             // 
             // btnCargar
             // 
             this.btnCargar.BackColor = System.Drawing.Color.Moccasin;
+            this.btnCargar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCargar.Location = new System.Drawing.Point(12, 215);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(372, 28);
@@ -187,11 +199,13 @@
             // lstTareas
             // 
             this.lstTareas.BackColor = System.Drawing.Color.Moccasin;
+            this.lstTareas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lstTareas.FormattingEnabled = true;
-            this.lstTareas.ItemHeight = 15;
+            this.lstTareas.HorizontalScrollbar = true;
+            this.lstTareas.ItemHeight = 17;
             this.lstTareas.Location = new System.Drawing.Point(422, 45);
             this.lstTareas.Name = "lstTareas";
-            this.lstTareas.Size = new System.Drawing.Size(378, 214);
+            this.lstTareas.Size = new System.Drawing.Size(483, 259);
             this.lstTareas.TabIndex = 29;
             // 
             // FormMenuPrincipal
@@ -199,11 +213,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(829, 315);
+            this.ClientSize = new System.Drawing.Size(917, 362);
             this.ControlBox = false;
             this.Controls.Add(this.lstTareas);
             this.Controls.Add(this.btnCargar);
-            this.Controls.Add(this.lblBusqueda);
+            this.Controls.Add(this.lblTareas);
             this.Controls.Add(this.btnEliminarTarea);
             this.Controls.Add(this.btnEditarTarea);
             this.Controls.Add(this.btnNuevaTarea);
@@ -240,7 +254,7 @@
         private System.Windows.Forms.Button btnNuevaTarea;
         private System.Windows.Forms.Button btnEditarTarea;
         private System.Windows.Forms.Button btnEliminarTarea;
-        private System.Windows.Forms.Label lblBusqueda;
+        private System.Windows.Forms.Label lblTareas;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.ListBox lstTareas;
     }

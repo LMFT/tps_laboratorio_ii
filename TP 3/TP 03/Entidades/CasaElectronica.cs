@@ -52,6 +52,14 @@ namespace Entidades
             }
         }
 
+        public static string Nombre
+        {
+            get
+            {
+                return "Electrónica Kaufmann";
+            }
+        }
+
         public static ImmutableList<Tarea> Tareas
         {
             get
@@ -127,7 +135,9 @@ namespace Entidades
                 stock.Add(producto, cantidades[i]);
             }
         }
-
+        /// <summary>
+        /// Hardcodea los proveedores
+        /// </summary>
         private static void HardcodearProveedores()
         {
             int[] dni = { 31323334, 34433211 };
@@ -569,6 +579,7 @@ namespace Entidades
         public static bool NuevaTarea(string descripcion)
         {
             Tarea tarea = new Tarea(descripcion);
+            tareas.Add(tarea);
             return tarea is not null;
         }
 

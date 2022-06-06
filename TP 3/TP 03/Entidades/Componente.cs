@@ -59,6 +59,14 @@ namespace Entidades
             }
         }
 
+        public override string Descripcion 
+        { 
+            get 
+            { 
+                return $"{descripcion} x {capacidad} {unidadMedicion}"; 
+            } 
+        }
+
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -67,5 +75,9 @@ namespace Entidades
             return sb.ToString();
         }
 
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

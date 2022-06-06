@@ -38,7 +38,7 @@
             // 
             this.rtxtDescripcion.Location = new System.Drawing.Point(12, 31);
             this.rtxtDescripcion.Name = "rtxtDescripcion";
-            this.rtxtDescripcion.Size = new System.Drawing.Size(210, 203);
+            this.rtxtDescripcion.Size = new System.Drawing.Size(336, 203);
             this.rtxtDescripcion.TabIndex = 0;
             this.rtxtDescripcion.Text = "";
             // 
@@ -63,7 +63,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(147, 240);
+            this.btnCancelar.Location = new System.Drawing.Point(273, 240);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 3;
@@ -76,12 +76,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(233, 267);
+            this.ClientSize = new System.Drawing.Size(360, 267);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.rtxtDescripcion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormDescripcionTarea";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nueva Tarea";
             this.ResumeLayout(false);
             this.PerformLayout();

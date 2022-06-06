@@ -12,13 +12,11 @@ namespace Logica.AgregarPedidos
 {
     public static class ControladorAgregar
     {
-        private static List<ElementoStock<Producto>> inventario;
         private static List<ElementoStock<Producto>> pedidosCliente;
         private static List<Producto> productosProveedor;
 
         static ControladorAgregar()
         {
-            inventario = new List<ElementoStock<Producto>>();
             pedidosCliente = new List<ElementoStock<Producto>>();
             productosProveedor = new List<Producto>();
         }
@@ -35,7 +33,28 @@ namespace Logica.AgregarPedidos
         {
             get
             {
-                return ImmutableList.Create(inventario.ToArray());
+                ImmutableList<ElementoStock<Producto>> lista = ImmutableList.Create<ElementoStock<Producto>>();
+                foreach(var par in CasaElectronica.Stock)
+                {
+                    lista = lista.Add(new ElementoStock<Producto>(par));
+                }
+                return lista;
+            }
+        }
+
+        public static ImmutableList<ElementoStock<Producto>> PedidosCliente
+        {
+            get
+            {
+                return ImmutableList.Create(pedidosCliente.ToArray());
+            }
+        }
+
+        public static ImmutableList<Producto> ProductosProveedor
+        {
+            get
+            {
+                return ImmutableList.Create(productosProveedor.ToArray());
             }
         }
 
@@ -56,13 +75,14 @@ namespace Logica.AgregarPedidos
         /// al listado de pedidos. De lo contraio retorna false</returns>
         public static bool NuevoPedido(object elemento, int cantidad)
         {
-            if(elemento is not null && elemento is Producto producto)
+            if(elemento is not null && elemento is ElementoStock<Producto> elementoStock)
             {
-                foreach(var item in inventario)
+                Producto producto = elementoStock.APar().Key;
+                foreach(var item in CasaElectronica.Stock.Keys)
                 {
-                    if(item == producto && item.Cantidad >= cantidad)
+                    if(item == producto && CasaElectronica.Stock[producto]>=cantidad)
                     {
-                        PrepararPedido(producto,cantidad);
+                        PrepararPedido(producto, cantidad);
                         return true;
                     }
                 }
@@ -106,8 +126,7 @@ namespace Logica.AgregarPedidos
             {
                 ElementoStock<Producto> pedido = new ElementoStock<Producto>(producto, cantidad);
                 pedidosCliente.Add(pedido);
-                CasaElectronica.RetirarDeStock(producto, cantidad);
-
+                return CasaElectronica.RetirarDeStock(producto, cantidad);
             }
             throw new NullReferenceException("No hay ningun elemento seleccionado");
         }

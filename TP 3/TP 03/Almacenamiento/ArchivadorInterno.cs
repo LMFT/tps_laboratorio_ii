@@ -7,14 +7,23 @@ namespace Almacenamiento
     /// </summary>
     public static class ArchivadorInterno
     {
-
+        /// <summary>
+        /// Verifica que un archivo exista en las carpetas internas de la aplicacion
+        /// </summary>
+        /// <param name="nombre">Nombre del archivo</param>
+        /// <returns>True si el arrchivo existe, de lo contrario false</returns>
         public static bool ArchivoExiste(string nombre)
         {
             nombre = nombre.Trim();
             string rutaCompleta = Path.GetFullPath(nombre);
             return File.Exists(rutaCompleta);
         }
-
+        /// <summary>
+        /// Lee un archivo que se encuentra dentro de la carpeta de la aplicacion
+        /// </summary>
+        /// <param name="nombre">Nombre del archivo</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static string Leer(string nombre)
         {
             string texto = string.Empty;
@@ -22,22 +31,26 @@ namespace Almacenamiento
             string rutaCompleta =Path.GetFullPath(nombre);
             try
             {
-                using(StreamReader sr = new StreamReader(rutaCompleta))
+                if (ArchivoExiste(nombre))
                 {
-                    texto = sr.ReadLine();
+                    using(StreamReader sr = new StreamReader(rutaCompleta))
+                    {
+                        texto = sr.ReadLine();
+                    }
                 }
                 return texto;
-            }
-            catch (FileNotFoundException ex)
-            {
-                throw new FileNotFoundException("No se encuentra el archivo ingresado", ex);
             }
             catch(Exception ex)
             {
                 throw new Exception("Ocurrio un error inesperado", ex);
             }
         }
-
+        /// <summary>
+        /// Escribe un nuevo archivo dentro de la carpeta de la aplicacion
+        /// </summary>
+        /// <param name="nombre">Nombre del archivo</param>
+        /// <param name="texto">Texto a escribir</param>
+        /// <exception cref="Exception"></exception>
         public static void Escribir(string nombre, string texto)
         {
             string rutaCompleta = Path.GetFullPath(nombre);
@@ -50,13 +63,6 @@ namespace Almacenamiento
                 }
                 using(StreamWriter sw = new StreamWriter(rutaCompleta))
                 {
-                    //Por razones que no terminé de entender, al realizar la lectura desde un archivo
-                    //a veces la lectura incluye un \r\n, lo cual modifica el texto ingresado.
-                    //Como solucion temporal estoy verificando y removiendo manualmente esta terminacion
-                    //if (texto.EndsWith(@"\r\n"))
-                    //{
-                    //    texto = texto.Remove(texto.Length - 4);
-                    //}
                     sw.WriteLine(texto);
                 }
             }
