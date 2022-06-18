@@ -57,7 +57,6 @@ namespace Logica.ABM
                     case MostrarInfo.Producto:
                         if (rdoCable)
                         {
-                            
                             return NuevoProducto(primerCampo, segundoCampo, tercerCampo, cuartoCampo, opcionCheckbox, cantidad);
                         }
                         return NuevoProducto(primerCampo,segundoCampo,tercerCampo,cuartoCampo,quintoCampo,cantidad);
@@ -76,7 +75,7 @@ namespace Logica.ABM
                                           string nombreUsuario, string password)
         {
             Permisos permisos = Permisos.Empleado;
-            if (int.TryParse(dni, out int dniInt))
+            if (int.TryParse(dni, out int dniInt) && dniInt>0)
             {
                 if(string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido))
                 {
@@ -137,8 +136,8 @@ namespace Logica.ABM
         private static bool NuevoProducto(string nombre, string precio, string marca, string capacidad, 
                                           string unidadMedicion, int cantidad)
         {
-            if (decimal.TryParse(precio, out decimal precioDecimal) && 
-                double.TryParse(capacidad, out double capacidadDouble))
+            if (decimal.TryParse(precio, out decimal precioDecimal) && precioDecimal>0 &&
+                double.TryParse(capacidad, out double capacidadDouble) && capacidadDouble>0)
             {
                 if(string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(marca)  ||
                    string.IsNullOrWhiteSpace(unidadMedicion))

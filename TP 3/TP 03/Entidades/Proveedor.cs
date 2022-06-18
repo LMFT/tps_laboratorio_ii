@@ -31,12 +31,40 @@ namespace Entidades
             productos = proveedor.Productos;
         }
 
+        public static bool operator ==(List<Proveedor> lp, Proveedor p)
+        {
+            foreach(Proveedor proveedor in lp)
+            {
+                if(p.dni == proveedor.dni) 
+                { 
+                    return true; 
+                }
+            }
+            return false;
+        }
+
+        public static bool operator !=(List<Proveedor> lp, Proveedor p)
+        {
+            return !(lp == p);
+        }
+
+
         internal List<Producto> Productos
         {
             get
             {
                 return productos;
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Proveedor proveedor && proveedor == this;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

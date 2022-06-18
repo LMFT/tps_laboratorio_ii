@@ -1,0 +1,3 @@
+﻿Estas clases estan pensadas para funcionar de forma interna a la hora de almacenar informacion, permitiendo utilizar las
+propiedades publicas para almacenar y cargar informacion sin proveer los métodos de escritura durante el funcionamiento
+de la aplicacion

@@ -115,7 +115,6 @@ namespace Entidades
             decimal[] precios = { 200M, 500M, 60M, 60M, 60M };
             string[] marcas = { "Volteck", "Backer"};
             int[] cantidades = { 2000, 1000, 75, 95, 40};
-            int[] cantidadesMinimas = { 1000, 500, 50, 50, 50 };
             double[] secciones = { 1.5, 6 };
             double[] capacidades = { 100,200,500};
             string unidadMedida = "ohm";
@@ -601,6 +600,15 @@ namespace Entidades
                 return;
             }
             throw new ArgumentException("El objeto seleccionado no es una tarea");
+        }
+
+        public static bool BajaProveedor(Proveedor proveedor)
+        {
+            if(proveedores == proveedor)
+            {
+                return proveedores.Remove(proveedor);
+            }
+            return false;
         }
     }
 }

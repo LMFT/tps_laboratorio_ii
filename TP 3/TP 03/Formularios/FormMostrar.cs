@@ -90,7 +90,7 @@ namespace Formularios
         /// </summary>
         private void RellenarStock()
         {
-            DataGridViewRow fila = SeleccionarFila();
+            DataGridViewRow? fila = SeleccionarFila();
             if(fila is not null)
             {
                 ControladorMostrar.RellenarStock(fila.DataBoundItem);
@@ -102,7 +102,7 @@ namespace Formularios
         /// <param name="cantidad">Cantidad de unidades a agregar</param>
         private void RellenarStock(int cantidad)
         {
-            DataGridViewRow fila = SeleccionarFila();
+            DataGridViewRow? fila = SeleccionarFila();
             if (fila is not null)
             {
                 ControladorMostrar.RellenarStock(fila.DataBoundItem, cantidad);
@@ -112,9 +112,13 @@ namespace Formularios
         /// Selecciona la primer fila que contenga una celda seleccionada
         /// </summary>
         /// <returns>Primer fila que contenga una celda seleccionada.</returns>
-        private DataGridViewRow SeleccionarFila()
+        private DataGridViewRow? SeleccionarFila()
         {
-            return dgvMostrar.SelectedRows[0];
+            if(dgvMostrar.SelectedRows.Count != 0)
+            {
+                return dgvMostrar.SelectedRows[0];
+            }
+            return null;
         }
         /// <summary>
         /// Abre el formulario de ABM de elementos para dar de alta un producto
@@ -135,7 +139,11 @@ namespace Formularios
         /// </summary>
         private void RemoverElemento()
         {
-            ControladorMostrar.Eliminar(Convert.ToInt32(SeleccionarFila().Cells[0].Value), mostrarInfo);
+            DataGridViewRow? fila = SeleccionarFila();
+            if(fila is not null)
+            {
+                ControladorMostrar.Eliminar(fila.DataBoundItem, mostrarInfo);
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

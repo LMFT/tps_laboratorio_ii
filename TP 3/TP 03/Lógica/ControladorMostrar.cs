@@ -60,15 +60,18 @@ namespace Logica.Mostrar
         /// <param name="mostrarInfo">Determina qué tipo de elemento es para buscarlo en la coleccion correspondiente
         /// </param>
         /// <returns>Retorna true si pudo eliminar el elemento, de lo contrario false</returns>
-        public static bool Eliminar(int id, MostrarInfo mostrarInfo)
+        public static bool Eliminar(object objeto, MostrarInfo mostrarInfo)
         {
             switch (mostrarInfo)
             {
                 case MostrarInfo.Empleado:
-                    Usuario usuario = CasaElectronica.BuscarUsuario(id);
-                    return CasaElectronica.Despedir(usuario);      
+                    Usuario usuario = (Usuario)objeto;
+                    return CasaElectronica.Despedir(usuario);
+                case MostrarInfo.Proveedores:
+                    Proveedor proveedor = (Proveedor)objeto;
+                    return CasaElectronica.BajaProveedor(proveedor);
                 default:
-                    Producto insumo = CasaElectronica.BuscarProducto(id);
+                    Producto insumo = (Producto)objeto;
                     return CasaElectronica.EliminarDeStock(insumo);
             }
         }

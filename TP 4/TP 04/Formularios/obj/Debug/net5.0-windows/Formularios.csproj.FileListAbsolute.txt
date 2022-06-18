@@ -1,0 +1,106 @@
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Formularios.exe
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Formularios.deps.json
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Formularios.runtimeconfig.json
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Formularios.runtimeconfig.dev.json
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Formularios.dll
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Formularios.pdb
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Entidades.dll
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Logica.dll
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Logica.pdb
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\bin\Debug\net5.0-windows\Entidades.pdb
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.csproj.AssemblyReference.cache
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.FormABM.resources
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.FormAgregar.resources
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.FormAutoCompletar.resources
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.FormCaja.resources
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.FormLogin.resources
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.FormMenuPrincipal.resources
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.FormMostrar.resources
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.FormRellenar.resources
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.csproj.GenerateResource.cache
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.AssemblyInfoInputs.cache
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.AssemblyInfo.cs
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.csproj.CopyComplete
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.dll
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\refint\Formularios.dll
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.pdb
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\Formularios.genruntimeconfig.cache
+C:\Users\lucas\Desktop\Parcial Labo II\Parcial-Labo-II\Ferrini.Lucas.2D.PPL2\FormLogin\obj\Debug\net5.0-windows\ref\Formularios.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.AssemblyReference.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormABM.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormAutoCompletar.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormCaja.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormLogin.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormMenuPrincipal.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormMostrar.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormRellenar.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.GenerateResource.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.AssemblyInfoInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.AssemblyInfo.cs
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.CoreCompileInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Formularios.exe
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Formularios.deps.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Formularios.runtimeconfig.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Formularios.runtimeconfig.dev.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Formularios.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Formularios.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Entidades.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Logica.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Entidades.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.CopyComplete
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\refint\Formularios.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.genruntimeconfig.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\ref\Formularios.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormAgregar.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Almacenamiento.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Interfaces.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Almacenamiento.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\bin\Debug\net5.0-windows\Interfaces.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 3\TP 03\Formularios\obj\Debug\net5.0-windows\Formularios.FormDescripcionTarea.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Formularios.exe
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Formularios.deps.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Formularios.runtimeconfig.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Formularios.runtimeconfig.dev.json
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Formularios.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Formularios.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Almacenamiento.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Entidades.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Interfaces.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Logica.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Logica.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Almacenamiento.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Entidades.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\bin\Debug\net5.0-windows\Interfaces.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.AssemblyReference.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.FormABM.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.FormAgregar.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.FormAutoCompletar.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.FormCaja.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.FormDescripcionTarea.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.FormLogin.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.FormMenuPrincipal.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.FormMostrar.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.FormRellenar.resources
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.GenerateResource.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.AssemblyInfoInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.AssemblyInfo.cs
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.CoreCompileInputs.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.csproj.CopyComplete
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\refint\Formularios.dll
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.pdb
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\Formularios.genruntimeconfig.cache
+D:\Curso Programacion\LaboProgra 2\tps_laboratorio_ii\TP 4\TP 04\Formularios\obj\Debug\net5.0-windows\ref\Formularios.dll
