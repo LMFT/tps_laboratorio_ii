@@ -46,7 +46,6 @@ namespace Entidades
             marca = (string)elementos[3];
             seccion = (double)elementos[4];
             dobleAislacion = (bool)elementos[5];
-            estaActivo = (bool)elementos[6];
         }
 
         public double Seccion
@@ -128,7 +127,6 @@ namespace Entidades
 
         internal override string GetValores()
         {
-            string dobleAislacion = estaActivo ? "1" : "0";
             return base.GetValores() + $"{seccion},{dobleAislacion}";
         }
     }

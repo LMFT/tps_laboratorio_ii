@@ -7,7 +7,6 @@ using System.Xml.Serialization;
 
 namespace Entidades
 {
-    [XmlInclude(typeof(Proveedor))]
     [XmlInclude(typeof(Usuario))]
     public abstract class Persona
     {

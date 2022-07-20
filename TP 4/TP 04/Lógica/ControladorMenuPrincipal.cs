@@ -116,6 +116,7 @@ namespace Logica.MenuPrincipal
 
         public static void Guardar()
         {
+            //Verificar string de comando al acceder a DB
             try
             {
                 CasaElectronica.Guardar();

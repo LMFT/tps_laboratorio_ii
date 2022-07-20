@@ -8,9 +8,7 @@ namespace Mostrar
 {
     public enum MostrarInfo
     {
-        Inventario,
         Empleado,
-        Producto,
-        Proveedores
+        Producto
     }
 }

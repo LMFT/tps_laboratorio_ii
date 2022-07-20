@@ -54,16 +54,13 @@ namespace Logica.ABM
                         return NuevoEmpleado(primerCampo, segundoCampo, tercerCampo, opcionCheckbox, cuartoCampo, quintoCampo);
                     //Para los productos evaluo que radioButton estaba seleccionado al ingresar al método. Segun el resultado,
                     //cambia el objeto a instanciar
-                    case MostrarInfo.Producto:
+                    default:
                         if (rdoCable)
                         {
                             
                             return NuevoProducto(primerCampo, segundoCampo, tercerCampo, cuartoCampo, opcionCheckbox, cantidad);
                         }
                         return NuevoProducto(primerCampo,segundoCampo,tercerCampo,cuartoCampo,quintoCampo,cantidad);
-                    //Por defecto, si no es un producto o empleado, es un proveedor
-                    default:
-                        return NuevoProveedor(primerCampo,segundoCampo,tercerCampo);
                 }
             }
             catch(Exception)
@@ -76,7 +73,7 @@ namespace Logica.ABM
                                           string nombreUsuario, string password)
         {
             Permisos permisos = Permisos.Empleado;
-            if (int.TryParse(dni, out int dniInt))
+            if (int.TryParse(dni, out int dniInt) && dniInt > 0)
             {
                 if(string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido))
                 {
@@ -151,28 +148,6 @@ namespace Logica.ABM
             }
             throw new ArgumentException("La informacion ingresada no es válida. Verifique que el valor de los campos pre" +
                 "cio y capacidad sean numéricos");
-        }
-        /// <summary>
-        /// Da de alta un nuevo proveedor
-        /// </summary>
-        /// <param name="nombre">Nombre del proveedor</param>
-        /// <param name="apellido">Apellido del proveedor</param>
-        /// <param name="dniStr">Dni del proveedor</param>
-        /// <returns>Retorna true si pudo dar de alta al proveedor, de lo contrario false</returns>
-        /// <exception cref="ArgumentException">Si alguno de los parametros no es válido para crear un proveedor
-        /// lanza esta extepcion</exception>
-        private static bool NuevoProveedor(string nombre, string apellido, string dniStr)
-        {
-            if(int.TryParse(dniStr, out int dni))
-            {
-                if(!string.IsNullOrWhiteSpace(nombre) && !string.IsNullOrWhiteSpace(apellido))
-                {
-                    Proveedor proveedor = new Proveedor(nombre,apellido,dni, productosDisponibles);
-                    return CasaElectronica.AltaProveedor(proveedor);
-                }
-            }
-            throw new ArgumentException("La informacion ingresada no es válida. Verifique que los campos nombre y" +
-                "apellido contengan caracteres ademas del espacio, y que el campo DNI sea numérico");
         }
 
         /// <summary>

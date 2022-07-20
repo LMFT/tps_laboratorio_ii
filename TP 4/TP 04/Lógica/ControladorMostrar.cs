@@ -38,14 +38,6 @@ namespace Logica.Mostrar
             }
         }
 
-        public static ImmutableList<Proveedor> Proveedores
-        {
-            get
-            {
-                return CasaElectronica.Proveedores;
-            }
-        }
-
         public static bool UsuarioEsAdmin
         {
             get
@@ -65,11 +57,12 @@ namespace Logica.Mostrar
             switch (mostrarInfo)
             {
                 case MostrarInfo.Empleado:
+
                     Usuario usuario = CasaElectronica.BuscarUsuario(id);
-                    return CasaElectronica.Despedir(usuario);      
+                    return CasaElectronica.Despedir(usuario);
                 default:
-                    Producto insumo = CasaElectronica.BuscarProducto(id);
-                    return CasaElectronica.EliminarDeStock(insumo);
+                    Producto producto = CasaElectronica.BuscarProducto(id);
+                    return CasaElectronica.EliminarDeStock(producto);
             }
         }
 

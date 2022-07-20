@@ -20,7 +20,6 @@ namespace Entidades
         protected decimal precio;
         protected string descripcion;
         protected string marca;
-        protected bool estaActivo;
 
         static Producto()
         {
@@ -33,7 +32,7 @@ namespace Entidades
             precio = 0;
             descripcion = string.Empty;
             marca = string.Empty;
-            estaActivo = true;
+
         }
 
         public Producto(string descripcion, decimal precio, string marca)
@@ -51,7 +50,6 @@ namespace Entidades
             this.descripcion = descripcion;
             this.precio = precio;
             this.marca = marca;
-            this.estaActivo = estaActivo;
         }
 
         public int Id
@@ -83,14 +81,6 @@ namespace Entidades
             get
             {
                 return marca;
-            }
-        }
-
-        public bool EstaActivo
-        {
-            get
-            {
-                return estaActivo;
             }
         }
 
@@ -167,7 +157,7 @@ namespace Entidades
         }
         public static bool operator -(Dictionary<Producto, int> d,Producto p)
         {
-            if(d is not null)
+            if(d is not null && p is not null)
             {
                 return d.Remove(p);
             }
@@ -227,8 +217,6 @@ namespace Entidades
             sb.AppendLine($"DESCRIPCION = {descripcion},");
             sb.AppendLine($"PRECIO = {precio},");
             sb.AppendLine($"MARCA = {marca},");
-            string estaActivo = this.estaActivo ? "1" : "0";
-            sb.AppendLine($"ESTA_ACTIVO = {estaActivo}");
 
             return sb.ToString();
         }

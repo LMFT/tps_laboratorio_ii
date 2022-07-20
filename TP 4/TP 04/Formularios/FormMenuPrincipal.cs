@@ -71,7 +71,7 @@ namespace Formularios
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            Mostrar(MostrarInfo.Inventario);
+            Mostrar(MostrarInfo.Producto);
         }
         /// <summary>
         /// Abre la ventana para mostrar informacion
@@ -87,11 +87,6 @@ namespace Formularios
         private void btnInfoEmpleados_Click(object sender, EventArgs e)
         {
             Mostrar(MostrarInfo.Empleado);
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            Mostrar(MostrarInfo.Proveedores);
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)

@@ -35,7 +35,6 @@
             this.btnStock = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btnProveedores = new System.Windows.Forms.Button();
             this.btnNuevaTarea = new System.Windows.Forms.Button();
             this.btnEditarTarea = new System.Windows.Forms.Button();
             this.btnEliminarTarea = new System.Windows.Forms.Button();
@@ -72,7 +71,7 @@
             // 
             this.btnExportar.BackColor = System.Drawing.Color.Moccasin;
             this.btnExportar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExportar.Location = new System.Drawing.Point(12, 249);
+            this.btnExportar.Location = new System.Drawing.Point(12, 216);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(173, 28);
             this.btnExportar.TabIndex = 5;
@@ -84,7 +83,7 @@
             // 
             this.btnInfoEmpleados.BackColor = System.Drawing.Color.Moccasin;
             this.btnInfoEmpleados.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnInfoEmpleados.Location = new System.Drawing.Point(12, 147);
+            this.btnInfoEmpleados.Location = new System.Drawing.Point(12, 114);
             this.btnInfoEmpleados.Name = "btnInfoEmpleados";
             this.btnInfoEmpleados.Size = new System.Drawing.Size(372, 28);
             this.btnInfoEmpleados.TabIndex = 6;
@@ -127,18 +126,6 @@
             this.btnCerrarSesion.Text = "Cerrar Sesion";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // btnProveedores
-            // 
-            this.btnProveedores.BackColor = System.Drawing.Color.Moccasin;
-            this.btnProveedores.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProveedores.Location = new System.Drawing.Point(12, 113);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(372, 28);
-            this.btnProveedores.TabIndex = 15;
-            this.btnProveedores.Text = "Proveedores";
-            this.btnProveedores.UseVisualStyleBackColor = false;
-            this.btnProveedores.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnNuevaTarea
             // 
@@ -190,7 +177,7 @@
             // 
             this.btnImportar.BackColor = System.Drawing.Color.Moccasin;
             this.btnImportar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnImportar.Location = new System.Drawing.Point(220, 249);
+            this.btnImportar.Location = new System.Drawing.Point(220, 216);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(164, 28);
             this.btnImportar.TabIndex = 28;
@@ -214,7 +201,7 @@
             // 
             this.btnCargar.BackColor = System.Drawing.Color.Moccasin;
             this.btnCargar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargar.Location = new System.Drawing.Point(12, 215);
+            this.btnCargar.Location = new System.Drawing.Point(12, 182);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(372, 28);
             this.btnCargar.TabIndex = 31;
@@ -226,7 +213,7 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Moccasin;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardar.Location = new System.Drawing.Point(12, 181);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 148);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(372, 28);
             this.btnGuardar.TabIndex = 30;
@@ -249,7 +236,6 @@
             this.Controls.Add(this.btnEliminarTarea);
             this.Controls.Add(this.btnEditarTarea);
             this.Controls.Add(this.btnNuevaTarea);
-            this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnStock);
@@ -278,7 +264,6 @@
         private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnNuevaTarea;
         private System.Windows.Forms.Button btnEditarTarea;
         private System.Windows.Forms.Button btnEliminarTarea;

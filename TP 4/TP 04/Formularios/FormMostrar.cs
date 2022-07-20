@@ -41,23 +41,47 @@ namespace Formularios
         /// </summary>
         private void FormatearDataGrid()
         {
+
             switch (mostrarInfo)
             {
-                case MostrarInfo.Inventario:
+                case MostrarInfo.Producto:
                     dgvMostrar.DataSource = ControladorMostrar.Inventario;
                     break;
                 case MostrarInfo.Empleado:
                     dgvMostrar.DataSource = ControladorMostrar.Empleados;
                     break;
-                case MostrarInfo.Proveedores:
-                    dgvMostrar.DataSource = ControladorMostrar.Proveedores;
-                    break;
                 default:
                     dgvMostrar.DataSource = null;
                     break;
             }
-            
+            OrdenarColumnas();
         }
+
+        private void OrdenarColumnas()
+        {
+            switch (mostrarInfo)
+            {
+                case MostrarInfo.Producto:
+                    //customersDataGridView.Columns["ContactName"].DisplayIndex = 0;
+                    dgvMostrar.Columns["Id"].DisplayIndex = 0;
+                    dgvMostrar.Columns["Nombre"].DisplayIndex = 1;
+                    dgvMostrar.Columns["Precio"].DisplayIndex = 2;
+                    dgvMostrar.Columns["Cantidad"].DisplayIndex = 3;
+                    break;
+                case MostrarInfo.Empleado:
+                    dgvMostrar.Columns["Dni"].DisplayIndex = 0;
+                    dgvMostrar.Columns["Nombre"].DisplayIndex = 1;
+                    dgvMostrar.Columns["Apellido"].DisplayIndex = 2;
+                    dgvMostrar.Columns["Permisos"].DisplayIndex = 3;
+                    dgvMostrar.Columns["NombreUsuario"].DisplayIndex = 4;
+                    dgvMostrar.Columns["NombreCompleto"].Visible = false;
+                    dgvMostrar.Columns["EstaActivo"].DisplayIndex = 5;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         /// <summary>
         /// Esconde los controles que no son necesarios, ya sea por el tipo de informacion
         /// a mostrar o por los permisos del usuario
@@ -114,7 +138,7 @@ namespace Formularios
         /// <returns>Primer fila que contenga una celda seleccionada.</returns>
         private DataGridViewRow SeleccionarFila()
         {
-            return dgvMostrar.SelectedRows[0];
+            return dgvMostrar.SelectedCells[0].OwningRow;
         }
         /// <summary>
         /// Abre el formulario de ABM de elementos para dar de alta un producto
@@ -135,7 +159,8 @@ namespace Formularios
         /// </summary>
         private void RemoverElemento()
         {
-            ControladorMostrar.Eliminar(Convert.ToInt32(SeleccionarFila().Cells[0].Value), mostrarInfo);
+            int id = Convert.ToInt32(SeleccionarFila().Cells[0].Value);
+            ControladorMostrar.Eliminar(id, mostrarInfo);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

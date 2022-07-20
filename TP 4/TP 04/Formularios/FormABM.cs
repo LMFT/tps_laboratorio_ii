@@ -46,12 +46,8 @@ namespace Formularios
             switch (mostrarInfo)
             {
                 //Adapta el texto para mostrar un producto
-                case MostrarInfo.Inventario:
+                case MostrarInfo.Producto:
                     AltaProducto();
-                    break;
-                //Da de alta un nuevo proveedor
-                case MostrarInfo.Proveedores:
-                    AltaProveedor();
                     break;
                     //Por defecto es alta de empleado
                 default:

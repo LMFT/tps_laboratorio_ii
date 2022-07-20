@@ -49,7 +49,6 @@ namespace Entidades
             marca = (string)elementos[3];
             capacidad = (double)elementos[4];
             unidadMedicion = (string)elementos[5];
-            estaActivo = (bool)elementos[6];
         }
 
         public double Capacidad

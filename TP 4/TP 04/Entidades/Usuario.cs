@@ -18,14 +18,12 @@ namespace Entidades
         private string nombreUsuario;
         private string password;
         private Permisos permisos;
-        private bool estaActivo;
 
         public Usuario() : base()
         {
             nombreUsuario = string.Empty;
             password = string.Empty;
             permisos = Permisos.Empleado;
-            estaActivo = true;
         }
 
 
@@ -91,13 +89,6 @@ namespace Entidades
             }
         }
 
-        public bool EstaActivo
-        {
-            get
-            {
-                return estaActivo;
-            }
-        }
 
         public static bool operator == (List<Usuario> lu, Usuario u)
         {
@@ -262,22 +253,13 @@ namespace Entidades
             sb.AppendLine($"ADMINISTRADOR = {(int)permisos},");
             sb.AppendLine($"USUARIO = {nombreUsuario},");
             sb.AppendLine($"CONTRASENIA = {password},");
-            if (estaActivo)
-            {
-                sb.AppendLine("ESTA_ACTIVO = 1");
-            }
-            else
-            {
-                sb.AppendLine("ESTA_ACTIVO = 0");
-            }
             return sb.ToString();
         }
 
         internal override string GetValores()
         {
             string administrador = ((int)permisos).ToString();
-            string estaActivo = this.estaActivo ? "1" : "0";
-            return base.GetValores() + $"{administrador},{nombreUsuario},{password},{estaActivo}";
+            return base.GetValores() + $"{administrador},{nombreUsuario},{password}";
         }
     }
 }

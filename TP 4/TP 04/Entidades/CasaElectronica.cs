@@ -14,25 +14,22 @@ namespace Entidades
     {
         Producto,
         Empleado,
-        Proveedor
     }
     public static class CasaElectronica
     {
         private static List<Usuario> personal;
         private static Dictionary<Producto, int> stock;
-        private static List<Proveedor> proveedores;
         private static List<Operacion> historial;
         private static List<Tarea> tareas;
         public static string rutaGuardado;
 
-        //public static event  EventoRellenarStock;
+        public static event Action<Producto, int>  rellenarStock;
 
         static CasaElectronica()
         {
             historial = new List<Operacion>();
             stock = new Dictionary<Producto, int>();
             personal = new List<Usuario>();
-            proveedores = new List<Proveedor>();
             tareas = new List<Tarea>();
             rutaGuardado = string.Empty;
 
@@ -48,7 +45,6 @@ namespace Entidades
             {
                 HardcodearPersonal();
                 HardcodearStock();
-                HardcodearProveedores();
             }
         }
         /// <summary>
@@ -90,11 +86,15 @@ namespace Entidades
             }
         }
 
-        public static ImmutableList<Proveedor> Proveedores
+        public static Action<Producto, int> Rellenar
         {
-            get
+            set
             {
-                return ImmutableList.Create(proveedores.ToArray());
+                if(value is null)
+                {
+                    throw new ArgumentNullException(nameof(value));
+                }
+                rellenarStock+=value;
             }
         }
         /// <summary>
@@ -142,35 +142,6 @@ namespace Entidades
                     producto = new Componente(nombres[i], precios[i], marcas[1], capacidades[i-2],unidadMedida);
                 }
                 stock.Add(producto, cantidades[i]);
-            }
-        }
-        /// <summary>
-        /// Hardcodea los proveedores
-        /// </summary>
-        private static void HardcodearProveedores()
-        {
-            int[] dni = { 31323334, 34433211 };
-            string[] nombres = { "Alberto", "Miriam" };
-            string[] apellidos = { "Casals", "Ferreira" };
-            List<Producto>[] productos = new List<Producto>[2];
-
-            
-            
-            productos[0] = new List<Producto>();
-            productos[0].Add(stock.ElementAt(0).Key);
-            productos[0].Add(stock.ElementAt(1).Key);
-            productos[0].Add(new Cable("Cable",150,"Volteck",2.5,false));
-            productos[0].Add(new Cable("Cable Doble Aislacion", 500, "Volteck", 10, true));
-            
-            productos[1] = new List<Producto>();
-            productos[1].Add(stock.ElementAt(2).Key);
-            productos[1].Add(stock.ElementAt(3).Key);
-            productos[1].Add(stock.ElementAt(4).Key);
-            productos[1].Add(new Componente("Capacitor", 150, "Reggie", 50, "Micro Faradios"));
-
-            for(int i = 0; i < dni.Length; i++)
-            {
-                proveedores.Add(new Proveedor(nombres[i], apellidos[i], dni[i], productos[i]));
             }
         }
 
@@ -351,21 +322,6 @@ namespace Entidades
             return false;
         }
         /// <summary>
-        /// Da de alta un proveedor
-        /// </summary>
-        /// <param name="proveedor">Proveedor a dar de alta</param>
-        /// <returns>Retorna true si el proveedor pudo darse de alta exitosamente, de lo contrario
-        /// false;</returns>
-        public static bool AltaProveedor(Proveedor proveedor)
-        {
-            if(proveedor is not null)
-            {
-                proveedores.Add(proveedor);
-                return true; 
-            }
-            return false;
-        }
-        /// <summary>
         /// Da de alta un producto
         /// </summary>
         /// <param name="producto">Producto a dar de alta</param>
@@ -390,14 +346,12 @@ namespace Entidades
             {
                 SerializadorXml<CableInterno> cables = new SerializadorXml<CableInterno>();
                 SerializadorXml<ComponenteInterno> componentes = new SerializadorXml<ComponenteInterno>();
-                SerializadorXml<ProveedorInterno> proveedores = new SerializadorXml<ProveedorInterno>();
                 SerializadorXml<UsuarioInterno> empleados = new SerializadorXml<UsuarioInterno>();
                 SerializadorJson<TareaInterna> tareas = new SerializadorJson<TareaInterna>();
 
 
                 cables.Exportar(GetCablesInternos(), ruta,"Cables.xml");
                 componentes.Exportar(GetComponentesInternos(),ruta, "Componentes.xml");
-                proveedores.Exportar(GetProveedoresInternos(),ruta, "Proveedores.xml");
                 empleados.Exportar(GetUsuariosInternos(), ruta, "Empleados.xml");
                 tareas.Exportar(GetTareasInternas(), ruta, "Tareas.json");
                 rutaGuardado = ruta;
@@ -418,19 +372,6 @@ namespace Entidades
             foreach(Usuario usuario in personal)
             {
                 lista.Add(new UsuarioInterno(usuario));
-            }
-            return lista;
-        }
-        /// <summary>
-        /// Obtiene una lista de proveedores de uso interno
-        /// </summary>
-        /// <returns>Lista de proveedores</returns>
-        private static List<ProveedorInterno> GetProveedoresInternos()
-        {
-            List<ProveedorInterno> lista = new List<ProveedorInterno>();
-            foreach (Proveedor proveedor in proveedores)
-            {
-                lista.Add(new ProveedorInterno(proveedor));
             }
             return lista;
         }
@@ -485,7 +426,6 @@ namespace Entidades
         public static void Importar()
         {
             SerializadorXml<UsuarioInterno> usuarios = new SerializadorXml<UsuarioInterno>();
-            SerializadorXml<ProveedorInterno> proveedores = new SerializadorXml<ProveedorInterno>();
             SerializadorXml<CableInterno> cables = new SerializadorXml<CableInterno>();
             SerializadorXml<ComponenteInterno> componentes = new SerializadorXml<ComponenteInterno>();
             SerializadorJson<TareaInterna> tareas = new SerializadorJson<TareaInterna>();
@@ -493,7 +433,6 @@ namespace Entidades
             ImportarEmpleados(usuarios.Importar(rutaGuardado, "Empleados.xml"));
             ImportarCables(cables.Importar(rutaGuardado, "Cables.xml"));
             ImportarComponentes(componentes.Importar(rutaGuardado, "Componentes.xml"));
-            ImportarProveedores(proveedores.Importar(rutaGuardado, "Proveedores.xml"));
             ImportarTareas(tareas.Importar(rutaGuardado, "Tareas.json"));
         }
         /// <summary>
@@ -505,17 +444,6 @@ namespace Entidades
             foreach(UsuarioInterno usuario in lista)
             {
                 personal.Add(new Usuario(usuario));
-            }
-        }
-        /// <summary>
-        /// Carga los proveedores a la aplicacion usando una lista de uso interno
-        /// </summary>
-        /// <param name="lista">Lista de proveedores de uso interno</param>
-        private static void ImportarProveedores(List<ProveedorInterno> lista)
-        {
-            foreach (ProveedorInterno proveedor in lista)
-            {
-                proveedores.Add(new Proveedor(proveedor));
             }
         }
         /// <summary>
@@ -614,12 +542,10 @@ namespace Entidades
 
         public static void Cargar()
         {
-            List<object[]> listaProductos = GestorBaseDatos.Consultar("PRODUCTOS", "*");
-            List<object[]> listaEmpleados = GestorBaseDatos.Consultar("EMPLEADOS", "*");
-            List<object[]> listaProveedores = GestorBaseDatos.Consultar("PROVEEDORES", "*");
+            List<object[]> listaProductos = GestorBaseDatos.ConsultarProductos();
+            List<object[]> listaEmpleados = GestorBaseDatos.ConsultarEmpleados();
 
             Cargar(listaEmpleados, ETipoCarga.Empleado);
-            Cargar(listaProveedores, ETipoCarga.Proveedor);
             Cargar(listaProductos, ETipoCarga.Producto);
         }
 
@@ -631,9 +557,6 @@ namespace Entidades
                 {
                     case ETipoCarga.Producto:
                         Cargar(elementos, stock);
-                        break;
-                    case ETipoCarga.Proveedor:
-                        Cargar(elementos, proveedores);
                         break;
                     case ETipoCarga.Empleado:
                         Cargar(elementos, personal);
@@ -676,22 +599,11 @@ namespace Entidades
             }
         }
 
-        private static void Cargar(List<object[]> elementos, List<Proveedor> proveedores)
-        {
-            foreach(object[] elemento in elementos)
-            {
-                Proveedor proveedor = new Proveedor();
-                proveedores.Add(proveedor.Cargar(elemento));
-            }
-        }
-
         public static void Guardar()
         {
             List<ElementoStock<Producto>> listaProductos = GenenrarListaProductos();
             Guardar(listaProductos);
-            Guardar<Usuario>(Personal, "EMPLEADOS");
-            Guardar<Proveedor>(Proveedores, "PROVEEDORES");
-            
+            Guardar<Usuario>(Personal, "EMPLEADOS");            
         }
 
         private static List<ElementoStock<Producto>> GenenrarListaProductos()
@@ -709,7 +621,7 @@ namespace Entidades
             string tabla = "PRODUCTOS";
             foreach (var item in lista)
             {
-                if(GestorBaseDatos.ElementoExiste(tabla, item.Id.ToString()))
+                if(GestorBaseDatos.ElementoExiste( "ID",tabla, $"ID = {item.Id}"))
                 {
                     GestorBaseDatos.Editar(tabla, GenerarCampos(item), $"@ID = {item.Id}");
                 }
@@ -725,21 +637,14 @@ namespace Entidades
         {
             foreach (T item in lista)
             {
-                if (GestorBaseDatos.ElementoExiste(tabla, item.Dni.ToString()))
+                if (GestorBaseDatos.ElementoExiste("DNI",tabla, $"DNI = {item.Dni}"))
                 {
                     GestorBaseDatos.Editar(tabla, GenerarCampos(item), $"DNI = {item.Dni}");
                 }
                 else
                 {
-                    if(tabla == "PROVEEDORES")
-                    {
-                        GestorBaseDatos.Insertar(tabla, "NOMBRE,APELLIDO,DNI,PRODUCTOS,ESTA_ACTIVO",item.GetValores());
-                    }
-                    else
-                    {
-                        GestorBaseDatos.Insertar(tabla, "NOMBRE,APELLIDO,DNI,ADMINISTRADOR,USUARIO," +
-                                                "CONTRASENIA,ESTA_ACTIVO",item.GetValores());
-                    }
+                    GestorBaseDatos.Insertar(tabla, "NOMBRE,APELLIDO,DNI,ADMINISTRADOR,USUARIO," +
+                                                "CONTRASENIA,ESTA_ACTIVO", item.GetValores());
 
                 }
             }
@@ -747,12 +652,14 @@ namespace Entidades
 
         private static string GenerarCampos(ElementoStock<Producto> producto)
         {
-            return producto.APar().Key.ActualizarValores() + $"CANTIDAD = {producto.APar().Value}";
+            return producto.APar().Key.ActualizarValores() + $"CANTIDAD = {producto.Cantidad}";
         }
 
         private static string GenerarCampos(Persona persona)
         {
             return persona.ActualizarValores();
         }
+
+
     }
 }
